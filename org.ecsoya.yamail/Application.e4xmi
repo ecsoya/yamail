@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmi:id="_cwRjQAAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.ide.application" bindingContexts="_cwRjSQAYEeSVCLYWvlBIUA">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_cwRjQQAYEeSVCLYWvlBIUA" label="Yamail - Ecsoya Mail Client" width="500" height="400">
+    <children xsi:type="basic:PartSashContainer" xmi:id="_LP2kAAAZEeSVCLYWvlBIUA" elementId="org.ecsoya.yamail.ui.main" containerData="" selectedElement="_MW32cAAZEeSVCLYWvlBIUA" horizontal="true">
+      <children xsi:type="basic:Part" xmi:id="_MW32cAAZEeSVCLYWvlBIUA" elementId="org.ecsoya.yamail.ui.views.account" containerData="1" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.AccountView" label="Account"/>
+      <children xsi:type="basic:PartSashContainer" xmi:id="_z8NB4AAZEeSVCLYWvlBIUA" elementId="org.ecsoya.yamail.ui.body" containerData="3" selectedElement="_0jzNYAAZEeSVCLYWvlBIUA">
+        <children xsi:type="basic:Part" xmi:id="_0jzNYAAZEeSVCLYWvlBIUA" elementId="org.ecsoya.yamail.ui.views.headers" containerData="1" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.HeaderView" label="Headers"/>
+        <children xsi:type="basic:Part" xmi:id="_05Fg4AAZEeSVCLYWvlBIUA" elementId="org.ecsoya.yamail.ui.views.details" containerData="3" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.DetailsView" label="Details"/>
+      </children>
+    </children>
+  </children>
+  <rootContext xmi:id="_cwRjSQAYEeSVCLYWvlBIUA" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_cwRjSgAYEeSVCLYWvlBIUA" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_cwRjSwAYEeSVCLYWvlBIUA" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <addons xmi:id="_cwRjQgAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_cwRjQwAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_cwRjRAAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_cwRjRQAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_cwRjRgAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_cwRjRwAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_cwRjSAAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>

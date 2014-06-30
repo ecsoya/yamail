@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+ <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="Yamail - Ecsoya Mail Client"
+            application="org.eclipse.e4.ui.workbench.swt.E4Application">
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/org.ecsoya.yamail/css/default.css">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="preference.ini">
+         </property>
+      </product>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated model -->
+      <package
+            uri="http://org.ecsoya.yamail/model/1.0"
+            class="org.ecsoya.yamail.model.YamailPackage"
+            genModel="model/model.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated model -->
+      <factory
+            uri="http://org.ecsoya.yamail/model/1.0"
+            class="org.ecsoya.yamail.model.provider.YamailItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+</plugin>

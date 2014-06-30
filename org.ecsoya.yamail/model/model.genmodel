@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.ecsoya.yamail/src" editDirectory="/org.ecsoya.yamail/src"
+    modelPluginID="org.ecsoya.yamail" modelName="Yamail" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    editPluginID="org.ecsoya.yamail" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>model.ecore</foreignModel>
+  <genPackages prefix="Yamail" basePackage="org.ecsoya.yamail" disposableProviderFactory="true"
+      ecorePackage="model.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//MailProtocol">
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//MailProtocol/POP"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//MailProtocol/SECURE_POP"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//MailProtocol/IMAP"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//MailProtocol/SECURE_IMAP"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//MailProtocol/SMTP"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//MailProtocol/SECURE_SMTP"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="model.ecore#//Message"/>
+    <genClasses ecoreClass="model.ecore#//YamailLibrary">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//YamailLibrary/accounts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//YamailLibrary/settings"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//YamailAccount">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailAccount/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//YamailAccount/incomingServer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//YamailAccount/outgoingServer"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="model.ecore#//YamailServer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailServer/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailServer/hostName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailServer/port"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailServer/userName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailServer/password"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailServer/protocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailServer/timeout"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//IncomingServer"/>
+    <genClasses ecoreClass="model.ecore#//OutgoingServer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//OutgoingServer/useTSL"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//OutgoingServer/fromAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//OutgoingServer/emailPrefix"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//YamailFolder">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailFolder/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//YamailFolder/mails"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Yamail">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Yamail/message"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

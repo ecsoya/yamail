@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="http://org.ecsoya.yamail/model/1.0" nsPrefix="yam">
+  <eClassifiers xsi:type="ecore:EClass" name="YamailLibrary">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="accounts" upperBound="-1"
+        eType="#//YamailAccount" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="settings" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStringToStringMapEntry"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="YamailAccount">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingServer" eType="#//IncomingServer"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingServer" eType="#//OutgoingServer"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="YamailServer" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocol" eType="#//MailProtocol"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+        defaultValueLiteral="10000"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IncomingServer" eSuperTypes="#//YamailServer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OutgoingServer" eSuperTypes="#//YamailServer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useTSL" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="emailPrefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MailProtocol" instanceClassName="org.ecsoya.yamail.core.model.MailProtocol">
+    <eLiterals name="POP" value="110" literal="pop3"/>
+    <eLiterals name="SECURE_POP" value="995" literal="pop3s"/>
+    <eLiterals name="IMAP" value="143" literal="imap"/>
+    <eLiterals name="SECURE_IMAP" value="993" literal="imaps"/>
+    <eLiterals name="SMTP" value="25" literal="smtp"/>
+    <eLiterals name="SECURE_SMTP" value="465" literal="smtps"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="YamailFolder">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mails" upperBound="-1"
+        eType="#//Yamail" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Yamail">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="#//Message"
+        transient="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Message" instanceClassName="javax.mail.Message"
+      serializable="false"/>
+</ecore:EPackage>

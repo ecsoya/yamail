@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component id="org.ecsoya.yamail" version="2">
+    <resource path="src/org/ecsoya/yamail/model/Yamail.java" type="org.ecsoya.yamail.model.Yamail">
+        <filter id="643842064">
+            <message_arguments>
+                <message_argument value="Message"/>
+                <message_argument value="Yamail"/>
+                <message_argument value="getMessage()"/>
+            </message_arguments>
+        </filter>
+        <filter id="643846161">
+            <message_arguments>
+                <message_argument value="Message"/>
+                <message_argument value="Yamail"/>
+                <message_argument value="setMessage(Message)"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/ecsoya/yamail/model/impl/YamailImpl.java" type="org.ecsoya.yamail.model.impl.YamailImpl">
+        <filter id="627060751">
+            <message_arguments>
+                <message_argument value="Message"/>
+                <message_argument value="YamailImpl"/>
+                <message_argument value="MESSAGE_EDEFAULT"/>
+            </message_arguments>
+        </filter>
+        <filter id="627060751">
+            <message_arguments>
+                <message_argument value="Message"/>
+                <message_argument value="YamailImpl"/>
+                <message_argument value="message"/>
+            </message_arguments>
+        </filter>
+        <filter id="643842064">
+            <message_arguments>
+                <message_argument value="Message"/>
+                <message_argument value="YamailImpl"/>
+                <message_argument value="getMessage()"/>
+            </message_arguments>
+        </filter>
+        <filter id="643846161">
+            <message_arguments>
+                <message_argument value="Message"/>
+                <message_argument value="YamailImpl"/>
+                <message_argument value="setMessage(Message)"/>
+            </message_arguments>
+        </filter>
+    </resource>
+</component>
