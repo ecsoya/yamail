@@ -5,14 +5,23 @@ import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.ViewForm;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Tree;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.ToolBar;
+import org.eclipse.swt.widgets.ToolItem;
 import org.ecsoya.yamail.YamailCore;
 import org.ecsoya.yamail.model.YamailAccount;
 import org.ecsoya.yamail.model.YamailFactory;
 import org.ecsoya.yamail.model.YamailLibrary;
+import org.ecsoya.yamail.ui.dialogs.CreateAccountWizard;
+import org.ecsoya.yamail.ui.resources.ImageFactory;
 
 public class AccountView {
 
@@ -25,7 +34,9 @@ public class AccountView {
 
 	@PostConstruct
 	public void postConstruct(Composite parent) {
-		accountViewer = new TreeViewer(parent, SWT.FULL_SELECTION | SWT.BORDER
+		ViewForm form = new ViewForm(parent, SWT.BORDER | SWT.FLAT);
+
+		accountViewer = new TreeViewer(form, SWT.FULL_SELECTION
 				| SWT.HIDE_SELECTION);
 		accountViewer.setContentProvider(new AccountContentProvider());
 		accountViewer.setLabelProvider(new AccountLabelProvider());
@@ -38,7 +49,7 @@ public class AccountView {
 						.createYamailAccount();
 				acc.setName("Soyatec");
 				acc.setAddress("jin.liu@soyatec.com");
-				
+
 				library.getAccounts().add(acc);
 
 				acc = YamailFactory.eINSTANCE.createYamailAccount();
@@ -48,8 +59,30 @@ public class AccountView {
 				accountViewer.setInput(library);
 			}
 		});
-	}
+		form.setContent(accountViewer.getControl());
 
+		Label label = new Label(form, SWT.NONE);
+		label.setText("Accounts");
+		label.setFont(JFaceResources.getBannerFont());
+
+		form.setTopLeft(label);
+
+		ToolBar toolbar = new ToolBar(form, SWT.FLAT);
+		ToolItem toolItem = new ToolItem(toolbar, SWT.NONE);
+		toolItem.setToolTipText("Add Account...");
+		toolItem.setImage(ImageFactory
+				.getImage("icons/full/ctools/16/add_account.png"));
+		toolItem.addListener(SWT.Selection, new Listener() {
+
+			@Override
+			public void handleEvent(Event event) {
+				WizardDialog dlg = new WizardDialog(parent.getShell(),
+						new CreateAccountWizard());
+				dlg.open();
+			}
+		});
+		form.setTopRight(toolbar);
+	}
 
 	@PreDestroy
 	public void preDestroy() {

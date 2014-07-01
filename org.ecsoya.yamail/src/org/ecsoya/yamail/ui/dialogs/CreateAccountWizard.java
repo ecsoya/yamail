@@ -1,6 +1,8 @@
 package org.ecsoya.yamail.ui.dialogs;
 
 import org.eclipse.jface.wizard.Wizard;
+import org.ecsoya.yamail.model.YamailAccount;
+import org.ecsoya.yamail.model.YamailFactory;
 
 public class CreateAccountWizard extends Wizard {
 
@@ -8,9 +10,17 @@ public class CreateAccountWizard extends Wizard {
 	private IncomingServerPage incomingServerPage;
 	private OutgoingServerPage outgoingServerPage;
 
+	private YamailAccount account;
+	
+	public CreateAccountWizard() {
+		account = YamailFactory.eINSTANCE.createYamailAccount();
+		account.setAddress("jin.liu@soyatec.com");
+		setWindowTitle("Add Account");
+	}
+	
 	@Override
 	public void addPages() {
-		basicPage = new AccountBasicPage(null);
+		basicPage = new AccountBasicPage(account);
 		addPage(basicPage);
 		
 		incomingServerPage = new IncomingServerPage();

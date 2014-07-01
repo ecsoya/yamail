@@ -1,0 +1,46 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:y="clr-namespace:org.ecsoya.yamail.ui.dialogs">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<Label text="Display Name">
+		<Label.layoutData>
+			<GridData horizontalAlignment="RIGHT" />
+		</Label.layoutData>
+	</Label>
+	<Text x:Style="BORDER" text="{Binding path=name}">
+		<Text.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Text.layoutData>
+	</Text>
+	<Label text="Account">
+		<Label.layoutData>
+			<GridData horizontalAlignment="RIGHT" />
+		</Label.layoutData>
+	</Label>
+	<Text x:Style="BORDER">
+		<Text.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Text.layoutData>
+		<Text.text>
+			<Binding path="address" updateSourceTrigger="PropertyChanged">
+				<Binding.validationRules>
+					<y:EmailValidationRule />
+				</Binding.validationRules>
+			</Binding>
+		</Text.text>
+	</Text>
+	<Label text="Password">
+		<Label.layoutData>
+			<GridData horizontalAlignment="RIGHT" />
+		</Label.layoutData>
+	</Label>
+	<Text x:Style="BORDER | PASSWORD" text="{Binding path=password}">
+		<Text.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Text.layoutData>
+	</Text>
+</Composite>

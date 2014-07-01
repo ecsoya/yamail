@@ -4,7 +4,7 @@
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_zHuoEQDJEeS4TJc19_3mMA">
       <children xsi:type="advanced:Perspective" xmi:id="_zHuoEgDJEeS4TJc19_3mMA">
         <children xsi:type="basic:PartSashContainer" xmi:id="_zHuoEwDJEeS4TJc19_3mMA" horizontal="true">
-          <children xsi:type="basic:Part" xmi:id="_s4RfUADNEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.ui.account" containerData="1" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.AccountView"/>
+          <children xsi:type="basic:Part" xmi:id="_s4RfUADNEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.ui.account" containerData="1" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.AccountView" label="Accounts"/>
           <children xsi:type="basic:PartSashContainer" xmi:id="_zRC_QADNEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.partsashcontainer.0" containerData="3">
             <children xsi:type="basic:Part" xmi:id="_zx_wMADNEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.ui.headers" containerData="1" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.HeaderView"/>
             <children xsi:type="basic:Part" xmi:id="_0GwfQADNEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.ui.details" containerData="3" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.DetailsView"/>
