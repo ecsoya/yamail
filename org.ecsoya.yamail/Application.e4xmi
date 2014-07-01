@@ -1,23 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmi:id="_cwRjQAAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.ide.application" bindingContexts="_cwRjSQAYEeSVCLYWvlBIUA">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_cwRjQQAYEeSVCLYWvlBIUA" label="Yamail - Ecsoya Mail Client" width="500" height="400">
-    <children xsi:type="basic:PartSashContainer" xmi:id="_LP2kAAAZEeSVCLYWvlBIUA" elementId="org.ecsoya.yamail.ui.main" containerData="" selectedElement="_MW32cAAZEeSVCLYWvlBIUA" horizontal="true">
-      <children xsi:type="basic:Part" xmi:id="_MW32cAAZEeSVCLYWvlBIUA" elementId="org.ecsoya.yamail.ui.views.account" containerData="1" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.AccountView" label="Account"/>
-      <children xsi:type="basic:PartSashContainer" xmi:id="_z8NB4AAZEeSVCLYWvlBIUA" elementId="org.ecsoya.yamail.ui.body" containerData="3" selectedElement="_0jzNYAAZEeSVCLYWvlBIUA">
-        <children xsi:type="basic:Part" xmi:id="_0jzNYAAZEeSVCLYWvlBIUA" elementId="org.ecsoya.yamail.ui.views.headers" containerData="1" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.HeaderView" label="Headers"/>
-        <children xsi:type="basic:Part" xmi:id="_05Fg4AAZEeSVCLYWvlBIUA" elementId="org.ecsoya.yamail.ui.views.details" containerData="3" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.DetailsView" label="Details"/>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_zHuA8ADJEeS4TJc19_3mMA" elementId="org.eclipse.e4.ide.application" bindingContexts="_zHuA-QDJEeS4TJc19_3mMA">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_zHuA8QDJEeS4TJc19_3mMA" label="Yamail - Ecsoya Mail Client">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_zHuoEQDJEeS4TJc19_3mMA">
+      <children xsi:type="advanced:Perspective" xmi:id="_zHuoEgDJEeS4TJc19_3mMA">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_zHuoEwDJEeS4TJc19_3mMA" horizontal="true">
+          <children xsi:type="basic:Part" xmi:id="_s4RfUADNEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.ui.account" containerData="1" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.AccountView"/>
+          <children xsi:type="basic:PartSashContainer" xmi:id="_zRC_QADNEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.partsashcontainer.0" containerData="3">
+            <children xsi:type="basic:Part" xmi:id="_zx_wMADNEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.ui.headers" containerData="1" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.HeaderView"/>
+            <children xsi:type="basic:Part" xmi:id="_0GwfQADNEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.ui.details" containerData="3" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.DetailsView"/>
+          </children>
+        </children>
       </children>
     </children>
+    <mainMenu xmi:id="_zHuoCgDJEeS4TJc19_3mMA" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_zHuoCwDJEeS4TJc19_3mMA" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_zHuoDgDJEeS4TJc19_3mMA" label="Quit" command="_zHuA_ADJEeS4TJc19_3mMA"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_zHuoDwDJEeS4TJc19_3mMA" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_zHuoEADJEeS4TJc19_3mMA" label="About" command="_zHuoBwDJEeS4TJc19_3mMA"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_zHuoFgDJEeS4TJc19_3mMA">
+      <children xsi:type="menu:ToolBar" xmi:id="_zHuoFwDJEeS4TJc19_3mMA" elementId="toolbar:org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_zHuoGADJEeS4TJc19_3mMA" label="Check" iconURI="platform:/plugin/org.ecsoya.yamail/icons/full/ctools/email_check.png" tooltip="Check all email accounts" command="_sl4J8ADcEeS4TJc19_3mMA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_zHuoGQDJEeS4TJc19_3mMA" label="Compose" iconURI="platform:/plugin/org.ecsoya.yamail/icons/full/ctools/email_compose.png" tooltip="Compose email" command="_6LjVcADcEeS4TJc19_3mMA"/>
+        <children xsi:type="menu:ToolBarSeparator" xmi:id="_3kq9UADdEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.toolbarseparator.0"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_h2k1AADkEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.handledtoolitem.0" iconURI="platform:/plugin/org.ecsoya.yamail/icons/full/ctools/email_reply.png" command="_Ui5_gADkEeS4TJc19_3mMA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_uwj_MADkEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.handledtoolitem.1" iconURI="platform:/plugin/org.ecsoya.yamail/icons/full/ctools/email_forward.png" command="_Zvs0gADkEeS4TJc19_3mMA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_8mJO8ADkEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.handledtoolitem.2" iconURI="platform:/plugin/org.ecsoya.yamail/icons/full/ctools/email_delete.png" command="_2rRL8ADkEeS4TJc19_3mMA"/>
+        <children xsi:type="menu:ToolBarSeparator" xmi:id="_92wa4ADnEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.toolbarseparator.1"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_-TgoUADnEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.handledtoolitem.3" iconURI="platform:/plugin/org.ecsoya.yamail/icons/full/ctools/email_setting.png" command="_1thC4ADnEeS4TJc19_3mMA"/>
+      </children>
+    </trimBars>
   </children>
-  <rootContext xmi:id="_cwRjSQAYEeSVCLYWvlBIUA" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
-    <children xmi:id="_cwRjSgAYEeSVCLYWvlBIUA" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
-    <children xmi:id="_cwRjSwAYEeSVCLYWvlBIUA" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  <handlers xmi:id="_zHuA_QDJEeS4TJc19_3mMA" elementId="e4demo.handler.quitCommand" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.handlers.QuitHandler" command="_zHuA_ADJEeS4TJc19_3mMA"/>
+  <handlers xmi:id="_zHuoCADJEeS4TJc19_3mMA" elementId="e4demo.handler.aboutCommand" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.handlers.AboutHandler" command="_zHuoBwDJEeS4TJc19_3mMA"/>
+  <handlers xmi:id="_mjnFgADcEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.handler.check" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.handlers.CheckMailHandler" command="_sl4J8ADcEeS4TJc19_3mMA"/>
+  <handlers xmi:id="_8YQdkADcEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.handler.compose" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.handlers.ComposeMailHandler" command="_6LjVcADcEeS4TJc19_3mMA"/>
+  <handlers xmi:id="_W9LCgADkEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.handler.reply" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.handlers.ReplyMailCommand" command="_Ui5_gADkEeS4TJc19_3mMA"/>
+  <handlers xmi:id="_cW3EAADkEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.handler.forward" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.handlers.ForwardCommand" command="_Zvs0gADkEeS4TJc19_3mMA"/>
+  <handlers xmi:id="_4To38ADkEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.handler.delete" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.handlers.DeleteMailCommand" command="_2rRL8ADkEeS4TJc19_3mMA"/>
+  <handlers xmi:id="_4gWW4ADnEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.handler.setting" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.handlers.SettingHandler" command="_1thC4ADnEeS4TJc19_3mMA"/>
+  <bindingTables xmi:id="_zHuA_gDJEeS4TJc19_3mMA" bindingContext="_zHuA-QDJEeS4TJc19_3mMA">
+    <bindings xmi:id="_zHuoAADJEeS4TJc19_3mMA" keySequence="M1+Q" command="_zHuA_ADJEeS4TJc19_3mMA"/>
+    <bindings xmi:id="_zHuoAwDJEeS4TJc19_3mMA" keySequence="M1+O"/>
+    <bindings xmi:id="_zHuoBgDJEeS4TJc19_3mMA" keySequence="M1+S"/>
+    <bindings xmi:id="_zHuoCQDJEeS4TJc19_3mMA" keySequence="M1+A" command="_zHuoBwDJEeS4TJc19_3mMA"/>
+  </bindingTables>
+  <rootContext xmi:id="_zHuA-QDJEeS4TJc19_3mMA" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_zHuA-gDJEeS4TJc19_3mMA" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_zHuA-wDJEeS4TJc19_3mMA" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
   </rootContext>
-  <addons xmi:id="_cwRjQgAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
-  <addons xmi:id="_cwRjQwAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
-  <addons xmi:id="_cwRjRAAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
-  <addons xmi:id="_cwRjRQAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
-  <addons xmi:id="_cwRjRgAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
-  <addons xmi:id="_cwRjRwAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
-  <addons xmi:id="_cwRjSAAYEeSVCLYWvlBIUA" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+  <commands xmi:id="_zHuA_ADJEeS4TJc19_3mMA" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
+  <commands xmi:id="_zHuoBwDJEeS4TJc19_3mMA" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <commands xmi:id="_sl4J8ADcEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.command.check" commandName="checkCommand" description="Check new emails"/>
+  <commands xmi:id="_6LjVcADcEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.command.compose" commandName="composeCommand" description="Compose new email"/>
+  <commands xmi:id="_Ui5_gADkEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.command.reply" commandName="replyCommand"/>
+  <commands xmi:id="_Zvs0gADkEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.command.forward" commandName="forwardCommand"/>
+  <commands xmi:id="_2rRL8ADkEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.command.delete" commandName="deleteCommand"/>
+  <commands xmi:id="_1thC4ADnEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.command.setting" commandName="settingCommand"/>
+  <addons xmi:id="_zHuA8gDJEeS4TJc19_3mMA" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_zHuA8wDJEeS4TJc19_3mMA" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_zHuA9ADJEeS4TJc19_3mMA" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_zHuA9QDJEeS4TJc19_3mMA" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_zHuA9gDJEeS4TJc19_3mMA" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_zHuA9wDJEeS4TJc19_3mMA" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_zHuA-ADJEeS4TJc19_3mMA" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
 </application:Application>

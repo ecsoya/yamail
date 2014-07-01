@@ -24,10 +24,9 @@ import org.ecsoya.yamail.model.Yamail;
 import org.ecsoya.yamail.model.YamailPackage;
 
 /**
- * This is the item provider adapter for a
- * {@link org.ecsoya.yamail.model.Yamail} object. <!-- begin-user-doc --> <!--
+ * This is the item provider adapter for a {@link org.ecsoya.yamail.model.Yamail} object.
+ * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
  * @generated
  */
 public class YamailItemProvider extends ItemProviderAdapter implements
@@ -66,48 +65,51 @@ public class YamailItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addMessagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Yamail_message_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Yamail_message_feature", "_UI_Yamail_type"),
-				YamailPackage.Literals.YAMAIL__MESSAGE, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Yamail_message_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Yamail_message_feature", "_UI_Yamail_type"),
+				 YamailPackage.Literals.YAMAIL__MESSAGE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This returns Yamail.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns Yamail.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Yamail"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Yamail"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		Message labelValue = ((Yamail) object).getMessage();
+		Message labelValue = ((Yamail)object).getMessage();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_Yamail_type")
-				: getString("_UI_Yamail_type") + " " + label;
+		return label == null || label.length() == 0 ?
+			getString("_UI_Yamail_type") :
+			getString("_UI_Yamail_type") + " " + label;
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -115,10 +117,9 @@ public class YamailItemProvider extends ItemProviderAdapter implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Yamail.class)) {
-		case YamailPackage.YAMAIL__MESSAGE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+			case YamailPackage.YAMAIL__MESSAGE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

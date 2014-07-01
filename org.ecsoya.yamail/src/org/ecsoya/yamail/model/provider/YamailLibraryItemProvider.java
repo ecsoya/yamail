@@ -24,10 +24,9 @@ import org.ecsoya.yamail.model.YamailLibrary;
 import org.ecsoya.yamail.model.YamailPackage;
 
 /**
- * This is the item provider adapter for a
- * {@link org.ecsoya.yamail.model.YamailLibrary} object. <!-- begin-user-doc -->
+ * This is the item provider adapter for a {@link org.ecsoya.yamail.model.YamailLibrary} object.
+ * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class YamailLibraryItemProvider extends ItemProviderAdapter implements
@@ -59,13 +58,10 @@ public class YamailLibraryItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to
-	 * deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand},
-	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
-	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -73,23 +69,19 @@ public class YamailLibraryItemProvider extends ItemProviderAdapter implements
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(YamailPackage.Literals.YAMAIL_LIBRARY__ACCOUNTS);
-			childrenFeatures
-					.add(YamailPackage.Literals.YAMAIL_LIBRARY__SETTINGS);
+			childrenFeatures.add(YamailPackage.Literals.YAMAIL_LIBRARY__ACCOUNTS);
+			childrenFeatures.add(YamailPackage.Literals.YAMAIL_LIBRARY__SETTINGS);
 		}
 		return childrenFeatures;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper
-		// feature to use for
+		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
@@ -103,14 +95,13 @@ public class YamailLibraryItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/YamailLibrary"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/YamailLibrary"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -119,11 +110,10 @@ public class YamailLibraryItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -131,11 +121,10 @@ public class YamailLibraryItemProvider extends ItemProviderAdapter implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(YamailLibrary.class)) {
-		case YamailPackage.YAMAIL_LIBRARY__ACCOUNTS:
-		case YamailPackage.YAMAIL_LIBRARY__SETTINGS:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case YamailPackage.YAMAIL_LIBRARY__ACCOUNTS:
+			case YamailPackage.YAMAIL_LIBRARY__SETTINGS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -152,15 +141,15 @@ public class YamailLibraryItemProvider extends ItemProviderAdapter implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				YamailPackage.Literals.YAMAIL_LIBRARY__ACCOUNTS,
-				YamailFactory.eINSTANCE.createYamailAccount()));
+		newChildDescriptors.add
+			(createChildParameter
+				(YamailPackage.Literals.YAMAIL_LIBRARY__ACCOUNTS,
+				 YamailFactory.eINSTANCE.createYamailAccount()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						YamailPackage.Literals.YAMAIL_LIBRARY__SETTINGS,
-						EcoreFactory.eINSTANCE
-								.create(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY)));
+		newChildDescriptors.add
+			(createChildParameter
+				(YamailPackage.Literals.YAMAIL_LIBRARY__SETTINGS,
+				 EcoreFactory.eINSTANCE.create(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY)));
 	}
 
 	/**

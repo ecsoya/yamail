@@ -14,6 +14,10 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingServer" eType="#//OutgoingServer"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="folders" upperBound="-1"
+        eType="#//YamailFolder" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="YamailServer" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -25,7 +29,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
         defaultValueLiteral="10000"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IncomingServer" eSuperTypes="#//YamailServer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IncomingServer" eSuperTypes="#//YamailServer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="15"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OutgoingServer" eSuperTypes="#//YamailServer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="useTSL" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

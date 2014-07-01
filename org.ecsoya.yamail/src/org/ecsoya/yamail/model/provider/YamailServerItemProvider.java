@@ -22,10 +22,9 @@ import org.ecsoya.yamail.model.YamailPackage;
 import org.ecsoya.yamail.model.YamailServer;
 
 /**
- * This is the item provider adapter for a
- * {@link org.ecsoya.yamail.model.YamailServer} object. <!-- begin-user-doc -->
+ * This is the item provider adapter for a {@link org.ecsoya.yamail.model.YamailServer} object.
+ * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class YamailServerItemProvider extends ItemProviderAdapter implements
@@ -64,22 +63,25 @@ public class YamailServerItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature. <!-- begin-user-doc
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_YamailServer_name_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_YamailServer_name_feature",
-						"_UI_YamailServer_type"),
-				YamailPackage.Literals.YAMAIL_SERVER__NAME, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_YamailServer_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_YamailServer_name_feature", "_UI_YamailServer_type"),
+				 YamailPackage.Literals.YAMAIL_SERVER__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -89,35 +91,41 @@ public class YamailServerItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addHostNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_YamailServer_hostName_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_YamailServer_hostName_feature",
-						"_UI_YamailServer_type"),
-				YamailPackage.Literals.YAMAIL_SERVER__HOST_NAME, true, false,
-				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_YamailServer_hostName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_YamailServer_hostName_feature", "_UI_YamailServer_type"),
+				 YamailPackage.Literals.YAMAIL_SERVER__HOST_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Port feature. <!-- begin-user-doc
+	 * This adds a property descriptor for the Port feature.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addPortPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_YamailServer_port_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_YamailServer_port_feature",
-						"_UI_YamailServer_type"),
-				YamailPackage.Literals.YAMAIL_SERVER__PORT, true, false, false,
-				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_YamailServer_port_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_YamailServer_port_feature", "_UI_YamailServer_type"),
+				 YamailPackage.Literals.YAMAIL_SERVER__PORT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -127,16 +135,19 @@ public class YamailServerItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addUserNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_YamailServer_userName_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_YamailServer_userName_feature",
-						"_UI_YamailServer_type"),
-				YamailPackage.Literals.YAMAIL_SERVER__USER_NAME, true, false,
-				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_YamailServer_userName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_YamailServer_userName_feature", "_UI_YamailServer_type"),
+				 YamailPackage.Literals.YAMAIL_SERVER__USER_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -146,16 +157,19 @@ public class YamailServerItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addPasswordPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_YamailServer_password_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_YamailServer_password_feature",
-						"_UI_YamailServer_type"),
-				YamailPackage.Literals.YAMAIL_SERVER__PASSWORD, true, false,
-				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_YamailServer_password_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_YamailServer_password_feature", "_UI_YamailServer_type"),
+				 YamailPackage.Literals.YAMAIL_SERVER__PASSWORD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -165,16 +179,19 @@ public class YamailServerItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addProtocolPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_YamailServer_protocol_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_YamailServer_protocol_feature",
-						"_UI_YamailServer_type"),
-				YamailPackage.Literals.YAMAIL_SERVER__PROTOCOL, true, false,
-				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_YamailServer_protocol_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_YamailServer_protocol_feature", "_UI_YamailServer_type"),
+				 YamailPackage.Literals.YAMAIL_SERVER__PROTOCOL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -184,39 +201,40 @@ public class YamailServerItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addTimeoutPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_YamailServer_timeout_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_YamailServer_timeout_feature",
-								"_UI_YamailServer_type"),
-						YamailPackage.Literals.YAMAIL_SERVER__TIMEOUT, true,
-						false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_YamailServer_timeout_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_YamailServer_timeout_feature", "_UI_YamailServer_type"),
+				 YamailPackage.Literals.YAMAIL_SERVER__TIMEOUT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((YamailServer) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_YamailServer_type")
-				: getString("_UI_YamailServer_type") + " " + label;
+		String label = ((YamailServer)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_YamailServer_type") :
+			getString("_UI_YamailServer_type") + " " + label;
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -224,16 +242,15 @@ public class YamailServerItemProvider extends ItemProviderAdapter implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(YamailServer.class)) {
-		case YamailPackage.YAMAIL_SERVER__NAME:
-		case YamailPackage.YAMAIL_SERVER__HOST_NAME:
-		case YamailPackage.YAMAIL_SERVER__PORT:
-		case YamailPackage.YAMAIL_SERVER__USER_NAME:
-		case YamailPackage.YAMAIL_SERVER__PASSWORD:
-		case YamailPackage.YAMAIL_SERVER__PROTOCOL:
-		case YamailPackage.YAMAIL_SERVER__TIMEOUT:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+			case YamailPackage.YAMAIL_SERVER__NAME:
+			case YamailPackage.YAMAIL_SERVER__HOST_NAME:
+			case YamailPackage.YAMAIL_SERVER__PORT:
+			case YamailPackage.YAMAIL_SERVER__USER_NAME:
+			case YamailPackage.YAMAIL_SERVER__PASSWORD:
+			case YamailPackage.YAMAIL_SERVER__PROTOCOL:
+			case YamailPackage.YAMAIL_SERVER__TIMEOUT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

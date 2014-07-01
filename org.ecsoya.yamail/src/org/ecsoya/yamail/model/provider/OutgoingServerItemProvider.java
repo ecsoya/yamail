@@ -15,10 +15,9 @@ import org.ecsoya.yamail.model.OutgoingServer;
 import org.ecsoya.yamail.model.YamailPackage;
 
 /**
- * This is the item provider adapter for a
- * {@link org.ecsoya.yamail.model.OutgoingServer} object. <!-- begin-user-doc
+ * This is the item provider adapter for a {@link org.ecsoya.yamail.model.OutgoingServer} object.
+ * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
  * @generated
  */
 public class OutgoingServerItemProvider extends YamailServerItemProvider {
@@ -57,16 +56,19 @@ public class OutgoingServerItemProvider extends YamailServerItemProvider {
 	 * @generated
 	 */
 	protected void addUseTSLPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_OutgoingServer_useTSL_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_OutgoingServer_useTSL_feature",
-						"_UI_OutgoingServer_type"),
-				YamailPackage.Literals.OUTGOING_SERVER__USE_TSL, true, false,
-				false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OutgoingServer_useTSL_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OutgoingServer_useTSL_feature", "_UI_OutgoingServer_type"),
+				 YamailPackage.Literals.OUTGOING_SERVER__USE_TSL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -76,17 +78,19 @@ public class OutgoingServerItemProvider extends YamailServerItemProvider {
 	 * @generated
 	 */
 	protected void addFromAddressPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_OutgoingServer_fromAddress_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_OutgoingServer_fromAddress_feature",
-						"_UI_OutgoingServer_type"),
-				YamailPackage.Literals.OUTGOING_SERVER__FROM_ADDRESS, true,
-				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-				null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OutgoingServer_fromAddress_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OutgoingServer_fromAddress_feature", "_UI_OutgoingServer_type"),
+				 YamailPackage.Literals.OUTGOING_SERVER__FROM_ADDRESS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -96,50 +100,51 @@ public class OutgoingServerItemProvider extends YamailServerItemProvider {
 	 * @generated
 	 */
 	protected void addEmailPrefixPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_OutgoingServer_emailPrefix_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_OutgoingServer_emailPrefix_feature",
-						"_UI_OutgoingServer_type"),
-				YamailPackage.Literals.OUTGOING_SERVER__EMAIL_PREFIX, true,
-				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-				null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OutgoingServer_emailPrefix_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OutgoingServer_emailPrefix_feature", "_UI_OutgoingServer_type"),
+				 YamailPackage.Literals.OUTGOING_SERVER__EMAIL_PREFIX,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This returns OutgoingServer.gif. <!-- begin-user-doc --> <!--
+	 * This returns OutgoingServer.gif.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/OutgoingServer"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/OutgoingServer"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((OutgoingServer) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_OutgoingServer_type")
-				: getString("_UI_OutgoingServer_type") + " " + label;
+		String label = ((OutgoingServer)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_OutgoingServer_type") :
+			getString("_UI_OutgoingServer_type") + " " + label;
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -147,12 +152,11 @@ public class OutgoingServerItemProvider extends YamailServerItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(OutgoingServer.class)) {
-		case YamailPackage.OUTGOING_SERVER__USE_TSL:
-		case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
-		case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+			case YamailPackage.OUTGOING_SERVER__USE_TSL:
+			case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
+			case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

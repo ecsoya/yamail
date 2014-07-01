@@ -7,9 +7,9 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 
 /**
- * This is the central singleton for the Yamail edit plugin. <!-- begin-user-doc
+ * This is the central singleton for the Yamail edit plugin.
+ * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
  * @generated
  */
 public final class YamailEditPlugin extends EMFPlugin {
@@ -30,18 +30,21 @@ public final class YamailEditPlugin extends EMFPlugin {
 	private static Implementation plugin;
 
 	/**
-	 * Create the instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Create the instance.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public YamailEditPlugin() {
-		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, });
+		super
+		  (new ResourceLocator [] {
+		     EcoreEditPlugin.INSTANCE,
+		   });
 	}
 
 	/**
-	 * Returns the singleton instance of the Eclipse plugin. <!-- begin-user-doc
+	 * Returns the singleton instance of the Eclipse plugin.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -51,9 +54,9 @@ public final class YamailEditPlugin extends EMFPlugin {
 	}
 
 	/**
-	 * Returns the singleton instance of the Eclipse plugin. <!-- begin-user-doc
+	 * Returns the singleton instance of the Eclipse plugin.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -69,8 +72,8 @@ public final class YamailEditPlugin extends EMFPlugin {
 	 */
 	public static class Implementation extends EclipsePlugin {
 		/**
-		 * Creates an instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * Creates an instance.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		public Implementation() {

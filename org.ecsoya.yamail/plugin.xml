@@ -12,7 +12,7 @@
          </property>
          <property
                name="preferenceCustomization"
-               value="preference.ini">
+               value="platform:/plugin/org.ecsoya.yamail/yamail.ini">
          </property>
       </product>
    </extension>

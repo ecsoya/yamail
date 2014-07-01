@@ -23,10 +23,8 @@ import org.ecsoya.yamail.model.YamailPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailFolderImpl#getName <em>Name
- * </em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailFolderImpl#getMails <em>Mails
- * </em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailFolderImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailFolderImpl#getMails <em>Mails</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,7 +35,6 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -47,7 +44,6 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -55,9 +51,8 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getMails() <em>Mails</em>}' containment
-	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getMails() <em>Mails</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getMails()
 	 * @generated
 	 * @ordered
@@ -66,7 +61,6 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected YamailFolderImpl() {
@@ -75,7 +69,6 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -85,7 +78,6 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -94,125 +86,113 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					YamailPackage.YAMAIL_FOLDER__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.YAMAIL_FOLDER__NAME, oldName, name));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<Yamail> getMails() {
 		if (mails == null) {
-			mails = new EObjectContainmentEList<Yamail>(Yamail.class, this,
-					YamailPackage.YAMAIL_FOLDER__MAILS);
+			mails = new EObjectContainmentEList<Yamail>(Yamail.class, this, YamailPackage.YAMAIL_FOLDER__MAILS);
 		}
 		return mails;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case YamailPackage.YAMAIL_FOLDER__MAILS:
-			return ((InternalEList<?>) getMails()).basicRemove(otherEnd, msgs);
+			case YamailPackage.YAMAIL_FOLDER__MAILS:
+				return ((InternalEList<?>)getMails()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case YamailPackage.YAMAIL_FOLDER__NAME:
-			return getName();
-		case YamailPackage.YAMAIL_FOLDER__MAILS:
-			return getMails();
+			case YamailPackage.YAMAIL_FOLDER__NAME:
+				return getName();
+			case YamailPackage.YAMAIL_FOLDER__MAILS:
+				return getMails();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case YamailPackage.YAMAIL_FOLDER__NAME:
-			setName((String) newValue);
-			return;
-		case YamailPackage.YAMAIL_FOLDER__MAILS:
-			getMails().clear();
-			getMails().addAll((Collection<? extends Yamail>) newValue);
-			return;
+			case YamailPackage.YAMAIL_FOLDER__NAME:
+				setName((String)newValue);
+				return;
+			case YamailPackage.YAMAIL_FOLDER__MAILS:
+				getMails().clear();
+				getMails().addAll((Collection<? extends Yamail>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case YamailPackage.YAMAIL_FOLDER__NAME:
-			setName(NAME_EDEFAULT);
-			return;
-		case YamailPackage.YAMAIL_FOLDER__MAILS:
-			getMails().clear();
-			return;
+			case YamailPackage.YAMAIL_FOLDER__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case YamailPackage.YAMAIL_FOLDER__MAILS:
+				getMails().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case YamailPackage.YAMAIL_FOLDER__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
-					.equals(name);
-		case YamailPackage.YAMAIL_FOLDER__MAILS:
-			return mails != null && !mails.isEmpty();
+			case YamailPackage.YAMAIL_FOLDER__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case YamailPackage.YAMAIL_FOLDER__MAILS:
+				return mails != null && !mails.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");

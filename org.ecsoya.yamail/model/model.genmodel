@@ -25,6 +25,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailAccount/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//YamailAccount/incomingServer"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//YamailAccount/outgoingServer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailAccount/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailAccount/password"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//YamailAccount/folders"/>
     </genClasses>
     <genClasses image="false" ecoreClass="model.ecore#//YamailServer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailServer/name"/>
@@ -35,7 +38,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailServer/protocol"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailServer/timeout"/>
     </genClasses>
-    <genClasses ecoreClass="model.ecore#//IncomingServer"/>
+    <genClasses ecoreClass="model.ecore#//IncomingServer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//IncomingServer/interval"/>
+    </genClasses>
     <genClasses ecoreClass="model.ecore#//OutgoingServer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//OutgoingServer/useTSL"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//OutgoingServer/fromAddress"/>

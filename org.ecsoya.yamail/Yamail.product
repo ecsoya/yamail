@@ -13,11 +13,14 @@
       </vmArgsMac>
    </launcherArgs>
 
-   <windowImages/>
+   <windowImages i16="/org.ecsoya.yamail/icons/yamail_16.png" i32="/org.ecsoya.yamail/icons/yamail_32.png"/>
 
+   <splash
+      location="org.ecsoya.yamail" />
    <launcher name="Yamail">
       <solaris/>
-      <win useIco="false">
+      <win useIco="true">
+         <ico path="/org.ecsoya.yamail/icons/yamail.ico"/>
          <bmp/>
       </win>
    </launcher>
