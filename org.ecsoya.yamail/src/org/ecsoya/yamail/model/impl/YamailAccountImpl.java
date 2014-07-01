@@ -3,6 +3,7 @@
 package org.ecsoya.yamail.model.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -12,9 +13,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.ecsoya.yamail.model.FolderType;
 import org.ecsoya.yamail.model.IncomingServer;
 import org.ecsoya.yamail.model.OutgoingServer;
 import org.ecsoya.yamail.model.YamailAccount;
+import org.ecsoya.yamail.model.YamailFactory;
 import org.ecsoya.yamail.model.YamailFolder;
 import org.ecsoya.yamail.model.YamailPackage;
 
@@ -77,8 +80,7 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getAddress()
 	 * @generated
 	 * @ordered
@@ -87,8 +89,7 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * The cached value of the '{@link #getAddress() <em>Address</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getAddress()
 	 * @generated
 	 * @ordered
@@ -97,8 +98,7 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * The default value of the '{@link #getPassword() <em>Password</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getPassword()
 	 * @generated
 	 * @ordered
@@ -107,8 +107,7 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * The cached value of the '{@link #getPassword() <em>Password</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getPassword()
 	 * @generated
 	 * @ordered
@@ -117,8 +116,7 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * The cached value of the '{@link #getFolders() <em>Folders</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getFolders()
 	 * @generated
 	 * @ordered
@@ -127,10 +125,44 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * 
+	 * @generated NOT
 	 */
 	protected YamailAccountImpl() {
 		super();
+		createSystemFolders();
+	}
+
+	private void createSystemFolders() {
+		YamailFolder folder = YamailFactory.eINSTANCE.createYamailFolder();
+		folder.setName("Inbox");
+		folder.setType(FolderType.INBOX);
+		folder.setSystem(true);
+		getFolders().add(folder);
+
+		folder = YamailFactory.eINSTANCE.createYamailFolder();
+		folder.setName("Draft");
+		folder.setType(FolderType.DRAFT);
+		folder.setSystem(true);
+		getFolders().add(folder);
+
+		folder = YamailFactory.eINSTANCE.createYamailFolder();
+		folder.setName("Sent");
+		folder.setType(FolderType.SENT);
+		folder.setSystem(true);
+		getFolders().add(folder);
+
+		folder = YamailFactory.eINSTANCE.createYamailFolder();
+		folder.setName("Trash");
+		folder.setType(FolderType.TRASH);
+		folder.setSystem(true);
+		getFolders().add(folder);
+
+		folder = YamailFactory.eINSTANCE.createYamailFolder();
+		folder.setName("Spam");
+		folder.setType(FolderType.SPAM);
+		folder.setSystem(true);
+		getFolders().add(folder);
 	}
 
 	/**
@@ -244,8 +276,7 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getAddress() {
@@ -253,8 +284,7 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setAddress(String newAddress) {
@@ -265,8 +295,7 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getPassword() {
@@ -274,8 +303,7 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setPassword(String newPassword) {
@@ -286,8 +314,7 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<YamailFolder> getFolders() {

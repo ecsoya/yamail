@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.ecsoya.yamail.model.*;
 import org.ecsoya.yamail.model.IncomingServer;
 import org.ecsoya.yamail.model.MailProtocol;
 import org.ecsoya.yamail.model.OutgoingServer;
@@ -80,6 +81,8 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 		switch (eDataType.getClassifierID()) {
 			case YamailPackage.MAIL_PROTOCOL:
 				return createMailProtocolFromString(eDataType, initialValue);
+			case YamailPackage.FOLDER_TYPE:
+				return createFolderTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -94,6 +97,8 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 		switch (eDataType.getClassifierID()) {
 			case YamailPackage.MAIL_PROTOCOL:
 				return convertMailProtocolToString(eDataType, instanceValue);
+			case YamailPackage.FOLDER_TYPE:
+				return convertFolderTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -170,6 +175,26 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	 */
 	public String convertMailProtocolToString(EDataType eDataType,
 			Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FolderType createFolderTypeFromString(EDataType eDataType, String initialValue) {
+		FolderType result = FolderType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertFolderTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

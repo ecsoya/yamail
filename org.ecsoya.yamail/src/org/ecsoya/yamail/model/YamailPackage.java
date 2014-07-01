@@ -519,13 +519,31 @@ public interface YamailPackage extends EPackage {
 	int YAMAIL_FOLDER__MAILS = 1;
 
 	/**
+	 * The feature id for the '<em><b>System</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int YAMAIL_FOLDER__SYSTEM = 2;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int YAMAIL_FOLDER__TYPE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Folder</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int YAMAIL_FOLDER_FEATURE_COUNT = 2;
+	int YAMAIL_FOLDER_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Folder</em>' class. <!--
@@ -575,6 +593,16 @@ public interface YamailPackage extends EPackage {
 	int MAIL_PROTOCOL = 7;
 
 	/**
+	 * The meta object id for the '{@link org.ecsoya.yamail.model.FolderType <em>Folder Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.ecsoya.yamail.model.FolderType
+	 * @see org.ecsoya.yamail.model.impl.YamailPackageImpl#getFolderType()
+	 * @generated
+	 */
+	int FOLDER_TYPE = 8;
+
+	/**
 	 * The meta object id for the '<em>Message</em>' data type. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -582,7 +610,7 @@ public interface YamailPackage extends EPackage {
 	 * @see org.ecsoya.yamail.model.impl.YamailPackageImpl#getMessage()
 	 * @generated
 	 */
-	int MESSAGE = 8;
+	int MESSAGE = 9;
 
 	/**
 	 * Returns the meta object for class '
@@ -888,6 +916,28 @@ public interface YamailPackage extends EPackage {
 	EReference getYamailFolder_Mails();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.ecsoya.yamail.model.YamailFolder#isSystem <em>System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>System</em>'.
+	 * @see org.ecsoya.yamail.model.YamailFolder#isSystem()
+	 * @see #getYamailFolder()
+	 * @generated
+	 */
+	EAttribute getYamailFolder_System();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.ecsoya.yamail.model.YamailFolder#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see org.ecsoya.yamail.model.YamailFolder#getType()
+	 * @see #getYamailFolder()
+	 * @generated
+	 */
+	EAttribute getYamailFolder_Type();
+
+	/**
 	 * Returns the meta object for enum '{@link org.ecsoya.yamail.model.MailProtocol <em>Mail Protocol</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for enum '<em>Mail Protocol</em>'.
@@ -895,6 +945,16 @@ public interface YamailPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getMailProtocol();
+
+	/**
+	 * Returns the meta object for enum '{@link org.ecsoya.yamail.model.FolderType <em>Folder Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Folder Type</em>'.
+	 * @see org.ecsoya.yamail.model.FolderType
+	 * @generated
+	 */
+	EEnum getFolderType();
 
 	/**
 	 * Returns the meta object for data type '{@link javax.mail.Message <em>Message</em>}'.
@@ -1162,6 +1222,22 @@ public interface YamailPackage extends EPackage {
 		EReference YAMAIL_FOLDER__MAILS = eINSTANCE.getYamailFolder_Mails();
 
 		/**
+		 * The meta object literal for the '<em><b>System</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute YAMAIL_FOLDER__SYSTEM = eINSTANCE.getYamailFolder_System();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute YAMAIL_FOLDER__TYPE = eINSTANCE.getYamailFolder_Type();
+
+		/**
 		 * The meta object literal for the '{@link org.ecsoya.yamail.model.MailProtocol <em>Mail Protocol</em>}' enum.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.ecsoya.yamail.model.MailProtocol
@@ -1169,6 +1245,16 @@ public interface YamailPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum MAIL_PROTOCOL = eINSTANCE.getMailProtocol();
+
+		/**
+		 * The meta object literal for the '{@link org.ecsoya.yamail.model.FolderType <em>Folder Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecsoya.yamail.model.FolderType
+		 * @see org.ecsoya.yamail.model.impl.YamailPackageImpl#getFolderType()
+		 * @generated
+		 */
+		EEnum FOLDER_TYPE = eINSTANCE.getFolderType();
 
 		/**
 		 * The meta object literal for the '<em>Message</em>' data type. <!--

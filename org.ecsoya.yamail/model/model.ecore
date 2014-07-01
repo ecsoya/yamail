@@ -51,6 +51,8 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mails" upperBound="-1"
         eType="#//Yamail" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="system" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//FolderType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Yamail">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="#//Message"
@@ -58,4 +60,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Message" instanceClassName="javax.mail.Message"
       serializable="false"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="FolderType">
+    <eLiterals name="INBOX"/>
+    <eLiterals name="SENT" value="1"/>
+    <eLiterals name="DRAFT" value="2"/>
+    <eLiterals name="TRASH" value="3"/>
+    <eLiterals name="SPAM" value="4"/>
+  </eClassifiers>
 </ecore:EPackage>

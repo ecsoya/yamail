@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.ecsoya.yamail.model.FolderType;
 import org.ecsoya.yamail.model.IncomingServer;
 import org.ecsoya.yamail.model.MailProtocol;
 import org.ecsoya.yamail.model.OutgoingServer;
@@ -76,6 +77,13 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * @generated
 	 */
 	private EEnum mailProtocolEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum folderTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -386,11 +394,38 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getYamailFolder_System() {
+		return (EAttribute)yamailFolderEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getYamailFolder_Type() {
+		return (EAttribute)yamailFolderEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEnum getMailProtocol() {
 		return mailProtocolEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getFolderType() {
+		return folderTypeEEnum;
 	}
 
 	/**
@@ -459,12 +494,15 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		yamailFolderEClass = createEClass(YAMAIL_FOLDER);
 		createEAttribute(yamailFolderEClass, YAMAIL_FOLDER__NAME);
 		createEReference(yamailFolderEClass, YAMAIL_FOLDER__MAILS);
+		createEAttribute(yamailFolderEClass, YAMAIL_FOLDER__SYSTEM);
+		createEAttribute(yamailFolderEClass, YAMAIL_FOLDER__TYPE);
 
 		yamailEClass = createEClass(YAMAIL);
 		createEAttribute(yamailEClass, YAMAIL__MESSAGE);
 
 		// Create enums
 		mailProtocolEEnum = createEEnum(MAIL_PROTOCOL);
+		folderTypeEEnum = createEEnum(FOLDER_TYPE);
 
 		// Create data types
 		messageEDataType = createEDataType(MESSAGE);
@@ -536,6 +574,8 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		initEClass(yamailFolderEClass, YamailFolder.class, "YamailFolder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getYamailFolder_Name(), ecorePackage.getEString(), "name", null, 0, 1, YamailFolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getYamailFolder_Mails(), this.getYamail(), null, "mails", null, 0, -1, YamailFolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamailFolder_System(), ecorePackage.getEBoolean(), "system", null, 0, 1, YamailFolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamailFolder_Type(), this.getFolderType(), "type", null, 0, 1, YamailFolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(yamailEClass, Yamail.class, "Yamail", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getYamail_Message(), this.getMessage(), "message", null, 0, 1, Yamail.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -548,6 +588,13 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		addEEnumLiteral(mailProtocolEEnum, MailProtocol.SECURE_IMAP);
 		addEEnumLiteral(mailProtocolEEnum, MailProtocol.SMTP);
 		addEEnumLiteral(mailProtocolEEnum, MailProtocol.SECURE_SMTP);
+
+		initEEnum(folderTypeEEnum, FolderType.class, "FolderType");
+		addEEnumLiteral(folderTypeEEnum, FolderType.INBOX);
+		addEEnumLiteral(folderTypeEEnum, FolderType.SENT);
+		addEEnumLiteral(folderTypeEEnum, FolderType.DRAFT);
+		addEEnumLiteral(folderTypeEEnum, FolderType.TRASH);
+		addEEnumLiteral(folderTypeEEnum, FolderType.SPAM);
 
 		// Initialize data types
 		initEDataType(messageEDataType, Message.class, "Message", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

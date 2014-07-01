@@ -16,6 +16,13 @@
       <genEnumLiterals ecoreEnumLiteral="model.ecore#//MailProtocol/SMTP"/>
       <genEnumLiterals ecoreEnumLiteral="model.ecore#//MailProtocol/SECURE_SMTP"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//FolderType">
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//FolderType/INBOX"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//FolderType/SENT"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//FolderType/DRAFT"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//FolderType/TRASH"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//FolderType/SPAM"/>
+    </genEnums>
     <genDataTypes ecoreDataType="model.ecore#//Message"/>
     <genClasses ecoreClass="model.ecore#//YamailLibrary">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//YamailLibrary/accounts"/>
@@ -49,6 +56,8 @@
     <genClasses ecoreClass="model.ecore#//YamailFolder">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailFolder/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//YamailFolder/mails"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailFolder/system"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailFolder/type"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//Yamail">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Yamail/message"/>
