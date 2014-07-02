@@ -1,0 +1,185 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:css="http://www.eclipse.org/xwt/css"
+	xmlns:y="clr-namespace:org.ecsoya.yamail.ui.dialogs" xmlns:m="clr-namespace:org.ecsoya.yamail.model">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+
+	<!-- Protocol -->
+	<Label text="Protocol">
+		<Label.layoutData>
+			<GridData horizontalAlignment="RIGHT" />
+		</Label.layoutData>
+	</Label>
+	<ComboViewer input="{Binding source={x:Type m:MailProtocol}}"
+		singleSelection="{Binding path=protocol}">
+		<ComboViewer.contentProvider>
+			<ObservableListContentProvider />
+		</ComboViewer.contentProvider>
+		<ComboViewer.filters>
+			<ViewerFilter>
+				<ViewerFilter.conditions>
+					<Condition property="name" value="POP|IMAP|SECURE_POP|SECURE_IMAP"
+						operator="LIKE" />
+				</ViewerFilter.conditions>
+			</ViewerFilter>
+		</ComboViewer.filters>
+		<ComboViewer.combo>
+			<ComboViewer.combo.layoutData>
+				<GridData grabExcessHorizontalSpace="true"
+					horizontalAlignment="FILL" />
+			</ComboViewer.combo.layoutData>
+		</ComboViewer.combo>
+	</ComboViewer>
+	<Label />
+	<Label text="Server type">
+		<css:Style script="color:light-black;font-size:8;" />
+		<Label.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Label.layoutData>
+	</Label>
+
+	<!-- Host Name -->
+	<Label text="Host Name">
+		<Label.layoutData>
+			<GridData horizontalAlignment="RIGHT" />
+		</Label.layoutData>
+	</Label>
+	<Text x:Style="BORDER">
+		<Text.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Text.layoutData>
+		<Text.text>
+			<Binding path="hostName" updateSourceTrigger="PropertyChanged">
+				<Binding.validationRules>
+					<y:RequiredValidationRule message="Mail server host can not be empty" />
+				</Binding.validationRules>
+			</Binding>
+		</Text.text>
+	</Text>
+	<Label />
+	<Label text="The host name of your POP / IMAP server">
+		<Label.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Label.layoutData>
+		<css:Style script="color:light-black;font-size:8;" />
+	</Label>
+
+	<!-- Port -->
+	<Label text="POP / IMAP Port">
+		<Label.layoutData>
+			<GridData horizontalAlignment="RIGHT" />
+		</Label.layoutData>
+	</Label>
+	<Text x:Style="BORDER" text="{Binding path=port}">
+		<Text.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Text.layoutData>
+	</Text>
+	<Label />
+	<Text x:Style="READ_ONLY|MULTI|WRAP"
+		text="Optional - The port to use to retrieve mail from your POP / IMAP account. Leave blank for default. (defaults: POP - 110, SECURE_POP - 995, IMAP - 143, SECURE_IMAP - 993)">
+		<Text.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Text.layoutData>
+		<css:Style script="color:light-black;font-size:8;" />
+	</Text>
+	<Label text="Timeout">
+		<Label.layoutData>
+			<GridData horizontalAlignment="RIGHT" />
+		</Label.layoutData>
+	</Label>
+	<Text x:Style="BORDER" text="{Binding path=timeout}">
+		<Text.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Text.layoutData>
+	</Text>
+	<Label />
+	<Text x:Style="READ_ONLY|MULTI|WRAP"
+		text="Timeout in milliseconds - 0 or negative values indicate infinite timeout. Leave blank for default (10000 ms).">
+		<Text.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Text.layoutData>
+		<css:Style script="color:light-black;font-size:8;" />
+	</Text>
+	<Label text="Username">
+		<Label.layoutData>
+			<GridData horizontalAlignment="RIGHT" />
+		</Label.layoutData>
+	</Label>
+	<Text x:Style="BORDER">
+		<Text.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Text.layoutData>
+		<Text.text>
+			<Binding path="userName" updateSourceTrigger="PropertyChanged">
+				<Binding.validationRules>
+					<y:RequiredValidationRule message="Username for login can not be empty" />
+				</Binding.validationRules>
+			</Binding>
+		</Text.text>
+	</Text>
+	<Label />
+	<Label text="The username used to authenticate your POP / IMAP account.">
+		<Label.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Label.layoutData>
+		<css:Style script="color:light-black;font-size:8;" />
+	</Label>
+	<Label text="Password">
+		<Label.layoutData>
+			<GridData horizontalAlignment="RIGHT" />
+		</Label.layoutData>
+	</Label>
+	<Text x:Style="BORDER | PASSWORD" text="{Binding path=password}">
+		<Text.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Text.layoutData>
+	</Text>
+	<Label />
+	<Label text="The password for your POP / IMAP account.">
+		<Label.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Label.layoutData>
+		<css:Style script="color:light-black;font-size:8;" />
+	</Label>
+	<Label />
+	<Composite>
+		<Composite.layout>
+			<GridLayout numColumns="4" />
+		</Composite.layout>
+		<Button x:Style="CHECK" text="Check email every" selection="{Binding path=check}" />
+		<Text x:Style="BORDER" text="{Binding path=interval}">
+			<Text.layoutData>
+				<GridData grabExcessHorizontalSpace="true"
+					horizontalAlignment="FILL" />
+			</Text.layoutData>
+		</Text>
+		<Label text="minutes automatically" />
+		<Label />
+		<Label />
+		<Label />
+		<Label />
+		<Button text="Test Connection">
+			<Button.layoutData>
+				<GridData grabExcessHorizontalSpace="true"
+					horizontalAlignment="FILL" />
+			</Button.layoutData>
+		</Button>
+		<Composite.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Composite.layoutData>
+	</Composite>
+</Composite>

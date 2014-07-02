@@ -6,6 +6,8 @@ import org.eclipse.xwt.validation.AbstractValidationRule;
 
 public class RequiredValidationRule extends AbstractValidationRule {
 
+	private String message;
+
 	/**
 	 * Required validation
 	 */
@@ -13,13 +15,14 @@ public class RequiredValidationRule extends AbstractValidationRule {
 		super();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.xwt.IValueValidator#validateBack(java.lang.Object)
-	 */
-	public IStatus validateBack(Object value) {
-		return ValidationStatus.ok();
+	@Override
+	public Phase getPhase() {
+		return Phase.BeforeSet;
+	}
+
+	@Override
+	public Direction getBindingMode() {
+		return Direction.TargetToSource;
 	}
 
 	/*
@@ -31,10 +34,25 @@ public class RequiredValidationRule extends AbstractValidationRule {
 	 */
 	public IStatus validate(Object value) {
 		if (value == null || value.toString().length() == 0) {
+			if (message != null) {
+				return ValidationStatus.error(message);
+			}
 			return ValidationStatus.error("Value is required");
 		}
 
 		return ValidationStatus.ok();
+	}
+
+	public IStatus validateBack(Object value) {
+		return validate(value);
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 }

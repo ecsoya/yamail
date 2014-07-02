@@ -1,20 +1,21 @@
 package org.ecsoya.yamail.ui.dialogs;
 
-import org.eclipse.jface.wizard.WizardPage;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Label;
+import java.net.URL;
 
-public class OutgoingServerPage extends WizardPage {
+import org.eclipse.xwt.IConstants;
+import org.ecsoya.yamail.model.OutgoingServer;
 
-	protected OutgoingServerPage() {
-		super("OutgoingServerPage");
+public class OutgoingServerPage extends XWTWizardPage {
+
+	protected OutgoingServerPage(OutgoingServer outgoingServer) {
+		super("OutgoingServerPage", "Add SMTP Mail Server", null,
+				outgoingServer);
 	}
 
 	@Override
-	public void createControl(Composite parent) {
-
-		setControl(new Label(parent, SWT.NONE));
+	protected URL getContentURL() {
+		return OutgoingServerPage.class.getResource(OutgoingServerPage.class
+				.getSimpleName() + IConstants.XWT_EXTENSION_SUFFIX);
 	}
 
 }

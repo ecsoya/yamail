@@ -1,9 +1,10 @@
 <Composite xmlns="http://www.eclipse.org/xwt/presentation"
-	xmlns:x="http://www.eclipse.org/xwt" xmlns:y="clr-namespace:org.ecsoya.yamail.ui.dialogs">
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:css="http://www.eclipse.org/xwt/css"
+	xmlns:y="clr-namespace:org.ecsoya.yamail.ui.dialogs">
 	<Composite.layout>
 		<GridLayout numColumns="2" />
 	</Composite.layout>
-	<Label text="Display Name">
+	<Label text="Name">
 		<Label.layoutData>
 			<GridData horizontalAlignment="RIGHT" />
 		</Label.layoutData>
@@ -14,6 +15,14 @@
 				horizontalAlignment="FILL" />
 		</Text.layoutData>
 	</Text>
+	<Label />
+	<Label text="The name to display on the Yamail.">
+		<Label.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Label.layoutData>
+		<css:Style script="color:light-black;font-size:8;swt-alignment: up;" />
+	</Label>
 	<Label text="Account">
 		<Label.layoutData>
 			<GridData horizontalAlignment="RIGHT" />
@@ -32,6 +41,14 @@
 			</Binding>
 		</Text.text>
 	</Text>
+	<Label />
+	<Label text="The email address of your account.">
+		<Label.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="FILL" />
+		</Label.layoutData>
+		<css:Style script="color:light-black;font-size:8;swt-alignment: up;" />
+	</Label>
 	<Label text="Password">
 		<Label.layoutData>
 			<GridData horizontalAlignment="RIGHT" />

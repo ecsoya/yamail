@@ -25,18 +25,18 @@ public class AccountContentProvider implements ITreeContentProvider {
 
 	@Override
 	public Object[] getChildren(Object parentElement) {
-		if (parentElement instanceof YamailLibrary){
-			return ((YamailLibrary)parentElement).getAccounts().toArray();
-		}else if (parentElement instanceof YamailAccount){
-			return ((YamailAccount)parentElement).getFolders().toArray();
+		if (parentElement instanceof YamailLibrary) {
+			return ((YamailLibrary) parentElement).getAccounts().toArray();
+		} else if (parentElement instanceof YamailAccount) {
+			return ((YamailAccount) parentElement).getFolders().toArray();
 		}
 		return new Object[0];
 	}
 
 	@Override
 	public Object getParent(Object element) {
-		if (element instanceof EObject){
-			return ((EObject)element).eContainer();
+		if (element instanceof EObject) {
+			return ((EObject) element).eContainer();
 		}
 		return null;
 	}

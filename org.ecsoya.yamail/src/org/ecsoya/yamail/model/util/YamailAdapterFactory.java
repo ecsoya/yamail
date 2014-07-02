@@ -19,21 +19,22 @@ import org.ecsoya.yamail.model.YamailServer;
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides
  * an adapter <code>createXXX</code> method for each class of the model. <!--
  * end-user-doc -->
+ * 
  * @see org.ecsoya.yamail.model.YamailPackage
  * @generated
  */
 public class YamailAdapterFactory extends AdapterFactoryImpl {
 	/**
-	 * The cached model package.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static YamailPackage modelPackage;
 
 	/**
-	 * Creates an instance of the adapter factory.
-	 * <!-- begin-user-doc --> <!--
+	 * Creates an instance of the adapter factory. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public YamailAdapterFactory() {
@@ -47,6 +48,7 @@ public class YamailAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This implementation returns <code>true</code> if
 	 * the object is either the model's package or is an instance object of the
 	 * model. <!-- end-user-doc -->
+	 * 
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -56,7 +58,7 @@ public class YamailAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -68,51 +70,59 @@ public class YamailAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected YamailSwitch<Adapter> modelSwitch = new YamailSwitch<Adapter>() {
-			@Override
-			public Adapter caseYamailLibrary(YamailLibrary object) {
-				return createYamailLibraryAdapter();
-			}
-			@Override
-			public Adapter caseYamailAccount(YamailAccount object) {
-				return createYamailAccountAdapter();
-			}
-			@Override
-			public Adapter caseYamailServer(YamailServer object) {
-				return createYamailServerAdapter();
-			}
-			@Override
-			public Adapter caseIncomingServer(IncomingServer object) {
-				return createIncomingServerAdapter();
-			}
-			@Override
-			public Adapter caseOutgoingServer(OutgoingServer object) {
-				return createOutgoingServerAdapter();
-			}
-			@Override
-			public Adapter caseYamailFolder(YamailFolder object) {
-				return createYamailFolderAdapter();
-			}
-			@Override
-			public Adapter caseYamail(Yamail object) {
-				return createYamailAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+		@Override
+		public Adapter caseYamailLibrary(YamailLibrary object) {
+			return createYamailLibraryAdapter();
+		}
+
+		@Override
+		public Adapter caseYamailAccount(YamailAccount object) {
+			return createYamailAccountAdapter();
+		}
+
+		@Override
+		public Adapter caseYamailServer(YamailServer object) {
+			return createYamailServerAdapter();
+		}
+
+		@Override
+		public Adapter caseIncomingServer(IncomingServer object) {
+			return createIncomingServerAdapter();
+		}
+
+		@Override
+		public Adapter caseOutgoingServer(OutgoingServer object) {
+			return createOutgoingServerAdapter();
+		}
+
+		@Override
+		public Adapter caseYamailFolder(YamailFolder object) {
+			return createYamailFolderAdapter();
+		}
+
+		@Override
+		public Adapter caseYamail(Yamail object) {
+			return createYamailAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
-	 * Creates an adapter for the <code>target</code>.
-	 * <!-- begin-user-doc -->
+	 * Creates an adapter for the <code>target</code>. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 * 
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 	/**
@@ -176,10 +186,12 @@ public class YamailAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.ecsoya.yamail.model.IncomingServer <em>Incoming Server</em>}'.
+	 * Creates a new adapter for an object of class '
+	 * {@link org.ecsoya.yamail.model.IncomingServer <em>Incoming Server</em>}'.
 	 * <!-- begin-user-doc --> This default implementation returns null so that
 	 * we can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.ecsoya.yamail.model.IncomingServer
 	 * @generated
@@ -189,10 +201,12 @@ public class YamailAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.ecsoya.yamail.model.OutgoingServer <em>Outgoing Server</em>}'.
+	 * Creates a new adapter for an object of class '
+	 * {@link org.ecsoya.yamail.model.OutgoingServer <em>Outgoing Server</em>}'.
 	 * <!-- begin-user-doc --> This default implementation returns null so that
 	 * we can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.ecsoya.yamail.model.OutgoingServer
 	 * @generated
@@ -217,9 +231,9 @@ public class YamailAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for the default case.
-	 * <!-- begin-user-doc --> This
+	 * Creates a new adapter for the default case. <!-- begin-user-doc --> This
 	 * default implementation returns null. <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @generated
 	 */

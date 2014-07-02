@@ -44,15 +44,20 @@ public class AccountLabelProvider extends LabelProvider implements
 			} else {
 				switch (type) {
 				case DRAFT:
-					return ImageFactory.getImage("icons/full/obj/32/email_draft.png");
+					return ImageFactory
+							.getImage("icons/full/obj/32/email_draft.png");
 				case INBOX:
-					return ImageFactory.getImage("icons/full/obj/32/email_inbox.png");
+					return ImageFactory
+							.getImage("icons/full/obj/32/email_inbox.png");
 				case SENT:
-					return ImageFactory.getImage("icons/full/obj/32/email_sent.png");
+					return ImageFactory
+							.getImage("icons/full/obj/32/email_sent.png");
 				case SPAM:
-					return ImageFactory.getImage("icons/full/obj/32/email_spam.png");
+					return ImageFactory
+							.getImage("icons/full/obj/32/email_spam.png");
 				case TRASH:
-					return ImageFactory.getImage("icons/full/obj/32/email_trash.png");
+					return ImageFactory
+							.getImage("icons/full/obj/32/email_trash.png");
 				}
 			}
 		}

@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.ecsoya.yamail.model.YamailFolder#getName <em>Name</em>}</li>
- *   <li>{@link org.ecsoya.yamail.model.YamailFolder#getMails <em>Mails</em>}</li>
- *   <li>{@link org.ecsoya.yamail.model.YamailFolder#isSystem <em>System</em>}</li>
- *   <li>{@link org.ecsoya.yamail.model.YamailFolder#getType <em>Type</em>}</li>
+ * <li>{@link org.ecsoya.yamail.model.YamailFolder#getName <em>Name</em>}</li>
+ * <li>{@link org.ecsoya.yamail.model.YamailFolder#getMails <em>Mails</em>}</li>
+ * <li>{@link org.ecsoya.yamail.model.YamailFolder#isSystem <em>System</em>}</li>
+ * <li>{@link org.ecsoya.yamail.model.YamailFolder#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,23 +42,27 @@ public interface YamailFolder extends EObject {
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.ecsoya.yamail.model.YamailFolder#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * Sets the value of the '
+	 * {@link org.ecsoya.yamail.model.YamailFolder#getName <em>Name</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Mails</b></em>' containment reference list.
-	 * The list contents are of type {@link org.ecsoya.yamail.model.Yamail}.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Mails</b></em>' containment reference
+	 * list. The list contents are of type
+	 * {@link org.ecsoya.yamail.model.Yamail}. <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Mails</em>' containment reference list isn't
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Mails</em>' containment reference list.
 	 * @see org.ecsoya.yamail.model.YamailPackage#getYamailFolder_Mails()
 	 * @model containment="true"
@@ -67,13 +71,14 @@ public interface YamailFolder extends EObject {
 	EList<Yamail> getMails();
 
 	/**
-	 * Returns the value of the '<em><b>System</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>System</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>System</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>System</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>System</em>' attribute.
 	 * @see #setSystem(boolean)
 	 * @see org.ecsoya.yamail.model.YamailPackage#getYamailFolder_System()
@@ -83,24 +88,27 @@ public interface YamailFolder extends EObject {
 	boolean isSystem();
 
 	/**
-	 * Sets the value of the '{@link org.ecsoya.yamail.model.YamailFolder#isSystem <em>System</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>System</em>' attribute.
+	 * Sets the value of the '
+	 * {@link org.ecsoya.yamail.model.YamailFolder#isSystem <em>System</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>System</em>' attribute.
 	 * @see #isSystem()
 	 * @generated
 	 */
 	void setSystem(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.ecsoya.yamail.model.FolderType}.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Type</b></em>' attribute. The literals
+	 * are from the enumeration {@link org.ecsoya.yamail.model.FolderType}. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Type</em>' attribute isn't clear, there really
+	 * should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see org.ecsoya.yamail.model.FolderType
 	 * @see #setType(FolderType)
@@ -111,10 +119,12 @@ public interface YamailFolder extends EObject {
 	FolderType getType();
 
 	/**
-	 * Sets the value of the '{@link org.ecsoya.yamail.model.YamailFolder#getType <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * Sets the value of the '
+	 * {@link org.ecsoya.yamail.model.YamailFolder#getType <em>Type</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Type</em>' attribute.
 	 * @see org.ecsoya.yamail.model.FolderType
 	 * @see #getType()
 	 * @generated

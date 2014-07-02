@@ -18,6 +18,7 @@ import org.eclipse.xwt.XWT;
 import org.eclipse.xwt.XWTLoader;
 import org.eclipse.xwt.databinding.BindingContext;
 import org.eclipse.xwt.internal.core.UIResource;
+import org.ecsoya.yamail.xwt.CSSXWTLoader;
 
 public abstract class XWTWizardPage extends WizardPage {
 
@@ -66,8 +67,16 @@ public abstract class XWTWizardPage extends WizardPage {
 		validationStatus.addChangeListener(new IChangeListener() {
 			public void handleChange(ChangeEvent event) {
 				final IStatus status = (IStatus) validationStatus.getValue();
-				setMessage(status.getMessage(),
-						toMessageType(status.getSeverity()));
+				int messageType = toMessageType(status.getSeverity());
+				if (IMessageProvider.ERROR == messageType) {
+					setErrorMessage(status.getMessage());
+				} else if (IMessageProvider.INFORMATION == messageType
+						|| IMessageProvider.WARNING == messageType) {
+					setMessage(status.getMessage(), messageType);
+				}
+				if (IStatus.OK == status.getSeverity()) {
+					setErrorMessage(null);
+				}
 				_parent.getDisplay().asyncExec(new Runnable() {
 
 					@Override
@@ -77,6 +86,8 @@ public abstract class XWTWizardPage extends WizardPage {
 				});
 			}
 		});
+
+		CSSXWTLoader.active();
 
 		ClassLoader classLoader = Thread.currentThread()
 				.getContextClassLoader();
@@ -165,6 +176,23 @@ public abstract class XWTWizardPage extends WizardPage {
 
 	public void setBindingContext(BindingContext bindingContext) {
 		this.bindingContext = bindingContext;
+	}
+
+	public void update() {
+		Control control = getControl();
+		if (control != null && !control.isDisposed()) {
+			control.getDisplay().asyncExec(new Runnable() {
+
+				@Override
+				public void run() {
+					final BindingContext bindingContext = getBindingContext();
+					if (bindingContext != null) {
+						bindingContext.updateTargets();
+						bindingContext.updateModels();
+					}
+				}
+			});
+		}
 	}
 
 }

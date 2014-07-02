@@ -5,6 +5,7 @@ import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.services.IStylingEngine;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.wizard.WizardDialog;
@@ -17,6 +18,7 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
 import org.ecsoya.yamail.YamailCore;
+import org.ecsoya.yamail.YamailPlugin;
 import org.ecsoya.yamail.model.YamailAccount;
 import org.ecsoya.yamail.model.YamailFactory;
 import org.ecsoya.yamail.model.YamailLibrary;
@@ -28,12 +30,15 @@ public class AccountView {
 	private TreeViewer accountViewer;
 
 	@Inject
-	public AccountView() {
+	private IStylingEngine engine;
 
+	@Inject
+	public AccountView() {
 	}
 
 	@PostConstruct
 	public void postConstruct(Composite parent) {
+		YamailPlugin.engine = engine;
 		ViewForm form = new ViewForm(parent, SWT.BORDER | SWT.FLAT);
 
 		accountViewer = new TreeViewer(form, SWT.FULL_SELECTION
@@ -78,6 +83,7 @@ public class AccountView {
 			public void handleEvent(Event event) {
 				WizardDialog dlg = new WizardDialog(parent.getShell(),
 						new CreateAccountWizard());
+				dlg.setPageSize(600, 400);
 				dlg.open();
 			}
 		});

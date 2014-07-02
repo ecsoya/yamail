@@ -17,7 +17,8 @@ import org.ecsoya.yamail.model.YamailPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getMessage <em>Message</em>}</li>
+ * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getMessage <em>Message
+ * </em>}</li>
  * </ul>
  * </p>
  *
@@ -25,8 +26,9 @@ import org.ecsoya.yamail.model.YamailPackage;
  */
 public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	/**
-	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The default value of the '{@link #getMessage() <em>Message</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -34,8 +36,9 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected static final Message MESSAGE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getMessage() <em>Message</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -44,6 +47,7 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected YamailImpl() {
@@ -52,6 +56,7 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -61,6 +66,7 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Message getMessage() {
@@ -69,76 +75,85 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setMessage(Message newMessage) {
 		Message oldMessage = message;
 		message = newMessage;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.YAMAIL__MESSAGE, oldMessage, message));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL__MESSAGE, oldMessage, message));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL__MESSAGE:
-				return getMessage();
+		case YamailPackage.YAMAIL__MESSAGE:
+			return getMessage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL__MESSAGE:
-				setMessage((Message)newValue);
-				return;
+		case YamailPackage.YAMAIL__MESSAGE:
+			setMessage((Message) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL__MESSAGE:
-				setMessage(MESSAGE_EDEFAULT);
-				return;
+		case YamailPackage.YAMAIL__MESSAGE:
+			setMessage(MESSAGE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL__MESSAGE:
-				return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
+		case YamailPackage.YAMAIL__MESSAGE:
+			return MESSAGE_EDEFAULT == null ? message != null
+					: !MESSAGE_EDEFAULT.equals(message);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (message: ");

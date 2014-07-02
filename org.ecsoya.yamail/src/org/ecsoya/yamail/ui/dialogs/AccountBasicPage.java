@@ -23,4 +23,5 @@ public class AccountBasicPage extends XWTWizardPage {
 		return AccountBasicPage.class.getResource(AccountBasicPage.class
 				.getSimpleName() + IConstants.XWT_EXTENSION_SUFFIX);
 	}
+
 }

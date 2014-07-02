@@ -1,5 +1,6 @@
 package org.ecsoya.yamail;
 
+import org.eclipse.e4.ui.services.IStylingEngine;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.internal.util.BundleUtility;
 import org.ecsoya.yamail.ui.resources.ImageFactory;
@@ -12,6 +13,8 @@ import org.osgi.framework.FrameworkUtil;
 public class YamailPlugin implements BundleActivator {
 
 	private static BundleContext context;
+
+	public static IStylingEngine engine;
 
 	static BundleContext getContext() {
 		return context;
@@ -51,5 +54,9 @@ public class YamailPlugin implements BundleActivator {
 			return ImageDescriptor.createFromURL(BundleUtility.find(bundle,
 					path));
 		}
+	}
+
+	public static IStylingEngine getStylingEngine() {
+		return engine;
 	}
 }

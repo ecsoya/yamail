@@ -47,6 +47,7 @@
     </genClasses>
     <genClasses ecoreClass="model.ecore#//IncomingServer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//IncomingServer/interval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//IncomingServer/check"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//OutgoingServer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//OutgoingServer/useTSL"/>
