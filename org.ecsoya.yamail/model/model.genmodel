@@ -35,6 +35,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailAccount/address"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailAccount/password"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//YamailAccount/folders"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailAccount/dataPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailAccount/customDataPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailAccount/detectServer"/>
     </genClasses>
     <genClasses image="false" ecoreClass="model.ecore#//YamailServer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailServer/name"/>

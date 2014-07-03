@@ -6,6 +6,9 @@ import javax.inject.Inject;
 
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.services.IStylingEngine;
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.wizard.WizardDialog;
@@ -18,9 +21,6 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
 import org.ecsoya.yamail.YamailCore;
-import org.ecsoya.yamail.YamailPlugin;
-import org.ecsoya.yamail.model.YamailAccount;
-import org.ecsoya.yamail.model.YamailFactory;
 import org.ecsoya.yamail.model.YamailLibrary;
 import org.ecsoya.yamail.ui.dialogs.CreateAccountWizard;
 import org.ecsoya.yamail.ui.resources.ImageFactory;
@@ -32,35 +32,43 @@ public class AccountView {
 	@Inject
 	private IStylingEngine engine;
 
+	private Adapter refresher;
+
 	@Inject
 	public AccountView() {
 	}
 
 	@PostConstruct
 	public void postConstruct(Composite parent) {
-		YamailPlugin.engine = engine;
+		YamailCore.setStylingEngine(engine);
 		ViewForm form = new ViewForm(parent, SWT.BORDER | SWT.FLAT);
 
 		accountViewer = new TreeViewer(form, SWT.FULL_SELECTION
 				| SWT.HIDE_SELECTION);
 		accountViewer.setContentProvider(new AccountContentProvider());
 		accountViewer.setLabelProvider(new AccountLabelProvider());
+
+		final YamailLibrary library = YamailCore.getLibrary();
+		library.eAdapters().add(refresher = new EContentAdapter() {
+			@Override
+			public void notifyChanged(Notification notification) {
+				super.notifyChanged(notification);
+				if (notification.isTouch()) {
+					return;
+				}
+				parent.getDisplay().asyncExec(new Runnable() {
+
+					@Override
+					public void run() {
+						accountViewer.refresh();
+					}
+				});
+			}
+		});
 		parent.getDisplay().asyncExec(new Runnable() {
 
 			@Override
 			public void run() {
-				YamailLibrary library = YamailCore.getLibrary();
-				YamailAccount acc = YamailFactory.eINSTANCE
-						.createYamailAccount();
-				acc.setName("Soyatec");
-				acc.setAddress("jin.liu@soyatec.com");
-
-				library.getAccounts().add(acc);
-
-				acc = YamailFactory.eINSTANCE.createYamailAccount();
-				acc.setName("Gmail");
-				acc.setAddress("jin.liu.soyatec@gmail.com");
-				library.getAccounts().add(acc);
 				accountViewer.setInput(library);
 			}
 		});
@@ -96,6 +104,9 @@ public class AccountView {
 			accountViewer.getControl().dispose();
 		}
 		accountViewer = null;
+		final YamailLibrary library = YamailCore.getLibrary();
+		library.eAdapters().remove(refresher);
+		refresher = null;
 	}
 
 	@Focus

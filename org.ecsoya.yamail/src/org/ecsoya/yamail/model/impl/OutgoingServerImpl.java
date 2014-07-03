@@ -5,6 +5,7 @@ package org.ecsoya.yamail.model.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.ecsoya.yamail.model.MailProtocol;
 import org.ecsoya.yamail.model.OutgoingServer;
 import org.ecsoya.yamail.model.YamailPackage;
 
@@ -90,10 +91,11 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	protected OutgoingServerImpl() {
 		super();
+		setProtocol(MailProtocol.SMTP);
 	}
 
 	/**

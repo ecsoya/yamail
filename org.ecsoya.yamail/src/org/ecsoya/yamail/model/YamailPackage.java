@@ -169,13 +169,40 @@ public interface YamailPackage extends EPackage {
 	int YAMAIL_ACCOUNT__FOLDERS = 5;
 
 	/**
+	 * The feature id for the '<em><b>Data Path</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int YAMAIL_ACCOUNT__DATA_PATH = 6;
+
+	/**
+	 * The feature id for the '<em><b>Custom Data Path</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int YAMAIL_ACCOUNT__CUSTOM_DATA_PATH = 7;
+
+	/**
+	 * The feature id for the '<em><b>Detect Server</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int YAMAIL_ACCOUNT__DETECT_SERVER = 8;
+
+	/**
 	 * The number of structural features of the '<em>Account</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int YAMAIL_ACCOUNT_FEATURE_COUNT = 6;
+	int YAMAIL_ACCOUNT_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Account</em>' class. <!--
@@ -767,6 +794,43 @@ public interface YamailPackage extends EPackage {
 	EReference getYamailAccount_Folders();
 
 	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.ecsoya.yamail.model.YamailAccount#getDataPath
+	 * <em>Data Path</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Data Path</em>'.
+	 * @see org.ecsoya.yamail.model.YamailAccount#getDataPath()
+	 * @see #getYamailAccount()
+	 * @generated
+	 */
+	EAttribute getYamailAccount_DataPath();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.ecsoya.yamail.model.YamailAccount#isCustomDataPath
+	 * <em>Custom Data Path</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the meta object for the attribute '<em>Custom Data Path</em>'.
+	 * @see org.ecsoya.yamail.model.YamailAccount#isCustomDataPath()
+	 * @see #getYamailAccount()
+	 * @generated
+	 */
+	EAttribute getYamailAccount_CustomDataPath();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.ecsoya.yamail.model.YamailAccount#isDetectServer
+	 * <em>Detect Server</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Detect Server</em>'.
+	 * @see org.ecsoya.yamail.model.YamailAccount#isDetectServer()
+	 * @see #getYamailAccount()
+	 * @generated
+	 */
+	EAttribute getYamailAccount_DetectServer();
+
+	/**
 	 * Returns the meta object for class '
 	 * {@link org.ecsoya.yamail.model.YamailServer <em>Server</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -1179,6 +1243,33 @@ public interface YamailPackage extends EPackage {
 		 */
 		EReference YAMAIL_ACCOUNT__FOLDERS = eINSTANCE
 				.getYamailAccount_Folders();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Path</b></em>' attribute
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute YAMAIL_ACCOUNT__DATA_PATH = eINSTANCE
+				.getYamailAccount_DataPath();
+
+		/**
+		 * The meta object literal for the '<em><b>Custom Data Path</b></em>'
+		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute YAMAIL_ACCOUNT__CUSTOM_DATA_PATH = eINSTANCE
+				.getYamailAccount_CustomDataPath();
+
+		/**
+		 * The meta object literal for the '<em><b>Detect Server</b></em>'
+		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute YAMAIL_ACCOUNT__DETECT_SERVER = eINSTANCE
+				.getYamailAccount_DetectServer();
 
 		/**
 		 * The meta object literal for the '

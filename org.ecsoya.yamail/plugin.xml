@@ -12,7 +12,11 @@
          </property>
          <property
                name="preferenceCustomization"
-               value="platform:/plugin/org.ecsoya.yamail/yamail.ini">
+               value="plugin_customization.ini">
+         </property>
+         <property
+               name="lifeCycleURI"
+               value="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.YamailLifeCycle">
          </property>
       </product>
    </extension>
@@ -35,5 +39,17 @@
                org.eclipse.emf.edit.provider.ITreeItemContentProvider
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+   <extension
+         point="org.eclipse.equinox.preferences.preferences">
+      <initializer
+            class="org.ecsoya.yamail.preferences.YamailPreferenceInitializer">
+      </initializer>
+      <modifier
+            class="org.ecsoya.yamail.PreferenceModifyListener1">
+      </modifier>
+      <scope
+            name="org.ecsoya.yamail.scope1">
+      </scope>
    </extension>
 </plugin>

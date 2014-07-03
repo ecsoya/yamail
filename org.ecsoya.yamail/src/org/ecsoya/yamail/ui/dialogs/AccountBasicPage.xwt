@@ -1,63 +1,130 @@
 <Composite xmlns="http://www.eclipse.org/xwt/presentation"
 	xmlns:x="http://www.eclipse.org/xwt" xmlns:css="http://www.eclipse.org/xwt/css"
-	xmlns:y="clr-namespace:org.ecsoya.yamail.ui.dialogs">
+	xmlns:y="clr-namespace:org.ecsoya.yamail.ui.dialogs" x:Class="org.ecsoya.yamail.ui.dialogs.CreateAccountHelper">
 	<Composite.layout>
-		<GridLayout numColumns="2" />
+		<GridLayout numColumns="1" />
 	</Composite.layout>
-	<Label text="Name">
-		<Label.layoutData>
-			<GridData horizontalAlignment="RIGHT" />
-		</Label.layoutData>
-	</Label>
-	<Text x:Style="BORDER" text="{Binding path=name}">
-		<Text.layoutData>
-			<GridData grabExcessHorizontalSpace="true"
-				horizontalAlignment="FILL" />
-		</Text.layoutData>
-	</Text>
-	<Label />
-	<Label text="The name to display on the Yamail.">
-		<Label.layoutData>
-			<GridData grabExcessHorizontalSpace="true"
-				horizontalAlignment="FILL" />
-		</Label.layoutData>
-		<css:Style script="color:light-black;font-size:8;swt-alignment: up;" />
-	</Label>
-	<Label text="Account">
-		<Label.layoutData>
-			<GridData horizontalAlignment="RIGHT" />
-		</Label.layoutData>
-	</Label>
-	<Text x:Style="BORDER">
-		<Text.layoutData>
-			<GridData grabExcessHorizontalSpace="true"
-				horizontalAlignment="FILL" />
-		</Text.layoutData>
-		<Text.text>
-			<Binding path="address" updateSourceTrigger="PropertyChanged">
-				<Binding.validationRules>
-					<y:EmailValidationRule />
-				</Binding.validationRules>
-			</Binding>
-		</Text.text>
-	</Text>
-	<Label />
-	<Label text="The email address of your account.">
-		<Label.layoutData>
-			<GridData grabExcessHorizontalSpace="true"
-				horizontalAlignment="FILL" />
-		</Label.layoutData>
-		<css:Style script="color:light-black;font-size:8;swt-alignment: up;" />
-	</Label>
-	<Label text="Password">
-		<Label.layoutData>
-			<GridData horizontalAlignment="RIGHT" />
-		</Label.layoutData>
-	</Label>
-	<Text x:Style="BORDER | PASSWORD" text="{Binding path=password}">
-		<Text.layoutData>
-			<GridData grabExcessHorizontalSpace="true"
-				horizontalAlignment="FILL" />
-		</Text.layoutData>
-	</Text>
+	<Composite>
+		<Composite.layout>
+			<GridLayout numColumns="4" />
+		</Composite.layout>
+		<Composite.layoutData>
+			<GridData horizontalAlignment="CENTER"
+				grabExcessHorizontalSpace="true" verticalAlignment="CENTER"
+				grabExcessVerticalSpace="true"></GridData>
+		</Composite.layoutData>
+		<!-- Account -->
+		<Label text="Account">
+			<Label.layoutData>
+				<GridData horizontalAlignment="RIGHT" />
+			</Label.layoutData>
+		</Label>
+		<Label text="*">
+			<css:Style script="color:red;" />
+		</Label>
+		<Text x:Style="BORDER">
+			<Text.layoutData>
+				<GridData grabExcessHorizontalSpace="true"
+					horizontalAlignment="FILL" horizontalSpan="2" />
+			</Text.layoutData>
+			<Text.text>
+				<Binding path="address" updateSourceTrigger="PropertyChanged">
+					<Binding.validationRules>
+						<y:EmailValidationRule />
+					</Binding.validationRules>
+				</Binding>
+			</Text.text>
+		</Text>
+
+		<!-- Account message -->
+		<Label />
+		<Label />
+		<Label text="The email address of your account.">
+			<Label.layoutData>
+				<GridData grabExcessHorizontalSpace="true"
+					horizontalAlignment="FILL" horizontalSpan="2" />
+			</Label.layoutData>
+			<css:Style script="color:light-black;font-size:8;swt-alignment: up;" />
+		</Label>
+
+		<!-- Password -->
+		<Label text="Password">
+			<Label.layoutData>
+				<GridData horizontalAlignment="RIGHT" />
+			</Label.layoutData>
+		</Label>
+		<Label />
+		<Text x:Style="BORDER | PASSWORD" text="{Binding path=password}">
+			<Text.layoutData>
+				<GridData grabExcessHorizontalSpace="true"
+					horizontalAlignment="FILL" horizontalSpan="2" />
+			</Text.layoutData>
+		</Text>
+
+		<!-- Separator -->
+		<Label x:Style="SEPARATOR|HORIZONTAL">
+			<Label.layoutData>
+				<GridData horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" horizontalSpan="4" />
+			</Label.layoutData>
+		</Label>
+
+		<!-- Display Name -->
+		<Label text="Name">
+			<Label.layoutData>
+				<GridData horizontalAlignment="RIGHT" />
+			</Label.layoutData>
+		</Label>
+		<Label />
+		<Text x:Style="BORDER" text="{Binding path=name}">
+			<Text.layoutData>
+				<GridData grabExcessHorizontalSpace="true"
+					horizontalAlignment="FILL" horizontalSpan="2" />
+			</Text.layoutData>
+		</Text>
+
+		<!-- Name message -->
+		<Label />
+		<Label />
+		<Label text="The name to display on the Yamail.">
+			<Label.layoutData>
+				<GridData grabExcessHorizontalSpace="true"
+					horizontalAlignment="FILL" horizontalSpan="2" />
+			</Label.layoutData>
+			<css:Style script="color:light-black;font-size:8;swt-alignment: up;" />
+		</Label>
+
+		<!-- DataPath -->
+		<Label text="Data Folder">
+			<Label.layoutData>
+				<GridData horizontalAlignment="RIGHT" />
+			</Label.layoutData>
+		</Label>
+		<Label />
+		<Text x:Style="BORDER" text="{Binding path=dataPath}">
+			<Text.layoutData>
+				<GridData grabExcessHorizontalSpace="true"
+					horizontalAlignment="FILL" />
+			</Text.layoutData>
+		</Text>
+		<Button text="Change" selectionEvent="changeDataFolder" />
+
+		<!-- DataPath message -->
+		<Label />
+		<Label />
+		<Text x:Style="READ_ONLY|WRAP"
+			text="Choose a folder on your computer to store your mails.">
+			<Text.layoutData>
+				<GridData grabExcessHorizontalSpace="true"
+					grabExcessVerticalSpace="true" verticalAlignment="FILL"
+					horizontalAlignment="FILL" horizontalSpan="2" heightHint="50" />
+			</Text.layoutData>
+			<css:Style script="color:light-black;font-size:8;swt-alignment: center;" />
+		</Text>
+
+		<!-- Auto detect host -->
+		<Label />
+		<Label />
+		<Button x:Style="CHECK" text="Auto detect server" selection="{Binding path=detectServer}" />
+	</Composite>
 </Composite>

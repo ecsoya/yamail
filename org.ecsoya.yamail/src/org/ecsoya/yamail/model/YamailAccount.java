@@ -23,6 +23,12 @@ import org.eclipse.emf.ecore.EObject;
  * </em>}</li>
  * <li>{@link org.ecsoya.yamail.model.YamailAccount#getFolders <em>Folders</em>}
  * </li>
+ * <li>{@link org.ecsoya.yamail.model.YamailAccount#getDataPath <em>Data Path
+ * </em>}</li>
+ * <li>{@link org.ecsoya.yamail.model.YamailAccount#isCustomDataPath <em>Custom
+ * Data Path</em>}</li>
+ * <li>{@link org.ecsoya.yamail.model.YamailAccount#isDetectServer <em>Detect
+ * Server</em>}</li>
  * </ul>
  * </p>
  *
@@ -199,5 +205,95 @@ public interface YamailAccount extends EObject {
 	 * @generated
 	 */
 	EList<YamailFolder> getFolders();
+
+	/**
+	 * Returns the value of the '<em><b>Data Path</b></em>' attribute. <!--
+	 * begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Data Path</em>' attribute isn't clear, there
+	 * really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Data Path</em>' attribute.
+	 * @see #setDataPath(String)
+	 * @see org.ecsoya.yamail.model.YamailPackage#getYamailAccount_DataPath()
+	 * @model
+	 * @generated
+	 */
+	String getDataPath();
+
+	/**
+	 * Sets the value of the '
+	 * {@link org.ecsoya.yamail.model.YamailAccount#getDataPath
+	 * <em>Data Path</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Data Path</em>' attribute.
+	 * @see #getDataPath()
+	 * @generated
+	 */
+	void setDataPath(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Custom Data Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Custom Data Path</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Custom Data Path</em>' attribute.
+	 * @see #setCustomDataPath(boolean)
+	 * @see org.ecsoya.yamail.model.YamailPackage#getYamailAccount_CustomDataPath()
+	 * @model transient="true"
+	 * @generated
+	 */
+	boolean isCustomDataPath();
+
+	/**
+	 * Sets the value of the '
+	 * {@link org.ecsoya.yamail.model.YamailAccount#isCustomDataPath
+	 * <em>Custom Data Path</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Custom Data Path</em>' attribute.
+	 * @see #isCustomDataPath()
+	 * @generated
+	 */
+	void setCustomDataPath(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Detect Server</b></em>' attribute. The
+	 * default value is <code>"true"</code>. <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Detect Server</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Detect Server</em>' attribute.
+	 * @see #setDetectServer(boolean)
+	 * @see org.ecsoya.yamail.model.YamailPackage#getYamailAccount_DetectServer()
+	 * @model default="true"
+	 * @generated
+	 */
+	boolean isDetectServer();
+
+	/**
+	 * Sets the value of the '
+	 * {@link org.ecsoya.yamail.model.YamailAccount#isDetectServer
+	 * <em>Detect Server</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Detect Server</em>' attribute.
+	 * @see #isDetectServer()
+	 * @generated
+	 */
+	void setDetectServer(boolean value);
 
 } // YamailAccount

@@ -1,8 +1,9 @@
 <Composite xmlns="http://www.eclipse.org/xwt/presentation"
 	xmlns:x="http://www.eclipse.org/xwt" xmlns:css="http://www.eclipse.org/xwt/css"
-	xmlns:y="clr-namespace:org.ecsoya.yamail.ui.dialogs" xmlns:m="clr-namespace:org.ecsoya.yamail.model">
+	xmlns:y="clr-namespace:org.ecsoya.yamail.ui.dialogs" xmlns:m="clr-namespace:org.ecsoya.yamail.model"
+	x:Class="org.ecsoya.yamail.ui.dialogs.CreateAccountHelper">
 	<Composite.layout>
-		<GridLayout numColumns="2" />
+		<GridLayout numColumns="3" />
 	</Composite.layout>
 
 	<!-- Protocol -->
@@ -11,6 +12,7 @@
 			<GridData horizontalAlignment="RIGHT" />
 		</Label.layoutData>
 	</Label>
+	<Label />
 	<ComboViewer input="{Binding source={x:Type m:MailProtocol}}"
 		singleSelection="{Binding path=protocol}">
 		<ComboViewer.contentProvider>
@@ -32,6 +34,7 @@
 		</ComboViewer.combo>
 	</ComboViewer>
 	<Label />
+	<Label />
 	<Label text="Server type">
 		<css:Style script="color:light-black;font-size:8;" />
 		<Label.layoutData>
@@ -45,6 +48,9 @@
 		<Label.layoutData>
 			<GridData horizontalAlignment="RIGHT" />
 		</Label.layoutData>
+	</Label>
+	<Label text="*">
+		<css:Style script="color:red;" />
 	</Label>
 	<Text x:Style="BORDER">
 		<Text.layoutData>
@@ -60,6 +66,7 @@
 		</Text.text>
 	</Text>
 	<Label />
+	<Label />
 	<Label text="The host name of your POP / IMAP server">
 		<Label.layoutData>
 			<GridData grabExcessHorizontalSpace="true"
@@ -74,12 +81,14 @@
 			<GridData horizontalAlignment="RIGHT" />
 		</Label.layoutData>
 	</Label>
+	<Label />
 	<Text x:Style="BORDER" text="{Binding path=port}">
 		<Text.layoutData>
 			<GridData grabExcessHorizontalSpace="true"
 				horizontalAlignment="FILL" />
 		</Text.layoutData>
 	</Text>
+	<Label />
 	<Label />
 	<Text x:Style="READ_ONLY|MULTI|WRAP"
 		text="Optional - The port to use to retrieve mail from your POP / IMAP account. Leave blank for default. (defaults: POP - 110, SECURE_POP - 995, IMAP - 143, SECURE_IMAP - 993)">
@@ -94,12 +103,14 @@
 			<GridData horizontalAlignment="RIGHT" />
 		</Label.layoutData>
 	</Label>
+	<Label />
 	<Text x:Style="BORDER" text="{Binding path=timeout}">
 		<Text.layoutData>
 			<GridData grabExcessHorizontalSpace="true"
 				horizontalAlignment="FILL" />
 		</Text.layoutData>
 	</Text>
+	<Label />
 	<Label />
 	<Text x:Style="READ_ONLY|MULTI|WRAP"
 		text="Timeout in milliseconds - 0 or negative values indicate infinite timeout. Leave blank for default (10000 ms).">
@@ -113,6 +124,9 @@
 		<Label.layoutData>
 			<GridData horizontalAlignment="RIGHT" />
 		</Label.layoutData>
+	</Label>
+	<Label text="*">
+		<css:Style script="color:red;" />
 	</Label>
 	<Text x:Style="BORDER">
 		<Text.layoutData>
@@ -128,6 +142,7 @@
 		</Text.text>
 	</Text>
 	<Label />
+	<Label />
 	<Label text="The username used to authenticate your POP / IMAP account.">
 		<Label.layoutData>
 			<GridData grabExcessHorizontalSpace="true"
@@ -140,12 +155,14 @@
 			<GridData horizontalAlignment="RIGHT" />
 		</Label.layoutData>
 	</Label>
+	<Label />
 	<Text x:Style="BORDER | PASSWORD" text="{Binding path=password}">
 		<Text.layoutData>
 			<GridData grabExcessHorizontalSpace="true"
 				horizontalAlignment="FILL" />
 		</Text.layoutData>
 	</Text>
+	<Label />
 	<Label />
 	<Label text="The password for your POP / IMAP account.">
 		<Label.layoutData>
@@ -155,11 +172,17 @@
 		<css:Style script="color:light-black;font-size:8;" />
 	</Label>
 	<Label />
-	<Composite>
+	<Label />
+	<Composite x:Style="NONE">
 		<Composite.layout>
 			<GridLayout numColumns="4" />
 		</Composite.layout>
-		<Button x:Style="CHECK" text="Check email every" selection="{Binding path=check}" />
+		<Button x:Style="CHECK" text="Check email every" selection="{Binding path=check}">
+			<Button.layoutData>
+				<GridData grabExcessHorizontalSpace="true"
+					horizontalAlignment="RIGHT" />
+			</Button.layoutData>
+		</Button>
 		<Text x:Style="BORDER" text="{Binding path=interval}">
 			<Text.layoutData>
 				<GridData grabExcessHorizontalSpace="true"
@@ -167,11 +190,20 @@
 			</Text.layoutData>
 		</Text>
 		<Label text="minutes automatically" />
-		<Label />
-		<Label />
-		<Label />
-		<Label />
-		<Button text="Test Connection">
+		<Label/>
+		<Label/>
+		<Composite x:Name="testIndicator" visible="false">
+			<Composite.layoutData>
+				<GridData grabExcessHorizontalSpace="true"
+					horizontalAlignment="RIGHT" horizontalSpan="2" />
+			</Composite.layoutData>
+			<Composite.layout>
+				<GridLayout numColumns="2" />
+			</Composite.layout>
+			<Label text="Testing..." />
+			<ProgressBar x:Style="HORIZONTAL|INDETERMINATE|SMOOTH" />
+		</Composite>
+		<Button text="Test Connection" selectionEvent="testConnection">
 			<Button.layoutData>
 				<GridData grabExcessHorizontalSpace="true"
 					horizontalAlignment="FILL" />

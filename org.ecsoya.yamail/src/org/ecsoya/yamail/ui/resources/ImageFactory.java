@@ -3,7 +3,7 @@ package org.ecsoya.yamail.ui.resources;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
-import org.ecsoya.yamail.YamailPlugin;
+import org.ecsoya.yamail.YamailCore;
 
 public class ImageFactory {
 
@@ -23,7 +23,7 @@ public class ImageFactory {
 	public static ImageDescriptor getImageDescriptor(String path) {
 		ImageDescriptor descriptor = registry.getDescriptor(path);
 		if (descriptor == null) {
-			descriptor = YamailPlugin.create(path);
+			descriptor = YamailCore.create(path);
 			if (descriptor != null) {
 				registry.put(path, descriptor);
 			}

@@ -266,6 +266,33 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * 
 	 * @generated
 	 */
+	public EAttribute getYamailAccount_DataPath() {
+		return (EAttribute) yamailAccountEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getYamailAccount_CustomDataPath() {
+		return (EAttribute) yamailAccountEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getYamailAccount_DetectServer() {
+		return (EAttribute) yamailAccountEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getYamailServer() {
 		return yamailServerEClass;
 	}
@@ -531,6 +558,9 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		createEAttribute(yamailAccountEClass, YAMAIL_ACCOUNT__ADDRESS);
 		createEAttribute(yamailAccountEClass, YAMAIL_ACCOUNT__PASSWORD);
 		createEReference(yamailAccountEClass, YAMAIL_ACCOUNT__FOLDERS);
+		createEAttribute(yamailAccountEClass, YAMAIL_ACCOUNT__DATA_PATH);
+		createEAttribute(yamailAccountEClass, YAMAIL_ACCOUNT__CUSTOM_DATA_PATH);
+		createEAttribute(yamailAccountEClass, YAMAIL_ACCOUNT__DETECT_SERVER);
 
 		yamailServerEClass = createEClass(YAMAIL_SERVER);
 		createEAttribute(yamailServerEClass, YAMAIL_SERVER__NAME);
@@ -645,6 +675,19 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 				null, "folders", null, 0, -1, YamailAccount.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getYamailAccount_DataPath(), ecorePackage.getEString(),
+				"dataPath", null, 0, 1, YamailAccount.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamailAccount_CustomDataPath(),
+				ecorePackage.getEBoolean(), "customDataPath", null, 0, 1,
+				YamailAccount.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamailAccount_DetectServer(),
+				ecorePackage.getEBoolean(), "detectServer", "true", 0, 1,
+				YamailAccount.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
 		initEClass(yamailServerEClass, YamailServer.class, "YamailServer",

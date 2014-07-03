@@ -5,13 +5,14 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import org.eclipse.e4.ui.services.IStylingEngine;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Widget;
 import org.eclipse.xwt.callback.IBeforeParsingCallback;
 import org.eclipse.xwt.callback.ICreatedCallback;
 import org.eclipse.xwt.callback.ILoadedCallback;
 import org.eclipse.xwt.jface.JFacesHelper;
-import org.ecsoya.yamail.YamailPlugin;
+import org.ecsoya.yamail.YamailCore;
 
 public class CSSXWTCallback implements ILoadedCallback, ICreatedCallback,
 		IBeforeParsingCallback {
@@ -35,9 +36,10 @@ public class CSSXWTCallback implements ILoadedCallback, ICreatedCallback,
 
 	@Override
 	public void onLoaded(Object sender) {
-		if (cssStyleMap.isEmpty() || YamailPlugin.engine == null) {
+		if (cssStyleMap.isEmpty() || YamailCore.getStylingEngine() == null) {
 			return;
 		}
+		IStylingEngine engine = YamailCore.getStylingEngine();
 		Set<Entry<Object, CSSStyle>> entrySet = cssStyleMap.entrySet();
 		for (Entry<Object, CSSStyle> entry : entrySet) {
 			Object widget = entry.getKey();
@@ -46,11 +48,11 @@ public class CSSXWTCallback implements ILoadedCallback, ICreatedCallback,
 			String id = style.getId();
 			final String script = style.getScript();
 			if (className != null && id != null) {
-				YamailPlugin.engine.setClassnameAndId(widget, className, id);
+				engine.setClassnameAndId(widget, className, id);
 			} else if (className != null) {
-				YamailPlugin.engine.setClassname(widget, className);
+				engine.setClassname(widget, className);
 			} else if (id != null) {
-				YamailPlugin.engine.setId(widget, id);
+				engine.setId(widget, id);
 			}
 			if (widget instanceof Widget) {
 				final Widget wgt = (Widget) widget;

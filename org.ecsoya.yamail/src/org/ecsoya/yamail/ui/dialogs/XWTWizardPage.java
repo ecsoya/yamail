@@ -1,6 +1,7 @@
 package org.ecsoya.yamail.ui.dialogs;
 
 import java.io.InputStream;
+import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.HashMap;
 
@@ -10,8 +11,11 @@ import org.eclipse.core.databinding.observable.IChangeListener;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jface.databinding.swt.ISWTObservable;
 import org.eclipse.jface.dialogs.IMessageProvider;
+import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.wizard.IWizardContainer;
 import org.eclipse.jface.wizard.WizardPage;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.xwt.XWT;
@@ -125,6 +129,48 @@ public abstract class XWTWizardPage extends WizardPage {
 		} finally {
 			Thread.currentThread().setContextClassLoader(classLoader);
 			_parent.setVisible(true);
+		}
+	}
+
+	protected Control getErrorMessageLabel() {
+		IWizardContainer container = getContainer();
+		if (container == null) {
+			return null;
+		}
+		try {
+			Field f = TitleAreaDialog.class.getDeclaredField("messageLabel");
+			f.setAccessible(true);
+			return (Control) f.get(container);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	@Override
+	public void setMessage(String newMessage, int newType) {
+		super.setMessage(newMessage, newType);
+		Control label = getErrorMessageLabel();
+		if (label != null) {
+			if (IMessageProvider.ERROR == newType) {
+				label.setData("style", "color:red;");
+			} else {
+				label.setData("style", "color:black;");
+			}
+			label.reskin(SWT.NONE);
+		}
+	}
+
+	@Override
+	public void setErrorMessage(String newMessage) {
+		super.setErrorMessage(newMessage);
+		Control label = getErrorMessageLabel();
+		if (label != null) {
+			if (newMessage == null) {
+				label.setData("style", "color:black;");
+			} else {
+				label.setData("style", "color:red;");
+			}
+			label.reskin(SWT.NONE);
 		}
 	}
 

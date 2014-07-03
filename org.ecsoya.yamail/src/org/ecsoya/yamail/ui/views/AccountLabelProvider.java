@@ -11,6 +11,7 @@ import org.ecsoya.yamail.model.FolderType;
 import org.ecsoya.yamail.model.YamailAccount;
 import org.ecsoya.yamail.model.YamailFolder;
 import org.ecsoya.yamail.ui.resources.ImageFactory;
+import org.ecsoya.yamail.utils.StringUtils;
 
 public class AccountLabelProvider extends LabelProvider implements
 		IFontProvider, IColorProvider {
@@ -19,11 +20,10 @@ public class AccountLabelProvider extends LabelProvider implements
 	public String getText(Object element) {
 		if (element instanceof YamailAccount) {
 			YamailAccount acc = (YamailAccount) element;
-			if (acc.getName() != null) {
+			if (!StringUtils.isEmpty(acc.getName())) {
 				return acc.getName();
-			} else if (acc.getAddress() != null) {
-				return acc.getAddress();
 			}
+			return acc.getAddress();
 		} else if (element instanceof YamailFolder) {
 			return ((YamailFolder) element).getName();
 		}

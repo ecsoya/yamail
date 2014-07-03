@@ -13,11 +13,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.ecsoya.yamail.model.FolderType;
 import org.ecsoya.yamail.model.IncomingServer;
 import org.ecsoya.yamail.model.OutgoingServer;
 import org.ecsoya.yamail.model.YamailAccount;
-import org.ecsoya.yamail.model.YamailFactory;
 import org.ecsoya.yamail.model.YamailFolder;
 import org.ecsoya.yamail.model.YamailPackage;
 
@@ -39,6 +37,12 @@ import org.ecsoya.yamail.model.YamailPackage;
  * Password</em>}</li>
  * <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getFolders <em>
  * Folders</em>}</li>
+ * <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getDataPath <em>
+ * Data Path</em>}</li>
+ * <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#isCustomDataPath
+ * <em>Custom Data Path</em>}</li>
+ * <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#isDetectServer <em>
+ * Detect Server</em>}</li>
  * </ul>
  * </p>
  *
@@ -139,45 +143,75 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	protected EList<YamailFolder> folders;
 
 	/**
+	 * The default value of the '{@link #getDataPath() <em>Data Path</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getDataPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DATA_PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDataPath() <em>Data Path</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getDataPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String dataPath = DATA_PATH_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isCustomDataPath()
+	 * <em>Custom Data Path</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #isCustomDataPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CUSTOM_DATA_PATH_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCustomDataPath()
+	 * <em>Custom Data Path</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #isCustomDataPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean customDataPath = CUSTOM_DATA_PATH_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isDetectServer()
+	 * <em>Detect Server</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #isDetectServer()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DETECT_SERVER_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isDetectServer() <em>Detect Server</em>}
+	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #isDetectServer()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean detectServer = DETECT_SERVER_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated NOT
+	 * @generated
 	 */
 	protected YamailAccountImpl() {
 		super();
-		createSystemFolders();
-	}
-
-	private void createSystemFolders() {
-		YamailFolder folder = YamailFactory.eINSTANCE.createYamailFolder();
-		folder.setName("Inbox");
-		folder.setType(FolderType.INBOX);
-		folder.setSystem(true);
-		getFolders().add(folder);
-
-		folder = YamailFactory.eINSTANCE.createYamailFolder();
-		folder.setName("Draft");
-		folder.setType(FolderType.DRAFT);
-		folder.setSystem(true);
-		getFolders().add(folder);
-
-		folder = YamailFactory.eINSTANCE.createYamailFolder();
-		folder.setName("Sent");
-		folder.setType(FolderType.SENT);
-		folder.setSystem(true);
-		getFolders().add(folder);
-
-		folder = YamailFactory.eINSTANCE.createYamailFolder();
-		folder.setName("Trash");
-		folder.setType(FolderType.TRASH);
-		folder.setSystem(true);
-		getFolders().add(folder);
-
-		folder = YamailFactory.eINSTANCE.createYamailFolder();
-		folder.setName("Spam");
-		folder.setType(FolderType.SPAM);
-		folder.setSystem(true);
-		getFolders().add(folder);
 	}
 
 	/**
@@ -400,6 +434,75 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	 * 
 	 * @generated
 	 */
+	public String getDataPath() {
+		return dataPath;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setDataPath(String newDataPath) {
+		String oldDataPath = dataPath;
+		dataPath = newDataPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL_ACCOUNT__DATA_PATH, oldDataPath,
+					dataPath));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean isCustomDataPath() {
+		return customDataPath;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setCustomDataPath(boolean newCustomDataPath) {
+		boolean oldCustomDataPath = customDataPath;
+		customDataPath = newCustomDataPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL_ACCOUNT__CUSTOM_DATA_PATH,
+					oldCustomDataPath, customDataPath));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean isDetectServer() {
+		return detectServer;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setDetectServer(boolean newDetectServer) {
+		boolean oldDetectServer = detectServer;
+		detectServer = newDetectServer;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL_ACCOUNT__DETECT_SERVER,
+					oldDetectServer, detectServer));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
@@ -435,6 +538,12 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 			return getPassword();
 		case YamailPackage.YAMAIL_ACCOUNT__FOLDERS:
 			return getFolders();
+		case YamailPackage.YAMAIL_ACCOUNT__DATA_PATH:
+			return getDataPath();
+		case YamailPackage.YAMAIL_ACCOUNT__CUSTOM_DATA_PATH:
+			return isCustomDataPath();
+		case YamailPackage.YAMAIL_ACCOUNT__DETECT_SERVER:
+			return isDetectServer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -467,6 +576,15 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 			getFolders().clear();
 			getFolders().addAll((Collection<? extends YamailFolder>) newValue);
 			return;
+		case YamailPackage.YAMAIL_ACCOUNT__DATA_PATH:
+			setDataPath((String) newValue);
+			return;
+		case YamailPackage.YAMAIL_ACCOUNT__CUSTOM_DATA_PATH:
+			setCustomDataPath((Boolean) newValue);
+			return;
+		case YamailPackage.YAMAIL_ACCOUNT__DETECT_SERVER:
+			setDetectServer((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -497,6 +615,15 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 		case YamailPackage.YAMAIL_ACCOUNT__FOLDERS:
 			getFolders().clear();
 			return;
+		case YamailPackage.YAMAIL_ACCOUNT__DATA_PATH:
+			setDataPath(DATA_PATH_EDEFAULT);
+			return;
+		case YamailPackage.YAMAIL_ACCOUNT__CUSTOM_DATA_PATH:
+			setCustomDataPath(CUSTOM_DATA_PATH_EDEFAULT);
+			return;
+		case YamailPackage.YAMAIL_ACCOUNT__DETECT_SERVER:
+			setDetectServer(DETECT_SERVER_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -524,6 +651,13 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 					: !PASSWORD_EDEFAULT.equals(password);
 		case YamailPackage.YAMAIL_ACCOUNT__FOLDERS:
 			return folders != null && !folders.isEmpty();
+		case YamailPackage.YAMAIL_ACCOUNT__DATA_PATH:
+			return DATA_PATH_EDEFAULT == null ? dataPath != null
+					: !DATA_PATH_EDEFAULT.equals(dataPath);
+		case YamailPackage.YAMAIL_ACCOUNT__CUSTOM_DATA_PATH:
+			return customDataPath != CUSTOM_DATA_PATH_EDEFAULT;
+		case YamailPackage.YAMAIL_ACCOUNT__DETECT_SERVER:
+			return detectServer != DETECT_SERVER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -545,6 +679,12 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 		result.append(address);
 		result.append(", password: ");
 		result.append(password);
+		result.append(", dataPath: ");
+		result.append(dataPath);
+		result.append(", customDataPath: ");
+		result.append(customDataPath);
+		result.append(", detectServer: ");
+		result.append(detectServer);
 		result.append(')');
 		return result.toString();
 	}
