@@ -15,12 +15,9 @@ import org.ecsoya.yamail.model.YamailPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.ecsoya.yamail.model.impl.OutgoingServerImpl#isUseTSL <em>Use
- * TSL</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.OutgoingServerImpl#getFromAddress
- * <em>From Address</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.OutgoingServerImpl#getEmailPrefix
- * <em>Email Prefix</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.OutgoingServerImpl#isUseTSL <em>Use TSL</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.OutgoingServerImpl#getFromAddress <em>From Address</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.OutgoingServerImpl#getEmailPrefix <em>Email Prefix</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,9 +26,8 @@ import org.ecsoya.yamail.model.YamailPackage;
 public class OutgoingServerImpl extends YamailServerImpl implements
 		OutgoingServer {
 	/**
-	 * The default value of the '{@link #isUseTSL() <em>Use TSL</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #isUseTSL() <em>Use TSL</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isUseTSL()
 	 * @generated
 	 * @ordered
@@ -41,7 +37,6 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 	/**
 	 * The cached value of the '{@link #isUseTSL() <em>Use TSL</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #isUseTSL()
 	 * @generated
 	 * @ordered
@@ -49,9 +44,8 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 	protected boolean useTSL = USE_TSL_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFromAddress() <em>From Address</em>}
-	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getFromAddress() <em>From Address</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getFromAddress()
 	 * @generated
 	 * @ordered
@@ -59,9 +53,8 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 	protected static final String FROM_ADDRESS_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getFromAddress() <em>From Address</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getFromAddress() <em>From Address</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getFromAddress()
 	 * @generated
 	 * @ordered
@@ -69,9 +62,8 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 	protected String fromAddress = FROM_ADDRESS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getEmailPrefix() <em>Email Prefix</em>}
-	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getEmailPrefix() <em>Email Prefix</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getEmailPrefix()
 	 * @generated
 	 * @ordered
@@ -79,9 +71,8 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 	protected static final String EMAIL_PREFIX_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getEmailPrefix() <em>Email Prefix</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getEmailPrefix() <em>Email Prefix</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getEmailPrefix()
 	 * @generated
 	 * @ordered
@@ -100,7 +91,6 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -110,7 +100,6 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean isUseTSL() {
@@ -119,20 +108,17 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setUseTSL(boolean newUseTSL) {
 		boolean oldUseTSL = useTSL;
 		useTSL = newUseTSL;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					YamailPackage.OUTGOING_SERVER__USE_TSL, oldUseTSL, useTSL));
+			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.OUTGOING_SERVER__USE_TSL, oldUseTSL, useTSL));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getFromAddress() {
@@ -141,21 +127,17 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setFromAddress(String newFromAddress) {
 		String oldFromAddress = fromAddress;
 		fromAddress = newFromAddress;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					YamailPackage.OUTGOING_SERVER__FROM_ADDRESS,
-					oldFromAddress, fromAddress));
+			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.OUTGOING_SERVER__FROM_ADDRESS, oldFromAddress, fromAddress));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getEmailPrefix() {
@@ -164,107 +146,96 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setEmailPrefix(String newEmailPrefix) {
 		String oldEmailPrefix = emailPrefix;
 		emailPrefix = newEmailPrefix;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX,
-					oldEmailPrefix, emailPrefix));
+			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX, oldEmailPrefix, emailPrefix));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case YamailPackage.OUTGOING_SERVER__USE_TSL:
-			return isUseTSL();
-		case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
-			return getFromAddress();
-		case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
-			return getEmailPrefix();
+			case YamailPackage.OUTGOING_SERVER__USE_TSL:
+				return isUseTSL();
+			case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
+				return getFromAddress();
+			case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
+				return getEmailPrefix();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case YamailPackage.OUTGOING_SERVER__USE_TSL:
-			setUseTSL((Boolean) newValue);
-			return;
-		case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
-			setFromAddress((String) newValue);
-			return;
-		case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
-			setEmailPrefix((String) newValue);
-			return;
+			case YamailPackage.OUTGOING_SERVER__USE_TSL:
+				setUseTSL((Boolean)newValue);
+				return;
+			case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
+				setFromAddress((String)newValue);
+				return;
+			case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
+				setEmailPrefix((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case YamailPackage.OUTGOING_SERVER__USE_TSL:
-			setUseTSL(USE_TSL_EDEFAULT);
-			return;
-		case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
-			setFromAddress(FROM_ADDRESS_EDEFAULT);
-			return;
-		case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
-			setEmailPrefix(EMAIL_PREFIX_EDEFAULT);
-			return;
+			case YamailPackage.OUTGOING_SERVER__USE_TSL:
+				setUseTSL(USE_TSL_EDEFAULT);
+				return;
+			case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
+				setFromAddress(FROM_ADDRESS_EDEFAULT);
+				return;
+			case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
+				setEmailPrefix(EMAIL_PREFIX_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case YamailPackage.OUTGOING_SERVER__USE_TSL:
-			return useTSL != USE_TSL_EDEFAULT;
-		case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
-			return FROM_ADDRESS_EDEFAULT == null ? fromAddress != null
-					: !FROM_ADDRESS_EDEFAULT.equals(fromAddress);
-		case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
-			return EMAIL_PREFIX_EDEFAULT == null ? emailPrefix != null
-					: !EMAIL_PREFIX_EDEFAULT.equals(emailPrefix);
+			case YamailPackage.OUTGOING_SERVER__USE_TSL:
+				return useTSL != USE_TSL_EDEFAULT;
+			case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
+				return FROM_ADDRESS_EDEFAULT == null ? fromAddress != null : !FROM_ADDRESS_EDEFAULT.equals(fromAddress);
+			case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
+				return EMAIL_PREFIX_EDEFAULT == null ? emailPrefix != null : !EMAIL_PREFIX_EDEFAULT.equals(emailPrefix);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (useTSL: ");

@@ -64,6 +64,31 @@
   <eClassifiers xsi:type="ecore:EClass" name="Yamail">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="#//Message"
         transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="read" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="from" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipients" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="receivedDate" eType="#//Date"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sentDate" eType="#//Date"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="headers" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStringToStringMapEntry"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attachments" upperBound="-1"
+        eType="#//YamailAttachment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="#//Priority"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="YamailAttachment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="#//InputStream"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Message" instanceClassName="javax.mail.Message"
       serializable="false"/>
@@ -73,5 +98,14 @@
     <eLiterals name="DRAFT" value="2"/>
     <eLiterals name="TRASH" value="3"/>
     <eLiterals name="SPAM" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Date" instanceClassName="java.util.Date"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="InputStream" instanceClassName="java.io.InputStream"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Priority">
+    <eLiterals name="highest" value="1"/>
+    <eLiterals name="high" value="2"/>
+    <eLiterals name="normal" value="3"/>
+    <eLiterals name="low" value="4"/>
+    <eLiterals name="lowest" value="5"/>
   </eClassifiers>
 </ecore:EPackage>

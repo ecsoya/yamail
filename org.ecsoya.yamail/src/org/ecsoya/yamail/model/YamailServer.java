@@ -11,17 +11,13 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.ecsoya.yamail.model.YamailServer#getName <em>Name</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.YamailServer#getHostName <em>Host Name
- * </em>}</li>
- * <li>{@link org.ecsoya.yamail.model.YamailServer#getPort <em>Port</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.YamailServer#getUserName <em>User Name
- * </em>}</li>
- * <li>{@link org.ecsoya.yamail.model.YamailServer#getPassword <em>Password
- * </em>}</li>
- * <li>{@link org.ecsoya.yamail.model.YamailServer#getProtocol <em>Protocol
- * </em>}</li>
- * <li>{@link org.ecsoya.yamail.model.YamailServer#getTimeout <em>Timeout</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.YamailServer#getName <em>Name</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.YamailServer#getHostName <em>Host Name</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.YamailServer#getPort <em>Port</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.YamailServer#getUserName <em>User Name</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.YamailServer#getPassword <em>Password</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.YamailServer#getProtocol <em>Protocol</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.YamailServer#getTimeout <em>Timeout</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,12 +44,9 @@ public interface YamailServer extends EObject {
 	String getName();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.ecsoya.yamail.model.YamailServer#getName <em>Name</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Name</em>' attribute.
+	 * Sets the value of the '{@link org.ecsoya.yamail.model.YamailServer#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -107,12 +100,9 @@ public interface YamailServer extends EObject {
 	int getPort();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.ecsoya.yamail.model.YamailServer#getPort <em>Port</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Port</em>' attribute.
+	 * Sets the value of the '{@link org.ecsoya.yamail.model.YamailServer#getPort <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Port</em>' attribute.
 	 * @see #getPort()
 	 * @generated
 	 */
@@ -179,15 +169,14 @@ public interface YamailServer extends EObject {
 	void setPassword(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Protocol</b></em>' attribute. The
-	 * literals are from the enumeration
-	 * {@link org.ecsoya.yamail.model.MailProtocol}. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Protocol</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.ecsoya.yamail.model.MailProtocol}.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Protocol</em>' attribute isn't clear, there
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Protocol</em>' attribute.
 	 * @see org.ecsoya.yamail.model.MailProtocol
 	 * @see #setProtocol(MailProtocol)
@@ -212,14 +201,14 @@ public interface YamailServer extends EObject {
 	void setProtocol(MailProtocol value);
 
 	/**
-	 * Returns the value of the '<em><b>Timeout</b></em>' attribute. The default
-	 * value is <code>"10000"</code>. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Timeout</b></em>' attribute.
+	 * The default value is <code>"10000"</code>.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Timeout</em>' attribute isn't clear, there
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Timeout</em>' attribute.
 	 * @see #setTimeout(long)
 	 * @see org.ecsoya.yamail.model.YamailPackage#getYamailServer_Timeout()
@@ -229,12 +218,9 @@ public interface YamailServer extends EObject {
 	long getTimeout();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.ecsoya.yamail.model.YamailServer#getTimeout <em>Timeout</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Timeout</em>' attribute.
+	 * Sets the value of the '{@link org.ecsoya.yamail.model.YamailServer#getTimeout <em>Timeout</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Timeout</em>' attribute.
 	 * @see #getTimeout()
 	 * @generated
 	 */

@@ -6,10 +6,13 @@ import javax.inject.Inject;
 
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.services.IStylingEngine;
+import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.SWT;
@@ -31,7 +34,8 @@ public class AccountView {
 
 	@Inject
 	private IStylingEngine engine;
-
+	@Inject
+	private ESelectionService selectionService;
 	private Adapter refresher;
 
 	@Inject
@@ -65,6 +69,14 @@ public class AccountView {
 				});
 			}
 		});
+		accountViewer
+				.addSelectionChangedListener(new ISelectionChangedListener() {
+
+					@Override
+					public void selectionChanged(SelectionChangedEvent event) {
+						selectionService.setSelection(event.getSelection());
+					}
+				});
 		parent.getDisplay().asyncExec(new Runnable() {
 
 			@Override

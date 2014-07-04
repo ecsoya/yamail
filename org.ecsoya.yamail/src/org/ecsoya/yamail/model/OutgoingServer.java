@@ -9,11 +9,9 @@ package org.ecsoya.yamail.model;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.ecsoya.yamail.model.OutgoingServer#isUseTSL <em>Use TSL</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.OutgoingServer#getFromAddress <em>From
- * Address</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.OutgoingServer#getEmailPrefix <em>Email
- * Prefix</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.OutgoingServer#isUseTSL <em>Use TSL</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.OutgoingServer#getFromAddress <em>From Address</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.OutgoingServer#getEmailPrefix <em>Email Prefix</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,12 +38,9 @@ public interface OutgoingServer extends YamailServer {
 	boolean isUseTSL();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.ecsoya.yamail.model.OutgoingServer#isUseTSL <em>Use TSL</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Use TSL</em>' attribute.
+	 * Sets the value of the '{@link org.ecsoya.yamail.model.OutgoingServer#isUseTSL <em>Use TSL</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Use TSL</em>' attribute.
 	 * @see #isUseTSL()
 	 * @generated
 	 */
@@ -69,13 +64,10 @@ public interface OutgoingServer extends YamailServer {
 	String getFromAddress();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.ecsoya.yamail.model.OutgoingServer#getFromAddress
-	 * <em>From Address</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.ecsoya.yamail.model.OutgoingServer#getFromAddress <em>From Address</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>From Address</em>' attribute.
+	 * @param value the new value of the '<em>From Address</em>' attribute.
 	 * @see #getFromAddress()
 	 * @generated
 	 */
@@ -99,13 +91,10 @@ public interface OutgoingServer extends YamailServer {
 	String getEmailPrefix();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.ecsoya.yamail.model.OutgoingServer#getEmailPrefix
-	 * <em>Email Prefix</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.ecsoya.yamail.model.OutgoingServer#getEmailPrefix <em>Email Prefix</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Email Prefix</em>' attribute.
+	 * @param value the new value of the '<em>Email Prefix</em>' attribute.
 	 * @see #getEmailPrefix()
 	 * @generated
 	 */
