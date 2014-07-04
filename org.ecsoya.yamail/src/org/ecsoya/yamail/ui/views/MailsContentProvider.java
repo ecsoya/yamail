@@ -1,7 +1,9 @@
 package org.ecsoya.yamail.ui.views;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -20,7 +22,7 @@ import org.ecsoya.yamail.model.YamailFolder;
 
 public class MailsContentProvider implements ITreeContentProvider {
 
-	private boolean groupingByDate = true;
+	private boolean groupingByDate = false;
 
 	private Viewer viewer;
 
@@ -105,7 +107,22 @@ public class MailsContentProvider implements ITreeContentProvider {
 	public Object[] getElements(Object inputElement) {
 		if (groupingByDate) {
 			if (datedMails != null) {
-				return datedMails.keySet().toArray();
+				Object[] array = datedMails.keySet().toArray();
+				Arrays.sort(array, new Comparator<Object>() {
+
+					@Override
+					public int compare(Object o1, Object o2) {
+						int s1 = ((DateGroup) o1).startDay;
+						int s2 = ((DateGroup) o2).startDay;
+						if (s1 > s2) {
+							return -1;
+						} else if (s1 < s2) {
+							return 1;
+						}
+						return 0;
+					}
+				});
+				return array;
 			}
 		}
 		if (inputElement instanceof YamailFolder) {

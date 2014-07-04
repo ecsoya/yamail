@@ -1,16 +1,29 @@
 package org.ecsoya.yamail.utils;
 
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
+import javax.mail.Address;
+import javax.mail.Header;
+import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Store;
 import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.ecsoya.yamail.model.IncomingServer;
 import org.ecsoya.yamail.model.MailProtocol;
 import org.ecsoya.yamail.model.OutgoingServer;
+import org.ecsoya.yamail.model.Priority;
+import org.ecsoya.yamail.model.Yamail;
 import org.ecsoya.yamail.model.YamailServer;
 
 public class MailUtils {
@@ -136,5 +149,103 @@ public class MailUtils {
 			}
 		}
 		return null;
+	}
+
+	public static Map<String, String> extractHeaders(Message message)
+			throws MessagingException {
+		@SuppressWarnings("rawtypes")
+		Enumeration allHeaders = message.getAllHeaders();
+
+		Map<String, String> map = new HashMap<String, String>();
+		while (allHeaders.hasMoreElements()) {
+			Header header = (Header) allHeaders.nextElement();
+			String name = header.getName();
+			if (name == null || name.equals("")) {
+				continue;
+			}
+			map.put(name.toUpperCase(), header.getValue());
+		}
+		return map;
+	}
+
+	public static List<String> extractAddress(Address[] addresses) {
+		List<String> list = new ArrayList<String>();
+		if (addresses != null && addresses.length != 0) {
+			for (Address addr : addresses) {
+				if (addr instanceof InternetAddress) {
+					InternetAddress id = (InternetAddress) addr;
+					// Trim down the email address to remove any whitespace etc.
+					String emailAddress = StringUtils.trimToNull(id
+							.getAddress());
+					if (emailAddress != null) {
+						list.add(emailAddress);
+					}
+				}
+			}
+		}
+		return list;
+	}
+
+	public static String getMessageId(final Message message) {
+		// Note: we get an array because Message-ID is an arbitrary header, but
+		// really there can be only one Message-ID
+		// value (if it is present)
+		try {
+			final String[] originalMessageIds = message
+					.getHeader(MailHeaders.HEADER_MESSAGE_ID);
+			if ((originalMessageIds == null)
+					|| (originalMessageIds.length == 0)) {
+				return null;
+			}
+			return originalMessageIds[0];
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public static void sync(Yamail yamail, Message message) {
+		if (yamail == null) {
+			return;
+		}
+		if (message == null) {
+			EList<EAttribute> attrs = yamail.eClass().getEAllAttributes();
+			for (EAttribute eAttribute : attrs) {
+				yamail.eUnset(eAttribute);
+			}
+		} else {
+			try {
+				yamail.getFrom().addAll(extractAddress(message.getFrom()));
+				yamail.getRecipients().addAll(
+						extractAddress(message.getAllRecipients()));
+				yamail.getHeaders().putAll(extractHeaders(message));
+				yamail.setContent(message.getContent());
+				yamail.setContentType(message.getContentType());
+				yamail.setSentDate(message.getSentDate());
+				yamail.setReceivedDate(message.getReceivedDate());
+				yamail.setSize(message.getSize());
+
+				String[] header = message.getHeader("X-Priority");
+				if (header != null && header.length != 0) {
+					String str = StringUtils.trimToNull(header[0]);
+					if (str != null) {
+						try {
+							int priority = Integer.parseInt(str);
+							yamail.setPriority(Priority.get(priority));
+						} catch (Exception e) {
+						}
+					}
+				}
+				String id = getMessageId(message);
+				if (id == null) {
+					id = EcoreUtil.generateUUID();
+				}
+				yamail.setSubject(message.getSubject());
+				yamail.setId(id);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		}
 	}
 }

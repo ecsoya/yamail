@@ -2,6 +2,7 @@ package org.ecsoya.yamail.ui.views;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 import java.util.Locale;
 
@@ -105,8 +106,12 @@ public class MailsView {
 		for (int i = 0; i < COLUMNS.length; i++) {
 			EStructuralFeature feature = YamailPackage.Literals.YAMAIL
 					.getEStructuralFeature(COLUMNS[i]);
-			TreeViewerColumn column = new TreeViewerColumn(mailsViewer,
-					SWT.CENTER);
+			int style = SWT.LEFT;
+			if (YamailPackage.Literals.YAMAIL__READ == feature
+					|| YamailPackage.Literals.YAMAIL__ATTACHMENTS == feature) {
+				style = SWT.CENTER;
+			}
+			TreeViewerColumn column = new TreeViewerColumn(mailsViewer, style);
 			TreeColumn item = column.getColumn();
 			item.setMoveable(true);
 			item.setResizable(true);
@@ -252,6 +257,13 @@ public class MailsView {
 						SimpleDateFormat format = new SimpleDateFormat(
 								"yyyy/MM/dd hh:mm:ss");
 						textValue = format.format(value);
+					} else if (value instanceof Collection<?>) {
+						StringBuffer buf = new StringBuffer();
+						for (Object obj : ((Collection<?>) value)) {
+							buf.append(obj.toString());
+							buf.append(";");
+						}
+						textValue = new String(buf);
 					}
 					cell.setText(textValue);
 				}
