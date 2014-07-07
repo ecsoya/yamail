@@ -10,6 +10,7 @@ import javax.mail.Session;
 import javax.mail.Store;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.ecsoya.yamail.model.IncomingServer;
@@ -37,6 +38,7 @@ public class CheckMailRunnable implements IRunnableWithProgress {
 			monitor.subTask("Get mails from " + account.getAddress());
 			try {
 				retrieveMails(account, monitor);
+				monitor.worked(1);
 			} catch (Exception e) {
 				throw new InvocationTargetException(e);
 			}
@@ -66,6 +68,9 @@ public class CheckMailRunnable implements IRunnableWithProgress {
 
 			EList<YamailFolder> folders = account.getFolders();
 			for (YamailFolder yamailFolder : folders) {
+				if (monitor.isCanceled()) {
+					break;
+				}
 				Folder folder = store.getFolder(yamailFolder.getName());
 				if (folder == null || !folder.exists()) {
 					continue;
@@ -74,10 +79,21 @@ public class CheckMailRunnable implements IRunnableWithProgress {
 					folder.open(Folder.READ_ONLY);
 				}
 				Message[] messages = folder.getMessages();
+				int length = messages.length;
+				SubProgressMonitor subMonitor = new SubProgressMonitor(monitor,
+						5);
+				subMonitor.beginTask("Found " + length + " new messages.",
+						length);
 				for (Message message : messages) {
+					if (monitor.isCanceled() || subMonitor.isCanceled()) {
+						break;
+					}
 					Yamail yamail = YamailFactory.eINSTANCE.createYamail();
 					yamail.setMessage(message);
 					yamailFolder.getMails().add(yamail);
+					subMonitor
+							.setTaskName("Remain " + (length--) + " messages");
+					subMonitor.worked(1);
 				}
 			}
 

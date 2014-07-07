@@ -1,10 +1,9 @@
 package org.ecsoya.yamail.ui.views;
 
+import java.text.Collator;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
-import java.util.Locale;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -25,6 +24,7 @@ import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.TreeViewerColumn;
+import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.jface.window.SameShellProvider;
 import org.eclipse.swt.SWT;
@@ -104,7 +104,7 @@ public class MailsView {
 
 		mailsViewer.setColumnProperties(COLUMNS);
 		for (int i = 0; i < COLUMNS.length; i++) {
-			EStructuralFeature feature = YamailPackage.Literals.YAMAIL
+			final EStructuralFeature feature = YamailPackage.Literals.YAMAIL
 					.getEStructuralFeature(COLUMNS[i]);
 			int style = SWT.LEFT;
 			if (YamailPackage.Literals.YAMAIL__READ == feature
@@ -134,10 +134,36 @@ public class MailsView {
 					doUpdateCell(cell);
 				}
 			});
+
+			new ColumnViewerSorter(mailsViewer, column) {
+
+				@Override
+				protected int doCompare(Viewer viewer, Object e1, Object e2) {
+					return MailsView.this.doCompare(viewer, (Yamail) e1,
+							(Yamail) e2, feature);
+				}
+
+			};
 		}
 
 		createContextMenu(mailsViewer);
+
 		mailsViewer.setInput(createTestFolder());
+	}
+
+	@SuppressWarnings("unchecked")
+	protected int doCompare(Viewer viewer, Yamail e1, Yamail e2,
+			EStructuralFeature feature) {
+		Object v1 = e1.eGet(feature);
+		Object v2 = e2.eGet(feature);
+		if (v1 != null && v2 != null) {
+			if (v1 instanceof Comparable) {
+				return ((Comparable<Object>) v1).compareTo(v2);
+			}
+		}
+		String s1 = v1 == null ? "" : v1.toString();
+		String s2 = v2 == null ? "" : v2.toString();
+		return Collator.getInstance().compare(s1, s2);
 	}
 
 	private void createContextMenu(final TreeViewer viewer) {
@@ -278,23 +304,23 @@ public class MailsView {
 
 	private Object createTestFolder() {
 		YamailFolder folder = YamailFactory.eINSTANCE.createYamailFolder();
-		Calendar calendar = Calendar.getInstance();
-		int day = calendar.get(Calendar.DAY_OF_YEAR);
-
-		int j = 5;
-		for (int i = day; i > day - 7; i--) {
-			Yamail mail = YamailFactory.eINSTANCE.createYamail();
-			calendar.set(Calendar.DAY_OF_YEAR, i);
-			mail.setReceivedDate(calendar.getTime());
-			mail.setSentDate(calendar.getTime());
-			mail.setPriority(Priority.get((j++) % 5));
-			mail.getFrom().add("ysh.liujin@163.com");
-			mail.getRecipients().add("jin.liu@soaytec.com");
-			mail.setSubject("Mail From Jin Liu of "
-					+ calendar.getDisplayName(Calendar.DAY_OF_WEEK,
-							Calendar.LONG_FORMAT, Locale.getDefault()));
-			folder.getMails().add(mail);
-		}
+		// Calendar calendar = Calendar.getInstance();
+		// int day = calendar.get(Calendar.DAY_OF_YEAR);
+		//
+		// int j = 5;
+		// for (int i = day; i > day - 7; i--) {
+		// Yamail mail = YamailFactory.eINSTANCE.createYamail();
+		// calendar.set(Calendar.DAY_OF_YEAR, i);
+		// mail.setReceivedDate(calendar.getTime());
+		// mail.setSentDate(calendar.getTime());
+		// mail.setPriority(Priority.get((j++) % 5));
+		// mail.getFrom().add("ysh.liujin@163.com");
+		// mail.getRecipients().add("jin.liu@soaytec.com");
+		// mail.setSubject("Mail From Jin Liu of "
+		// + calendar.getDisplayName(Calendar.DAY_OF_WEEK,
+		// Calendar.LONG_FORMAT, Locale.getDefault()));
+		// folder.getMails().add(mail);
+		// }
 		return folder;
 	}
 
