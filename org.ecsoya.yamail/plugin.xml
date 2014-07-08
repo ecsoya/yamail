@@ -4,7 +4,7 @@
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            name="Yamail - Ecsoya Mail Client"
+            name="org.ecsoya.yamail"
             application="org.eclipse.e4.ui.workbench.swt.E4Application">
          <property
                name="applicationCSS"
@@ -17,6 +17,14 @@
          <property
                name="lifeCycleURI"
                value="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.YamailLifeCycle">
+         </property>
+         <property
+               name="appName"
+               value="org.ecsoya.yamail">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/yamail_16.png,icons/yamail_32.png">
          </property>
       </product>
    </extension>
