@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -195,13 +196,22 @@ public interface YamailPackage extends EPackage {
 	int YAMAIL_ACCOUNT_FEATURE_COUNT = 9;
 
 	/**
+	 * The operation id for the '<em>Get Folder</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int YAMAIL_ACCOUNT___GET_FOLDER__OBJECT = 0;
+
+	/**
 	 * The number of operations of the '<em>Account</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int YAMAIL_ACCOUNT_OPERATION_COUNT = 0;
+	int YAMAIL_ACCOUNT_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.ecsoya.yamail.model.impl.YamailServerImpl <em>Server</em>}' class.
@@ -724,13 +734,22 @@ public interface YamailPackage extends EPackage {
 	int YAMAIL__LABEL = 14;
 
 	/**
+	 * The feature id for the '<em><b>Local File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int YAMAIL__LOCAL_FILE = 15;
+
+	/**
 	 * The number of structural features of the '<em>Yamail</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int YAMAIL_FEATURE_COUNT = 15;
+	int YAMAIL_FEATURE_COUNT = 16;
 
 	/**
 	 * The number of operations of the '<em>Yamail</em>' class. <!--
@@ -995,6 +1014,16 @@ public interface YamailPackage extends EPackage {
 	EAttribute getYamailAccount_DetectServer();
 
 	/**
+	 * Returns the meta object for the '{@link org.ecsoya.yamail.model.YamailAccount#getFolder(java.lang.Object) <em>Get Folder</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Folder</em>' operation.
+	 * @see org.ecsoya.yamail.model.YamailAccount#getFolder(java.lang.Object)
+	 * @generated
+	 */
+	EOperation getYamailAccount__GetFolder__Object();
+
+	/**
 	 * Returns the meta object for class '
 	 * {@link org.ecsoya.yamail.model.YamailServer <em>Server</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -1255,6 +1284,17 @@ public interface YamailPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getYamail_Label();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.ecsoya.yamail.model.Yamail#getLocalFile <em>Local File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Local File</em>'.
+	 * @see org.ecsoya.yamail.model.Yamail#getLocalFile()
+	 * @see #getYamail()
+	 * @generated
+	 */
+	EAttribute getYamail_LocalFile();
 
 	/**
 	 * Returns the meta object for class '{@link org.ecsoya.yamail.model.YamailAttachment <em>Attachment</em>}'.
@@ -1606,6 +1646,14 @@ public interface YamailPackage extends EPackage {
 		EAttribute YAMAIL_ACCOUNT__DETECT_SERVER = eINSTANCE.getYamailAccount_DetectServer();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Folder</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation YAMAIL_ACCOUNT___GET_FOLDER__OBJECT = eINSTANCE.getYamailAccount__GetFolder__Object();
+
+		/**
 		 * The meta object literal for the '{@link org.ecsoya.yamail.model.impl.YamailServerImpl <em>Server</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.ecsoya.yamail.model.impl.YamailServerImpl
@@ -1779,6 +1827,14 @@ public interface YamailPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute YAMAIL__LABEL = eINSTANCE.getYamail_Label();
+
+		/**
+		 * The meta object literal for the '<em><b>Local File</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute YAMAIL__LOCAL_FILE = eINSTANCE.getYamail_LocalFile();
 
 		/**
 		 * The meta object literal for the '{@link org.ecsoya.yamail.model.impl.YamailAttachmentImpl <em>Attachment</em>}' class.

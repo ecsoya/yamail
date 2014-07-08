@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.ecsoya.yamail.model.Yamail#getId <em>Id</em>}</li>
  *   <li>{@link org.ecsoya.yamail.model.Yamail#getPriority <em>Priority</em>}</li>
  *   <li>{@link org.ecsoya.yamail.model.Yamail#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.Yamail#getLocalFile <em>Local File</em>}</li>
  * </ul>
  * </p>
  *
@@ -408,5 +409,31 @@ public interface Yamail extends EObject {
 	 * @generated
 	 */
 	void setLabel(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Local File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Local File</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Local File</em>' attribute.
+	 * @see #setLocalFile(String)
+	 * @see org.ecsoya.yamail.model.YamailPackage#getYamail_LocalFile()
+	 * @model
+	 * @generated
+	 */
+	String getLocalFile();
+
+	/**
+	 * Sets the value of the '{@link org.ecsoya.yamail.model.Yamail#getLocalFile <em>Local File</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Local File</em>' attribute.
+	 * @see #getLocalFile()
+	 * @generated
+	 */
+	void setLocalFile(String value);
 
 } // Yamail

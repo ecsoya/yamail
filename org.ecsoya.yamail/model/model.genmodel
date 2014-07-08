@@ -47,6 +47,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailAccount/dataPath"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailAccount/customDataPath"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailAccount/detectServer"/>
+      <genOperations ecoreOperation="model.ecore#//YamailAccount/getFolder">
+        <genParameters ecoreParameter="model.ecore#//YamailAccount/getFolder/nameOrType"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="model.ecore#//YamailServer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailServer/name"/>
@@ -88,6 +91,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Yamail/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Yamail/priority"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Yamail/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Yamail/localFile"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//YamailAttachment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailAttachment/fileName"/>

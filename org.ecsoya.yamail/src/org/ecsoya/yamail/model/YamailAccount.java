@@ -262,4 +262,12 @@ public interface YamailAccount extends EObject {
 	 */
 	void setDetectServer(boolean value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	YamailFolder getFolder(Object nameOrType);
+
 } // YamailAccount

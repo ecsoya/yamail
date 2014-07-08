@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.ecsoya.yamail.feature_1.0.0.qualifier.jar" id="org.ecsoya.yamail.feature" version="1.0.0.qualifier">
+      <category name="Yamail"/>
+   </feature>
+   <category-def name="Yamail" label="Yamail"/>
+</site>

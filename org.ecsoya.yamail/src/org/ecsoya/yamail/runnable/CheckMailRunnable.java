@@ -1,5 +1,7 @@
 package org.ecsoya.yamail.runnable;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 
@@ -11,8 +13,8 @@ import javax.mail.Store;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubProgressMonitor;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.ecsoya.yamail.model.FolderType;
 import org.ecsoya.yamail.model.IncomingServer;
 import org.ecsoya.yamail.model.MailProtocol;
 import org.ecsoya.yamail.model.Yamail;
@@ -64,37 +66,55 @@ public class CheckMailRunnable implements IRunnableWithProgress {
 			store = session.getStore(mailProtocol.getLiteral());
 			store.connect(server.getHostName(), server.getUserName(),
 					server.getPassword());
-			Folder[] list = store.getDefaultFolder().list();
 
-			EList<YamailFolder> folders = account.getFolders();
-			for (YamailFolder yamailFolder : folders) {
-				if (monitor.isCanceled()) {
+			File root = new File(account.getDataPath());
+			if (!root.exists()) {
+				root.mkdirs();
+			}
+
+			YamailFolder inbox = account.getFolder(FolderType.INBOX);
+			YamailFolder spams = account.getFolder(FolderType.SPAM);
+			Folder remoteInbox = store.getFolder(FolderType.INBOX.getName());
+			if (monitor.isCanceled()) {
+				return;
+			}
+			if (remoteInbox == null || !remoteInbox.exists()) {
+				return;
+			}
+			if (!remoteInbox.isOpen()) {
+				remoteInbox.open(Folder.READ_WRITE);
+			}
+
+			SpamFilter spamer = new SpamFilter(account);
+
+			Message[] messages = remoteInbox.getMessages();
+			int length = messages.length;
+			SubProgressMonitor subMonitor = new SubProgressMonitor(monitor, 5);
+			subMonitor.beginTask("Found " + length + " new messages.", length);
+			for (Message message : messages) {
+				if (monitor.isCanceled() || subMonitor.isCanceled()) {
 					break;
 				}
-				Folder folder = store.getFolder(yamailFolder.getName());
-				if (folder == null || !folder.exists()) {
+				Yamail yamail = YamailFactory.eINSTANCE.createYamail();
+				yamail.setMessage(message);
+				String fileName = root.list().length + 1 + ".eml";
+				yamail.setLocalFile(fileName);
+
+				try {
+					File file = new File(root, fileName);
+					FileOutputStream out = new FileOutputStream(file);
+					message.writeTo(out);
+					out.close();
+				} catch (Exception e) {
 					continue;
 				}
-				if (!folder.isOpen()) {
-					folder.open(Folder.READ_ONLY);
+				if (spamer.isSpam(message)) {
+					spams.getMails().add(yamail);
+				} else {
+					inbox.getMails().add(yamail);
 				}
-				Message[] messages = folder.getMessages();
-				int length = messages.length;
-				SubProgressMonitor subMonitor = new SubProgressMonitor(monitor,
-						5);
-				subMonitor.beginTask("Found " + length + " new messages.",
-						length);
-				for (Message message : messages) {
-					if (monitor.isCanceled() || subMonitor.isCanceled()) {
-						break;
-					}
-					Yamail yamail = YamailFactory.eINSTANCE.createYamail();
-					yamail.setMessage(message);
-					yamailFolder.getMails().add(yamail);
-					subMonitor
-							.setTaskName("Remain " + (length--) + " messages");
-					subMonitor.worked(1);
-				}
+				subMonitor.setTaskName("Remain " + (length--) + " messages");
+				subMonitor.worked(1);
 			}
 
 		} catch (MessagingException e) {

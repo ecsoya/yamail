@@ -1,9 +1,8 @@
 package org.ecsoya.yamail.ui.views;
 
 import java.text.Collator;
-import java.text.SimpleDateFormat;
-import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -13,6 +12,7 @@ import javax.inject.Named;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.MenuManager;
@@ -21,7 +21,9 @@ import org.eclipse.jface.layout.TreeColumnLayout;
 import org.eclipse.jface.util.ConfigureColumns;
 import org.eclipse.jface.viewers.CellLabelProvider;
 import org.eclipse.jface.viewers.ColumnWeightData;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.TreeViewerColumn;
 import org.eclipse.jface.viewers.Viewer;
@@ -41,6 +43,7 @@ import org.ecsoya.yamail.model.YamailFactory;
 import org.ecsoya.yamail.model.YamailFolder;
 import org.ecsoya.yamail.model.YamailPackage;
 import org.ecsoya.yamail.ui.resources.ImageFactory;
+import org.ecsoya.yamail.utils.StringUtils;
 
 public class MailsView {
 
@@ -66,6 +69,9 @@ public class MailsView {
 	private Color normalPriority;
 	private Color lowPriority;
 	private Color lowestPriority;
+
+	@Inject
+	private ESelectionService selectionService;
 
 	@Inject
 	public MailsView() {
@@ -149,6 +155,15 @@ public class MailsView {
 		createContextMenu(mailsViewer);
 
 		mailsViewer.setInput(createTestFolder());
+
+		mailsViewer
+				.addSelectionChangedListener(new ISelectionChangedListener() {
+
+					@Override
+					public void selectionChanged(SelectionChangedEvent event) {
+						selectionService.setSelection(event.getSelection());
+					}
+				});
 	}
 
 	@SuppressWarnings("unchecked")
@@ -280,16 +295,9 @@ public class MailsView {
 				if (value != null) {
 					String textValue = value.toString();
 					if (value instanceof Date) {
-						SimpleDateFormat format = new SimpleDateFormat(
-								"yyyy/MM/dd hh:mm:ss");
-						textValue = format.format(value);
-					} else if (value instanceof Collection<?>) {
-						StringBuffer buf = new StringBuffer();
-						for (Object obj : ((Collection<?>) value)) {
-							buf.append(obj.toString());
-							buf.append(";");
-						}
-						textValue = new String(buf);
+						textValue = StringUtils.toString((Date) value);
+					} else if (value instanceof List<?>) {
+						textValue = StringUtils.toString((List<String>) value);
 					}
 					cell.setText(textValue);
 				}

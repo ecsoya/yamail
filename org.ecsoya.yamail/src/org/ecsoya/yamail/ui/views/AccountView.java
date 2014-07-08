@@ -34,8 +34,10 @@ public class AccountView {
 
 	@Inject
 	private IStylingEngine engine;
+
 	@Inject
 	private ESelectionService selectionService;
+
 	private Adapter refresher;
 
 	@Inject

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<relativePath>../org.ecsoya.yamail.build.tycho/pom.xml</relativePath>
+		<groupId>org.ecsoya.yamail</groupId>
+		<artifactId>org.ecsoya.yamail.build.tycho</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>luna</artifactId>
+	<packaging>eclipse-target-definition</packaging>
+
+	<groupId>target</groupId>
+</project> 

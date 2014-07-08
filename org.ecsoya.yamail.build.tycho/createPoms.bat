@@ -1,0 +1,1 @@
+mvn org.eclipse.tycho:tycho-pomgenerator-plugin:generate-poms -DgroupId=org.ecsoya.yamail -DextraDirs="../org.ecsoya.yamail,../org.ecsoya.yamail.feature" 

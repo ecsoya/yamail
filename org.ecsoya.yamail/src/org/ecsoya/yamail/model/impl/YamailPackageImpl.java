@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -291,6 +292,15 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getYamailAccount__GetFolder__Object() {
+		return yamailAccountEClass.getEOperations().get(0);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -482,6 +492,15 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 */
 	public EAttribute getYamail_Label() {
 		return (EAttribute)yamailEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getYamail_LocalFile() {
+		return (EAttribute)yamailEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -701,6 +720,7 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		createEAttribute(yamailAccountEClass, YAMAIL_ACCOUNT__DATA_PATH);
 		createEAttribute(yamailAccountEClass, YAMAIL_ACCOUNT__CUSTOM_DATA_PATH);
 		createEAttribute(yamailAccountEClass, YAMAIL_ACCOUNT__DETECT_SERVER);
+		createEOperation(yamailAccountEClass, YAMAIL_ACCOUNT___GET_FOLDER__OBJECT);
 
 		yamailServerEClass = createEClass(YAMAIL_SERVER);
 		createEAttribute(yamailServerEClass, YAMAIL_SERVER__NAME);
@@ -742,6 +762,7 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		createEAttribute(yamailEClass, YAMAIL__ID);
 		createEAttribute(yamailEClass, YAMAIL__PRIORITY);
 		createEAttribute(yamailEClass, YAMAIL__LABEL);
+		createEAttribute(yamailEClass, YAMAIL__LOCAL_FILE);
 
 		yamailAttachmentEClass = createEClass(YAMAIL_ATTACHMENT);
 		createEAttribute(yamailAttachmentEClass, YAMAIL_ATTACHMENT__FILE_NAME);
@@ -808,6 +829,9 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		initEAttribute(getYamailAccount_CustomDataPath(), ecorePackage.getEBoolean(), "customDataPath", null, 0, 1, YamailAccount.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getYamailAccount_DetectServer(), ecorePackage.getEBoolean(), "detectServer", "true", 0, 1, YamailAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		EOperation op = initEOperation(getYamailAccount__GetFolder__Object(), this.getYamailFolder(), "getFolder", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "nameOrType", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(yamailServerEClass, YamailServer.class, "YamailServer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getYamailServer_Name(), ecorePackage.getEString(), "name", null, 0, 1, YamailServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getYamailServer_HostName(), ecorePackage.getEString(), "hostName", null, 0, 1, YamailServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -848,6 +872,7 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		initEAttribute(getYamail_Id(), ecorePackage.getEString(), "id", null, 0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getYamail_Priority(), this.getPriority(), "priority", null, 0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getYamail_Label(), ecorePackage.getEString(), "label", null, 0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamail_LocalFile(), ecorePackage.getEString(), "localFile", null, 0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(yamailAttachmentEClass, YamailAttachment.class, "YamailAttachment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getYamailAttachment_FileName(), ecorePackage.getEString(), "fileName", null, 0, 1, YamailAttachment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
