@@ -57,8 +57,9 @@ public class MailsView {
 			YamailPackage.Literals.YAMAIL__SUBJECT.getName(),
 			YamailPackage.Literals.YAMAIL__SENT_DATE.getName(),
 			YamailPackage.Literals.YAMAIL__RECEIVED_DATE.getName(),
-			YamailPackage.Literals.YAMAIL__SIZE.getName() };
-	private static final int[] WEIGHTS = { 2, /* 1, 1, 2, */3, 3, 4, 2, 2, 1 };
+			YamailPackage.Literals.YAMAIL__SIZE.getName(),
+			YamailPackage.Literals.YAMAIL__SPAM_SCORE.getName() };
+	private static final int[] WEIGHTS = { 1, /* 1, 1, 2, */3, 3, 4, 2, 2, 1, 1 };
 
 	private TreeViewer mailsViewer;
 
@@ -238,6 +239,8 @@ public class MailsView {
 			return "Date";
 		} else if (YamailPackage.Literals.YAMAIL__SIZE == feature) {
 			return "Size";
+		} else if (YamailPackage.Literals.YAMAIL__SPAM_SCORE == feature) {
+			return "Spam Score";
 		}
 		return prop;
 	}

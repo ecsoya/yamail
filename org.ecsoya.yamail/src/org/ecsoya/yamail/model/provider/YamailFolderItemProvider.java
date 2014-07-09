@@ -19,7 +19,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.ecsoya.yamail.model.YamailFactory;
 import org.ecsoya.yamail.model.YamailFolder;
 import org.ecsoya.yamail.model.YamailPackage;
 
@@ -165,6 +164,16 @@ public class YamailFolderItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	protected boolean shouldComposeCreationImage() {
+		return true;
+	}
+
+	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
 	 * 
@@ -202,23 +211,6 @@ public class YamailFolderItemProvider extends ItemProviderAdapter implements
 			return;
 		}
 		super.notifyChanged(notification);
-	}
-
-	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
-	 * describing the children that can be created under this object. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
-		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(
-				YamailPackage.Literals.YAMAIL_FOLDER__MAILS,
-				YamailFactory.eINSTANCE.createYamail()));
 	}
 
 	/**

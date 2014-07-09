@@ -1,6 +1,7 @@
 package org.ecsoya.yamail;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Collections;
 
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
@@ -78,6 +79,10 @@ public class YamailCore implements BundleActivator {
 	public void stop(BundleContext bundleContext) throws Exception {
 		ImageFactory.dispose();
 		YamailCore.context = null;
+		save();
+	}
+
+	public static void save() throws IOException {
 		if (resource != null) {
 			resource.save(Collections.EMPTY_MAP);
 		}

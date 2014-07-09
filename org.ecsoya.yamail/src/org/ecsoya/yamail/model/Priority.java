@@ -9,10 +9,9 @@ import java.util.List;
 import org.eclipse.emf.common.util.Enumerator;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Priority</b></em>',
- * and utility methods for working with them.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the literals of the enumeration '
+ * <em><b>Priority</b></em>', and utility methods for working with them. <!--
+ * end-user-doc -->
  * @see org.ecsoya.yamail.model.YamailPackage#getPriority()
  * @model
  * @generated
@@ -30,8 +29,8 @@ public enum Priority implements Enumerator {
 
 	/**
 	 * The '<em><b>High</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #HIGH_VALUE
 	 * @generated
 	 * @ordered
@@ -40,8 +39,8 @@ public enum Priority implements Enumerator {
 
 	/**
 	 * The '<em><b>Normal</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #NORMAL_VALUE
 	 * @generated
 	 * @ordered
@@ -50,8 +49,8 @@ public enum Priority implements Enumerator {
 
 	/**
 	 * The '<em><b>Low</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #LOW_VALUE
 	 * @generated
 	 * @ordered
@@ -60,8 +59,8 @@ public enum Priority implements Enumerator {
 
 	/**
 	 * The '<em><b>Lowest</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #LOWEST_VALUE
 	 * @generated
 	 * @ordered
@@ -117,8 +116,8 @@ public enum Priority implements Enumerator {
 	 * The '<em><b>Low</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Low</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Low</b></em>' literal object isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #LOW
@@ -144,32 +143,25 @@ public enum Priority implements Enumerator {
 	public static final int LOWEST_VALUE = 5;
 
 	/**
-	 * An array of all the '<em><b>Priority</b></em>' enumerators.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * An array of all the '<em><b>Priority</b></em>' enumerators. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	private static final Priority[] VALUES_ARRAY =
-		new Priority[] {
-			HIGHEST,
-			HIGH,
-			NORMAL,
-			LOW,
-			LOWEST,
-		};
+	private static final Priority[] VALUES_ARRAY = new Priority[] { HIGHEST,
+			HIGH, NORMAL, LOW, LOWEST, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Priority</b></em>' enumerators.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<Priority> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<Priority> VALUES = Collections
+			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Priority</b></em>' literal with the specified literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static Priority get(String literal) {
@@ -184,8 +176,7 @@ public enum Priority implements Enumerator {
 
 	/**
 	 * Returns the '<em><b>Priority</b></em>' literal with the specified name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static Priority getByName(String name) {
@@ -200,46 +191,47 @@ public enum Priority implements Enumerator {
 
 	/**
 	 * Returns the '<em><b>Priority</b></em>' literal with the specified integer value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static Priority get(int value) {
 		switch (value) {
-			case HIGHEST_VALUE: return HIGHEST;
-			case HIGH_VALUE: return HIGH;
-			case NORMAL_VALUE: return NORMAL;
-			case LOW_VALUE: return LOW;
-			case LOWEST_VALUE: return LOWEST;
+		case HIGHEST_VALUE:
+			return HIGHEST;
+		case HIGH_VALUE:
+			return HIGH;
+		case NORMAL_VALUE:
+			return NORMAL;
+		case LOW_VALUE:
+			return LOW;
+		case LOWEST_VALUE:
+			return LOWEST;
 		}
 		return null;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final int value;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String name;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String literal;
 
 	/**
 	 * Only this class can construct instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	private Priority(int value, String name, String literal) {
@@ -249,41 +241,40 @@ public enum Priority implements Enumerator {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //Priority
+
+} // Priority

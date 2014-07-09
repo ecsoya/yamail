@@ -17,7 +17,8 @@ public interface YamailFactory extends EFactory {
 	 * end-user-doc -->
 	 * @generated
 	 */
-	YamailFactory eINSTANCE = org.ecsoya.yamail.model.impl.YamailFactoryImpl.init();
+	YamailFactory eINSTANCE = org.ecsoya.yamail.model.impl.YamailFactoryImpl
+			.init();
 
 	/**
 	 * Returns a new object of class '<em>Library</em>'.

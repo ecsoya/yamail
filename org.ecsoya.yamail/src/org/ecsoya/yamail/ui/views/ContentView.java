@@ -160,7 +160,7 @@ public class ContentView {
 				html = MailUtils.getHTMLText(currentYamail.getMessage());
 			} catch (Exception e) {
 				try {
-					String text = MailUtils.getText(currentYamail.getMessage());
+					String text = MailUtils.getBody(currentYamail.getMessage());
 					if (text != null) {
 						html = text;
 					}

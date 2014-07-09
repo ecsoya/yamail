@@ -35,7 +35,7 @@ public class SpamFilter {
 			String spamScore = extract(message.getHeader(SPAM_SCORE));
 			if (spamScore != null) {
 				try {
-					long score = Long.parseLong(spamScore);
+					float score = Float.parseFloat(spamScore);
 					if (score > 6) {
 						return true;
 					}

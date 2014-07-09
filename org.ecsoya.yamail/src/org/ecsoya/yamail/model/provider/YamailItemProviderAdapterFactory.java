@@ -223,6 +223,32 @@ public class YamailItemProviderAdapterFactory extends YamailAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all
+	 * {@link org.ecsoya.yamail.model.YamailAttachment} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected YamailAttachmentItemProvider yamailAttachmentItemProvider;
+
+	/**
+	 * This creates an adapter for a
+	 * {@link org.ecsoya.yamail.model.YamailAttachment}. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createYamailAttachmentAdapter() {
+		if (yamailAttachmentItemProvider == null) {
+			yamailAttachmentItemProvider = new YamailAttachmentItemProvider(
+					this);
+		}
+
+		return yamailAttachmentItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -335,6 +361,8 @@ public class YamailItemProviderAdapterFactory extends YamailAdapterFactory
 			yamailFolderItemProvider.dispose();
 		if (yamailItemProvider != null)
 			yamailItemProvider.dispose();
+		if (yamailAttachmentItemProvider != null)
+			yamailAttachmentItemProvider.dispose();
 	}
 
 }

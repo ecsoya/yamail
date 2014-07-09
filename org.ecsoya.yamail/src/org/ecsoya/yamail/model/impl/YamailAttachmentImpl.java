@@ -102,6 +102,7 @@ public class YamailAttachmentImpl extends MinimalEObjectImpl.Container
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getFileName() {
 		return fileName;
 	}
@@ -110,17 +111,21 @@ public class YamailAttachmentImpl extends MinimalEObjectImpl.Container
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFileName(String newFileName) {
 		String oldFileName = fileName;
 		fileName = newFileName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.YAMAIL_ATTACHMENT__FILE_NAME, oldFileName, fileName));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL_ATTACHMENT__FILE_NAME, oldFileName,
+					fileName));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getContentType() {
 		return contentType;
 	}
@@ -129,17 +134,21 @@ public class YamailAttachmentImpl extends MinimalEObjectImpl.Container
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setContentType(String newContentType) {
 		String oldContentType = contentType;
 		contentType = newContentType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.YAMAIL_ATTACHMENT__CONTENT_TYPE, oldContentType, contentType));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL_ATTACHMENT__CONTENT_TYPE,
+					oldContentType, contentType));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InputStream getContent() {
 		return content;
 	}
@@ -148,11 +157,14 @@ public class YamailAttachmentImpl extends MinimalEObjectImpl.Container
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setContent(InputStream newContent) {
 		InputStream oldContent = content;
 		content = newContent;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.YAMAIL_ATTACHMENT__CONTENT, oldContent, content));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL_ATTACHMENT__CONTENT, oldContent,
+					content));
 	}
 
 	/**
@@ -162,12 +174,12 @@ public class YamailAttachmentImpl extends MinimalEObjectImpl.Container
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_ATTACHMENT__FILE_NAME:
-				return getFileName();
-			case YamailPackage.YAMAIL_ATTACHMENT__CONTENT_TYPE:
-				return getContentType();
-			case YamailPackage.YAMAIL_ATTACHMENT__CONTENT:
-				return getContent();
+		case YamailPackage.YAMAIL_ATTACHMENT__FILE_NAME:
+			return getFileName();
+		case YamailPackage.YAMAIL_ATTACHMENT__CONTENT_TYPE:
+			return getContentType();
+		case YamailPackage.YAMAIL_ATTACHMENT__CONTENT:
+			return getContent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -179,15 +191,15 @@ public class YamailAttachmentImpl extends MinimalEObjectImpl.Container
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_ATTACHMENT__FILE_NAME:
-				setFileName((String)newValue);
-				return;
-			case YamailPackage.YAMAIL_ATTACHMENT__CONTENT_TYPE:
-				setContentType((String)newValue);
-				return;
-			case YamailPackage.YAMAIL_ATTACHMENT__CONTENT:
-				setContent((InputStream)newValue);
-				return;
+		case YamailPackage.YAMAIL_ATTACHMENT__FILE_NAME:
+			setFileName((String) newValue);
+			return;
+		case YamailPackage.YAMAIL_ATTACHMENT__CONTENT_TYPE:
+			setContentType((String) newValue);
+			return;
+		case YamailPackage.YAMAIL_ATTACHMENT__CONTENT:
+			setContent((InputStream) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -199,15 +211,15 @@ public class YamailAttachmentImpl extends MinimalEObjectImpl.Container
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_ATTACHMENT__FILE_NAME:
-				setFileName(FILE_NAME_EDEFAULT);
-				return;
-			case YamailPackage.YAMAIL_ATTACHMENT__CONTENT_TYPE:
-				setContentType(CONTENT_TYPE_EDEFAULT);
-				return;
-			case YamailPackage.YAMAIL_ATTACHMENT__CONTENT:
-				setContent(CONTENT_EDEFAULT);
-				return;
+		case YamailPackage.YAMAIL_ATTACHMENT__FILE_NAME:
+			setFileName(FILE_NAME_EDEFAULT);
+			return;
+		case YamailPackage.YAMAIL_ATTACHMENT__CONTENT_TYPE:
+			setContentType(CONTENT_TYPE_EDEFAULT);
+			return;
+		case YamailPackage.YAMAIL_ATTACHMENT__CONTENT:
+			setContent(CONTENT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -219,12 +231,15 @@ public class YamailAttachmentImpl extends MinimalEObjectImpl.Container
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_ATTACHMENT__FILE_NAME:
-				return FILE_NAME_EDEFAULT == null ? fileName != null : !FILE_NAME_EDEFAULT.equals(fileName);
-			case YamailPackage.YAMAIL_ATTACHMENT__CONTENT_TYPE:
-				return CONTENT_TYPE_EDEFAULT == null ? contentType != null : !CONTENT_TYPE_EDEFAULT.equals(contentType);
-			case YamailPackage.YAMAIL_ATTACHMENT__CONTENT:
-				return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
+		case YamailPackage.YAMAIL_ATTACHMENT__FILE_NAME:
+			return FILE_NAME_EDEFAULT == null ? fileName != null
+					: !FILE_NAME_EDEFAULT.equals(fileName);
+		case YamailPackage.YAMAIL_ATTACHMENT__CONTENT_TYPE:
+			return CONTENT_TYPE_EDEFAULT == null ? contentType != null
+					: !CONTENT_TYPE_EDEFAULT.equals(contentType);
+		case YamailPackage.YAMAIL_ATTACHMENT__CONTENT:
+			return CONTENT_EDEFAULT == null ? content != null
+					: !CONTENT_EDEFAULT.equals(content);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -235,7 +250,8 @@ public class YamailAttachmentImpl extends MinimalEObjectImpl.Container
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (fileName: ");

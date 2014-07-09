@@ -97,8 +97,7 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	private EEnum folderTypeEEnum = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EEnum priorityEEnum = null;
@@ -162,10 +161,14 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * @generated
 	 */
 	public static YamailPackage init() {
-		if (isInited) return (YamailPackage)EPackage.Registry.INSTANCE.getEPackage(YamailPackage.eNS_URI);
+		if (isInited)
+			return (YamailPackage) EPackage.Registry.INSTANCE
+					.getEPackage(YamailPackage.eNS_URI);
 
 		// Obtain or create and register package
-		YamailPackageImpl theYamailPackage = (YamailPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof YamailPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new YamailPackageImpl());
+		YamailPackageImpl theYamailPackage = (YamailPackageImpl) (EPackage.Registry.INSTANCE
+				.get(eNS_URI) instanceof YamailPackageImpl ? EPackage.Registry.INSTANCE
+				.get(eNS_URI) : new YamailPackageImpl());
 
 		isInited = true;
 
@@ -181,7 +184,6 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		// Mark meta-data to indicate it can't be changed
 		theYamailPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(YamailPackage.eNS_URI, theYamailPackage);
 		return theYamailPackage;
@@ -191,6 +193,7 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getYamailLibrary() {
 		return yamailLibraryEClass;
 	}
@@ -199,22 +202,25 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getYamailLibrary_Accounts() {
-		return (EReference)yamailLibraryEClass.getEStructuralFeatures().get(0);
+		return (EReference) yamailLibraryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getYamailLibrary_Settings() {
-		return (EReference)yamailLibraryEClass.getEStructuralFeatures().get(1);
+		return (EReference) yamailLibraryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getYamailAccount() {
 		return yamailAccountEClass;
 	}
@@ -223,79 +229,88 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailAccount_Name() {
-		return (EAttribute)yamailAccountEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) yamailAccountEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getYamailAccount_IncomingServer() {
-		return (EReference)yamailAccountEClass.getEStructuralFeatures().get(1);
+		return (EReference) yamailAccountEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getYamailAccount_OutgoingServer() {
-		return (EReference)yamailAccountEClass.getEStructuralFeatures().get(2);
+		return (EReference) yamailAccountEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailAccount_Address() {
-		return (EAttribute)yamailAccountEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) yamailAccountEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailAccount_Password() {
-		return (EAttribute)yamailAccountEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) yamailAccountEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getYamailAccount_Folders() {
-		return (EReference)yamailAccountEClass.getEStructuralFeatures().get(5);
+		return (EReference) yamailAccountEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailAccount_DataPath() {
-		return (EAttribute)yamailAccountEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) yamailAccountEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailAccount_CustomDataPath() {
-		return (EAttribute)yamailAccountEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) yamailAccountEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailAccount_DetectServer() {
-		return (EAttribute)yamailAccountEClass.getEStructuralFeatures().get(8);
+		return (EAttribute) yamailAccountEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getYamailAccount__GetFolder__Object() {
 		return yamailAccountEClass.getEOperations().get(0);
 	}
@@ -304,6 +319,7 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getYamailServer() {
 		return yamailServerEClass;
 	}
@@ -312,62 +328,70 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailServer_Name() {
-		return (EAttribute)yamailServerEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) yamailServerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailServer_HostName() {
-		return (EAttribute)yamailServerEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) yamailServerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailServer_Port() {
-		return (EAttribute)yamailServerEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) yamailServerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailServer_UserName() {
-		return (EAttribute)yamailServerEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) yamailServerEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailServer_Password() {
-		return (EAttribute)yamailServerEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) yamailServerEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailServer_Protocol() {
-		return (EAttribute)yamailServerEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) yamailServerEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailServer_Timeout() {
-		return (EAttribute)yamailServerEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) yamailServerEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getYamail() {
 		return yamailEClass;
 	}
@@ -376,137 +400,160 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamail_Message() {
-		return (EAttribute)yamailEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) yamailEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamail_Read() {
-		return (EAttribute)yamailEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) yamailEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamail_From() {
-		return (EAttribute)yamailEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) yamailEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamail_Recipients() {
-		return (EAttribute)yamailEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) yamailEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamail_Subject() {
-		return (EAttribute)yamailEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) yamailEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamail_ContentType() {
-		return (EAttribute)yamailEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) yamailEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamail_ReceivedDate() {
-		return (EAttribute)yamailEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) yamailEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamail_SentDate() {
-		return (EAttribute)yamailEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) yamailEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamail_Content() {
-		return (EAttribute)yamailEClass.getEStructuralFeatures().get(8);
+		return (EAttribute) yamailEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getYamail_Headers() {
-		return (EReference)yamailEClass.getEStructuralFeatures().get(9);
+		return (EReference) yamailEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamail_Size() {
-		return (EAttribute)yamailEClass.getEStructuralFeatures().get(10);
+		return (EAttribute) yamailEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getYamail_Attachments() {
-		return (EReference)yamailEClass.getEStructuralFeatures().get(11);
+		return (EReference) yamailEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamail_Id() {
-		return (EAttribute)yamailEClass.getEStructuralFeatures().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getYamail_Priority() {
-		return (EAttribute)yamailEClass.getEStructuralFeatures().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getYamail_Label() {
-		return (EAttribute)yamailEClass.getEStructuralFeatures().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getYamail_LocalFile() {
-		return (EAttribute)yamailEClass.getEStructuralFeatures().get(15);
+		return (EAttribute) yamailEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EAttribute getYamail_Priority() {
+		return (EAttribute) yamailEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getYamail_Label() {
+		return (EAttribute) yamailEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getYamail_LocalFile() {
+		return (EAttribute) yamailEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getYamail_SpamScore() {
+		return (EAttribute) yamailEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getYamailAttachment() {
 		return yamailAttachmentEClass;
 	}
@@ -515,30 +562,37 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailAttachment_FileName() {
-		return (EAttribute)yamailAttachmentEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) yamailAttachmentEClass.getEStructuralFeatures()
+				.get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailAttachment_ContentType() {
-		return (EAttribute)yamailAttachmentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) yamailAttachmentEClass.getEStructuralFeatures()
+				.get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailAttachment_Content() {
-		return (EAttribute)yamailAttachmentEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) yamailAttachmentEClass.getEStructuralFeatures()
+				.get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIncomingServer() {
 		return incomingServerEClass;
 	}
@@ -547,22 +601,27 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getIncomingServer_Interval() {
-		return (EAttribute)incomingServerEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) incomingServerEClass.getEStructuralFeatures()
+				.get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getIncomingServer_Check() {
-		return (EAttribute)incomingServerEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) incomingServerEClass.getEStructuralFeatures()
+				.get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOutgoingServer() {
 		return outgoingServerEClass;
 	}
@@ -571,30 +630,37 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getOutgoingServer_UseTSL() {
-		return (EAttribute)outgoingServerEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) outgoingServerEClass.getEStructuralFeatures()
+				.get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getOutgoingServer_FromAddress() {
-		return (EAttribute)outgoingServerEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) outgoingServerEClass.getEStructuralFeatures()
+				.get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getOutgoingServer_EmailPrefix() {
-		return (EAttribute)outgoingServerEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) outgoingServerEClass.getEStructuralFeatures()
+				.get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getYamailFolder() {
 		return yamailFolderEClass;
 	}
@@ -603,38 +669,43 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailFolder_Name() {
-		return (EAttribute)yamailFolderEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) yamailFolderEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getYamailFolder_Mails() {
-		return (EReference)yamailFolderEClass.getEStructuralFeatures().get(1);
+		return (EReference) yamailFolderEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailFolder_System() {
-		return (EAttribute)yamailFolderEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) yamailFolderEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getYamailFolder_Type() {
-		return (EAttribute)yamailFolderEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) yamailFolderEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getMailProtocol() {
 		return mailProtocolEEnum;
 	}
@@ -643,15 +714,16 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getFolderType() {
 		return folderTypeEEnum;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getPriority() {
 		return priorityEEnum;
 	}
@@ -660,6 +732,7 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getMessage() {
 		return messageEDataType;
 	}
@@ -668,6 +741,7 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getDate() {
 		return dateEDataType;
 	}
@@ -676,6 +750,7 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getInputStream() {
 		return inputStreamEDataType;
 	}
@@ -684,8 +759,9 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public YamailFactory getYamailFactory() {
-		return (YamailFactory)getEFactoryInstance();
+		return (YamailFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -702,7 +778,8 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -720,7 +797,8 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		createEAttribute(yamailAccountEClass, YAMAIL_ACCOUNT__DATA_PATH);
 		createEAttribute(yamailAccountEClass, YAMAIL_ACCOUNT__CUSTOM_DATA_PATH);
 		createEAttribute(yamailAccountEClass, YAMAIL_ACCOUNT__DETECT_SERVER);
-		createEOperation(yamailAccountEClass, YAMAIL_ACCOUNT___GET_FOLDER__OBJECT);
+		createEOperation(yamailAccountEClass,
+				YAMAIL_ACCOUNT___GET_FOLDER__OBJECT);
 
 		yamailServerEClass = createEClass(YAMAIL_SERVER);
 		createEAttribute(yamailServerEClass, YAMAIL_SERVER__NAME);
@@ -763,10 +841,12 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		createEAttribute(yamailEClass, YAMAIL__PRIORITY);
 		createEAttribute(yamailEClass, YAMAIL__LABEL);
 		createEAttribute(yamailEClass, YAMAIL__LOCAL_FILE);
+		createEAttribute(yamailEClass, YAMAIL__SPAM_SCORE);
 
 		yamailAttachmentEClass = createEClass(YAMAIL_ATTACHMENT);
 		createEAttribute(yamailAttachmentEClass, YAMAIL_ATTACHMENT__FILE_NAME);
-		createEAttribute(yamailAttachmentEClass, YAMAIL_ATTACHMENT__CONTENT_TYPE);
+		createEAttribute(yamailAttachmentEClass,
+				YAMAIL_ATTACHMENT__CONTENT_TYPE);
 		createEAttribute(yamailAttachmentEClass, YAMAIL_ATTACHMENT__CONTENT);
 
 		// Create enums
@@ -794,7 +874,8 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -803,7 +884,8 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE
+				.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -814,70 +896,234 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		outgoingServerEClass.getESuperTypes().add(this.getYamailServer());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(yamailLibraryEClass, YamailLibrary.class, "YamailLibrary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getYamailLibrary_Accounts(), this.getYamailAccount(), null, "accounts", null, 0, -1, YamailLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getYamailLibrary_Settings(), theEcorePackage.getEStringToStringMapEntry(), null, "settings", null, 0, -1, YamailLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(yamailLibraryEClass, YamailLibrary.class, "YamailLibrary",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getYamailLibrary_Accounts(), this.getYamailAccount(),
+				null, "accounts", null, 0, -1, YamailLibrary.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getYamailLibrary_Settings(),
+				theEcorePackage.getEStringToStringMapEntry(), null, "settings",
+				null, 0, -1, YamailLibrary.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(yamailAccountEClass, YamailAccount.class, "YamailAccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getYamailAccount_Name(), ecorePackage.getEString(), "name", null, 0, 1, YamailAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getYamailAccount_IncomingServer(), this.getIncomingServer(), null, "incomingServer", null, 0, 1, YamailAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getYamailAccount_OutgoingServer(), this.getOutgoingServer(), null, "outgoingServer", null, 0, 1, YamailAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamailAccount_Address(), ecorePackage.getEString(), "address", null, 0, 1, YamailAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamailAccount_Password(), ecorePackage.getEString(), "password", null, 0, 1, YamailAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getYamailAccount_Folders(), this.getYamailFolder(), null, "folders", null, 0, -1, YamailAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamailAccount_DataPath(), ecorePackage.getEString(), "dataPath", null, 0, 1, YamailAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamailAccount_CustomDataPath(), ecorePackage.getEBoolean(), "customDataPath", null, 0, 1, YamailAccount.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamailAccount_DetectServer(), ecorePackage.getEBoolean(), "detectServer", "true", 0, 1, YamailAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(yamailAccountEClass, YamailAccount.class, "YamailAccount",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getYamailAccount_Name(), ecorePackage.getEString(),
+				"name", null, 0, 1, YamailAccount.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getYamailAccount_IncomingServer(),
+				this.getIncomingServer(), null, "incomingServer", null, 0, 1,
+				YamailAccount.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getYamailAccount_OutgoingServer(),
+				this.getOutgoingServer(), null, "outgoingServer", null, 0, 1,
+				YamailAccount.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamailAccount_Address(), ecorePackage.getEString(),
+				"address", null, 0, 1, YamailAccount.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamailAccount_Password(), ecorePackage.getEString(),
+				"password", null, 0, 1, YamailAccount.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getYamailAccount_Folders(), this.getYamailFolder(),
+				null, "folders", null, 0, -1, YamailAccount.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getYamailAccount_DataPath(), ecorePackage.getEString(),
+				"dataPath", null, 0, 1, YamailAccount.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamailAccount_CustomDataPath(),
+				ecorePackage.getEBoolean(), "customDataPath", null, 0, 1,
+				YamailAccount.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamailAccount_DetectServer(),
+				ecorePackage.getEBoolean(), "detectServer", "true", 0, 1,
+				YamailAccount.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
-		EOperation op = initEOperation(getYamailAccount__GetFolder__Object(), this.getYamailFolder(), "getFolder", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaObject(), "nameOrType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getYamailAccount__GetFolder__Object(),
+				this.getYamailFolder(), "getFolder", 0, 1, IS_UNIQUE,
+				IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "nameOrType", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
 
-		initEClass(yamailServerEClass, YamailServer.class, "YamailServer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getYamailServer_Name(), ecorePackage.getEString(), "name", null, 0, 1, YamailServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamailServer_HostName(), ecorePackage.getEString(), "hostName", null, 0, 1, YamailServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamailServer_Port(), ecorePackage.getEInt(), "port", null, 0, 1, YamailServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamailServer_UserName(), ecorePackage.getEString(), "userName", null, 0, 1, YamailServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamailServer_Password(), ecorePackage.getEString(), "password", null, 0, 1, YamailServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamailServer_Protocol(), this.getMailProtocol(), "protocol", null, 0, 1, YamailServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamailServer_Timeout(), ecorePackage.getELong(), "timeout", "10000", 0, 1, YamailServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(yamailServerEClass, YamailServer.class, "YamailServer",
+				IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getYamailServer_Name(), ecorePackage.getEString(),
+				"name", null, 0, 1, YamailServer.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamailServer_HostName(), ecorePackage.getEString(),
+				"hostName", null, 0, 1, YamailServer.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamailServer_Port(), ecorePackage.getEInt(), "port",
+				null, 0, 1, YamailServer.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getYamailServer_UserName(), ecorePackage.getEString(),
+				"userName", null, 0, 1, YamailServer.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamailServer_Password(), ecorePackage.getEString(),
+				"password", null, 0, 1, YamailServer.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamailServer_Protocol(), this.getMailProtocol(),
+				"protocol", null, 0, 1, YamailServer.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamailServer_Timeout(), ecorePackage.getELong(),
+				"timeout", "10000", 0, 1, YamailServer.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(incomingServerEClass, IncomingServer.class, "IncomingServer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIncomingServer_Interval(), theEcorePackage.getEInt(), "interval", "15", 0, 1, IncomingServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIncomingServer_Check(), ecorePackage.getEBoolean(), "check", "true", 0, 1, IncomingServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(incomingServerEClass, IncomingServer.class,
+				"IncomingServer", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIncomingServer_Interval(), theEcorePackage.getEInt(),
+				"interval", "15", 0, 1, IncomingServer.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIncomingServer_Check(), ecorePackage.getEBoolean(),
+				"check", "true", 0, 1, IncomingServer.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(outgoingServerEClass, OutgoingServer.class, "OutgoingServer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOutgoingServer_UseTSL(), ecorePackage.getEBoolean(), "useTSL", null, 0, 1, OutgoingServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOutgoingServer_FromAddress(), ecorePackage.getEString(), "fromAddress", null, 0, 1, OutgoingServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOutgoingServer_EmailPrefix(), ecorePackage.getEString(), "emailPrefix", null, 0, 1, OutgoingServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(outgoingServerEClass, OutgoingServer.class,
+				"OutgoingServer", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOutgoingServer_UseTSL(), ecorePackage.getEBoolean(),
+				"useTSL", null, 0, 1, OutgoingServer.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOutgoingServer_FromAddress(),
+				ecorePackage.getEString(), "fromAddress", null, 0, 1,
+				OutgoingServer.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getOutgoingServer_EmailPrefix(),
+				ecorePackage.getEString(), "emailPrefix", null, 0, 1,
+				OutgoingServer.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
-		initEClass(yamailFolderEClass, YamailFolder.class, "YamailFolder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getYamailFolder_Name(), ecorePackage.getEString(), "name", null, 0, 1, YamailFolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getYamailFolder_Mails(), this.getYamail(), null, "mails", null, 0, -1, YamailFolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamailFolder_System(), ecorePackage.getEBoolean(), "system", null, 0, 1, YamailFolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamailFolder_Type(), this.getFolderType(), "type", null, 0, 1, YamailFolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(yamailFolderEClass, YamailFolder.class, "YamailFolder",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getYamailFolder_Name(), ecorePackage.getEString(),
+				"name", null, 0, 1, YamailFolder.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getYamailFolder_Mails(), this.getYamail(), null,
+				"mails", null, 0, -1, YamailFolder.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamailFolder_System(), ecorePackage.getEBoolean(),
+				"system", null, 0, 1, YamailFolder.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamailFolder_Type(), this.getFolderType(), "type",
+				null, 0, 1, YamailFolder.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
-		initEClass(yamailEClass, Yamail.class, "Yamail", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getYamail_Message(), this.getMessage(), "message", null, 0, 1, Yamail.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamail_Read(), ecorePackage.getEBoolean(), "read", null, 0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamail_From(), ecorePackage.getEString(), "from", null, 0, -1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamail_Recipients(), ecorePackage.getEString(), "recipients", null, 0, -1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamail_Subject(), ecorePackage.getEString(), "subject", null, 0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamail_ContentType(), ecorePackage.getEString(), "contentType", null, 0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamail_ReceivedDate(), this.getDate(), "receivedDate", null, 0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamail_SentDate(), this.getDate(), "sentDate", null, 0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamail_Content(), ecorePackage.getEJavaObject(), "content", null, 0, 1, Yamail.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getYamail_Headers(), theEcorePackage.getEStringToStringMapEntry(), null, "headers", null, 0, -1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamail_Size(), ecorePackage.getELong(), "size", null, 0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getYamail_Attachments(), this.getYamailAttachment(), null, "attachments", null, 0, -1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamail_Id(), ecorePackage.getEString(), "id", null, 0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamail_Priority(), this.getPriority(), "priority", null, 0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamail_Label(), ecorePackage.getEString(), "label", null, 0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamail_LocalFile(), ecorePackage.getEString(), "localFile", null, 0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(yamailEClass, Yamail.class, "Yamail", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getYamail_Message(), this.getMessage(), "message", null,
+				0, 1, Yamail.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamail_Read(), ecorePackage.getEBoolean(), "read",
+				null, 0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getYamail_From(), ecorePackage.getEString(), "from",
+				null, 0, -1, Yamail.class, IS_TRANSIENT, !IS_VOLATILE,
+				!IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getYamail_Recipients(), ecorePackage.getEString(),
+				"recipients", null, 0, -1, Yamail.class, IS_TRANSIENT,
+				!IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamail_Subject(), ecorePackage.getEString(),
+				"subject", null, 0, 1, Yamail.class, IS_TRANSIENT,
+				!IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamail_ContentType(), ecorePackage.getEString(),
+				"contentType", null, 0, 1, Yamail.class, IS_TRANSIENT,
+				!IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamail_ReceivedDate(), this.getDate(),
+				"receivedDate", null, 0, 1, Yamail.class, IS_TRANSIENT,
+				!IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamail_SentDate(), this.getDate(), "sentDate", null,
+				0, 1, Yamail.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamail_Content(), ecorePackage.getEJavaObject(),
+				"content", null, 0, 1, Yamail.class, IS_TRANSIENT,
+				!IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getYamail_Headers(),
+				theEcorePackage.getEStringToStringMapEntry(), null, "headers",
+				null, 0, -1, Yamail.class, IS_TRANSIENT, !IS_VOLATILE,
+				!IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamail_Size(), ecorePackage.getELong(), "size", null,
+				0, 1, Yamail.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getYamail_Attachments(), this.getYamailAttachment(),
+				null, "attachments", null, 0, -1, Yamail.class, !IS_TRANSIENT,
+				!IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getYamail_Id(), ecorePackage.getEString(), "id", null,
+				0, 1, Yamail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamail_Priority(), this.getPriority(), "priority",
+				null, 0, 1, Yamail.class, IS_TRANSIENT, !IS_VOLATILE,
+				!IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getYamail_Label(), ecorePackage.getEString(), "label",
+				null, 0, 1, Yamail.class, IS_TRANSIENT, !IS_VOLATILE,
+				!IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getYamail_LocalFile(), ecorePackage.getEString(),
+				"localFile", null, 0, 1, Yamail.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getYamail_SpamScore(), ecorePackage.getEFloat(),
+				"spamScore", "-1", 0, 1, Yamail.class, IS_TRANSIENT,
+				!IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(yamailAttachmentEClass, YamailAttachment.class, "YamailAttachment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getYamailAttachment_FileName(), ecorePackage.getEString(), "fileName", null, 0, 1, YamailAttachment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamailAttachment_ContentType(), ecorePackage.getEString(), "contentType", null, 0, 1, YamailAttachment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getYamailAttachment_Content(), this.getInputStream(), "content", null, 0, 1, YamailAttachment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(yamailAttachmentEClass, YamailAttachment.class,
+				"YamailAttachment", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getYamailAttachment_FileName(),
+				ecorePackage.getEString(), "fileName", null, 0, 1,
+				YamailAttachment.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getYamailAttachment_ContentType(),
+				ecorePackage.getEString(), "contentType", null, 0, 1,
+				YamailAttachment.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getYamailAttachment_Content(), this.getInputStream(),
+				"content", null, 0, 1, YamailAttachment.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(mailProtocolEEnum, MailProtocol.class, "MailProtocol");
@@ -903,9 +1149,12 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		addEEnumLiteral(priorityEEnum, Priority.LOWEST);
 
 		// Initialize data types
-		initEDataType(messageEDataType, Message.class, "Message", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(dateEDataType, Date.class, "Date", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(inputStreamEDataType, InputStream.class, "InputStream", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(messageEDataType, Message.class, "Message",
+				!IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(dateEDataType, Date.class, "Date", IS_SERIALIZABLE,
+				!IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(inputStreamEDataType, InputStream.class, "InputStream",
+				IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

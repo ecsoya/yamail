@@ -174,20 +174,15 @@ public enum MailProtocol implements Enumerator {
 	 * @generated
 	 */
 	private static final MailProtocol[] VALUES_ARRAY = new MailProtocol[] {
-			POP,
-			SECURE_POP,
-			IMAP,
-			SECURE_IMAP,
-			SMTP,
-			SECURE_SMTP,
-		};
+			POP, SECURE_POP, IMAP, SECURE_IMAP, SMTP, SECURE_SMTP, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Mail Protocol</b></em>' enumerators.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<MailProtocol> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<MailProtocol> VALUES = Collections
+			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Mail Protocol</b></em>' literal with the specified literal value.
@@ -226,12 +221,18 @@ public enum MailProtocol implements Enumerator {
 	 */
 	public static MailProtocol get(int value) {
 		switch (value) {
-			case POP_VALUE: return POP;
-			case SECURE_POP_VALUE: return SECURE_POP;
-			case IMAP_VALUE: return IMAP;
-			case SECURE_IMAP_VALUE: return SECURE_IMAP;
-			case SMTP_VALUE: return SMTP;
-			case SECURE_SMTP_VALUE: return SECURE_SMTP;
+		case POP_VALUE:
+			return POP;
+		case SECURE_POP_VALUE:
+			return SECURE_POP;
+		case IMAP_VALUE:
+			return IMAP;
+		case SECURE_IMAP_VALUE:
+			return SECURE_IMAP;
+		case SMTP_VALUE:
+			return SMTP;
+		case SECURE_SMTP_VALUE:
+			return SECURE_SMTP;
 		}
 		return null;
 	}
@@ -270,24 +271,27 @@ public enum MailProtocol implements Enumerator {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**

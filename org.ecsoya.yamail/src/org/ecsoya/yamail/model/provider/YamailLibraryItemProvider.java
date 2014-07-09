@@ -9,8 +9,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcoreFactory;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -19,7 +17,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.ecsoya.yamail.model.YamailFactory;
 import org.ecsoya.yamail.model.YamailLibrary;
 import org.ecsoya.yamail.model.YamailPackage;
 
@@ -108,6 +105,16 @@ public class YamailLibraryItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	protected boolean shouldComposeCreationImage() {
+		return true;
+	}
+
+	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
 	 * 
@@ -138,29 +145,6 @@ public class YamailLibraryItemProvider extends ItemProviderAdapter implements
 			return;
 		}
 		super.notifyChanged(notification);
-	}
-
-	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
-	 * describing the children that can be created under this object. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
-		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(
-				YamailPackage.Literals.YAMAIL_LIBRARY__ACCOUNTS,
-				YamailFactory.eINSTANCE.createYamailAccount()));
-
-		newChildDescriptors
-				.add(createChildParameter(
-						YamailPackage.Literals.YAMAIL_LIBRARY__SETTINGS,
-						EcoreFactory.eINSTANCE
-								.create(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY)));
 	}
 
 	/**

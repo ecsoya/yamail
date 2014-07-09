@@ -10,5 +10,6 @@ public class YamailLifeCycle {
 	@PostContextCreate
 	public void postContextCreate(final IEventBroker eventBroker,
 			IApplicationContext context) {
+
 	}
 }

@@ -102,6 +102,7 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isUseTSL() {
 		return useTSL;
 	}
@@ -110,17 +111,20 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUseTSL(boolean newUseTSL) {
 		boolean oldUseTSL = useTSL;
 		useTSL = newUseTSL;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.OUTGOING_SERVER__USE_TSL, oldUseTSL, useTSL));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.OUTGOING_SERVER__USE_TSL, oldUseTSL, useTSL));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getFromAddress() {
 		return fromAddress;
 	}
@@ -129,17 +133,21 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFromAddress(String newFromAddress) {
 		String oldFromAddress = fromAddress;
 		fromAddress = newFromAddress;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.OUTGOING_SERVER__FROM_ADDRESS, oldFromAddress, fromAddress));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.OUTGOING_SERVER__FROM_ADDRESS,
+					oldFromAddress, fromAddress));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getEmailPrefix() {
 		return emailPrefix;
 	}
@@ -148,11 +156,14 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEmailPrefix(String newEmailPrefix) {
 		String oldEmailPrefix = emailPrefix;
 		emailPrefix = newEmailPrefix;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX, oldEmailPrefix, emailPrefix));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX,
+					oldEmailPrefix, emailPrefix));
 	}
 
 	/**
@@ -162,12 +173,12 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case YamailPackage.OUTGOING_SERVER__USE_TSL:
-				return isUseTSL();
-			case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
-				return getFromAddress();
-			case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
-				return getEmailPrefix();
+		case YamailPackage.OUTGOING_SERVER__USE_TSL:
+			return isUseTSL();
+		case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
+			return getFromAddress();
+		case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
+			return getEmailPrefix();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -179,15 +190,15 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case YamailPackage.OUTGOING_SERVER__USE_TSL:
-				setUseTSL((Boolean)newValue);
-				return;
-			case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
-				setFromAddress((String)newValue);
-				return;
-			case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
-				setEmailPrefix((String)newValue);
-				return;
+		case YamailPackage.OUTGOING_SERVER__USE_TSL:
+			setUseTSL((Boolean) newValue);
+			return;
+		case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
+			setFromAddress((String) newValue);
+			return;
+		case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
+			setEmailPrefix((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -199,15 +210,15 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case YamailPackage.OUTGOING_SERVER__USE_TSL:
-				setUseTSL(USE_TSL_EDEFAULT);
-				return;
-			case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
-				setFromAddress(FROM_ADDRESS_EDEFAULT);
-				return;
-			case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
-				setEmailPrefix(EMAIL_PREFIX_EDEFAULT);
-				return;
+		case YamailPackage.OUTGOING_SERVER__USE_TSL:
+			setUseTSL(USE_TSL_EDEFAULT);
+			return;
+		case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
+			setFromAddress(FROM_ADDRESS_EDEFAULT);
+			return;
+		case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
+			setEmailPrefix(EMAIL_PREFIX_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -219,12 +230,14 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case YamailPackage.OUTGOING_SERVER__USE_TSL:
-				return useTSL != USE_TSL_EDEFAULT;
-			case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
-				return FROM_ADDRESS_EDEFAULT == null ? fromAddress != null : !FROM_ADDRESS_EDEFAULT.equals(fromAddress);
-			case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
-				return EMAIL_PREFIX_EDEFAULT == null ? emailPrefix != null : !EMAIL_PREFIX_EDEFAULT.equals(emailPrefix);
+		case YamailPackage.OUTGOING_SERVER__USE_TSL:
+			return useTSL != USE_TSL_EDEFAULT;
+		case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
+			return FROM_ADDRESS_EDEFAULT == null ? fromAddress != null
+					: !FROM_ADDRESS_EDEFAULT.equals(fromAddress);
+		case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
+			return EMAIL_PREFIX_EDEFAULT == null ? emailPrefix != null
+					: !EMAIL_PREFIX_EDEFAULT.equals(emailPrefix);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -235,7 +248,8 @@ public class OutgoingServerImpl extends YamailServerImpl implements
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (useTSL: ");

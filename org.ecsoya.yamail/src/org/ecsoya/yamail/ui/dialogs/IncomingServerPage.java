@@ -2,8 +2,9 @@ package org.ecsoya.yamail.ui.dialogs;
 
 import java.net.URL;
 
-import org.eclipse.xwt.IConstants;
 import org.ecsoya.yamail.model.IncomingServer;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 
 public class IncomingServerPage extends XWTWizardPage {
 
@@ -14,8 +15,11 @@ public class IncomingServerPage extends XWTWizardPage {
 
 	@Override
 	protected URL getContentURL() {
-		return IncomingServerPage.class.getResource(IncomingServerPage.class
-				.getSimpleName() + IConstants.XWT_EXTENSION_SUFFIX);
+		Bundle bundle = FrameworkUtil.getBundle(getClass());
+		if (bundle != null) {
+			return bundle.getEntry("xwt/dialogs/IncomingServerPage.xwt");
+		}
+		return null;
 	}
 
 }

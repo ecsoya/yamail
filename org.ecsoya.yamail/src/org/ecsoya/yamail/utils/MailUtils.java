@@ -7,7 +7,6 @@ import java.io.Reader;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
@@ -26,14 +25,10 @@ import javax.mail.Store;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.ecsoya.yamail.model.IncomingServer;
 import org.ecsoya.yamail.model.MailProtocol;
 import org.ecsoya.yamail.model.OutgoingServer;
-import org.ecsoya.yamail.model.Priority;
-import org.ecsoya.yamail.model.Yamail;
 import org.ecsoya.yamail.model.YamailServer;
 
 public class MailUtils {
@@ -226,54 +221,21 @@ public class MailUtils {
 		return null;
 	}
 
-	public static void sync(Yamail yamail, Message message) {
-		if (yamail == null) {
-			return;
-		}
+	public static int getPriority(Message message) throws MessagingException {
 		if (message == null) {
-			EList<EAttribute> attrs = yamail.eClass().getEAllAttributes();
-			for (EAttribute eAttribute : attrs) {
-				yamail.eUnset(eAttribute);
-			}
-		} else {
-			try {
-				yamail.getFrom().addAll(extractAddress(message.getFrom()));
-				yamail.getRecipients().addAll(
-						extractAddress(message.getAllRecipients()));
-				yamail.getHeaders().putAll(extractHeaders(message));
-				yamail.setContent(message.getContent());
-				yamail.setContentType(message.getContentType());
-				yamail.setSentDate(message.getSentDate());
-				Date receivedDate = message.getReceivedDate();
-				if (receivedDate != null) {
-					yamail.setReceivedDate(receivedDate);
-				} else {
-					yamail.setReceivedDate(message.getSentDate());
-				}
-				yamail.setSize(message.getSize());
-
-				String[] header = message.getHeader("X-Priority");
-				if (header != null && header.length != 0) {
-					String str = StringUtils.trimToNull(header[0]);
-					if (str != null) {
-						try {
-							int priority = Integer.parseInt(str);
-							yamail.setPriority(Priority.get(priority));
-						} catch (Exception e) {
-						}
-					}
-				}
-				String id = getMessageId(message);
-				if (id == null) {
-					id = EcoreUtil.generateUUID();
-				}
-				yamail.setSubject(message.getSubject());
-				yamail.setId(id);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
+			return -1;
 		}
+		String[] header = message.getHeader(MailHeaders.HEADER_PRIORITY);
+		if (header != null && header.length != 0) {
+			String str = StringUtils.trimToNull(header[0]);
+			if (str != null) {
+				try {
+					return Integer.parseInt(str);
+				} catch (Exception e) {
+				}
+			}
+		}
+		return -1;
 	}
 
 	/**
@@ -563,5 +525,29 @@ public class MailUtils {
 		}
 
 		return null;
+	}
+
+	public static String getFirstHeader(Message message, String key)
+			throws MessagingException {
+		if (message == null || key == null) {
+			return null;
+		}
+		String[] headers = message.getHeader(key);
+		if (headers == null || headers.length == 0) {
+			return null;
+		}
+		return StringUtils.trimToNull(headers[0]);
+	}
+
+	public static float getSpamScore(Message message) throws MessagingException {
+		String header = getFirstHeader(message, MailHeaders.HEADER_SPAM_SCORE);
+		if (header != null) {
+			try {
+				return Float.parseFloat(header.trim());
+			} catch (NumberFormatException e) {
+				return 0;
+			}
+		}
+		return 0;
 	}
 }

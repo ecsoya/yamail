@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.ecsoya.yamail.model.Yamail#getPriority <em>Priority</em>}</li>
  *   <li>{@link org.ecsoya.yamail.model.Yamail#getLabel <em>Label</em>}</li>
  *   <li>{@link org.ecsoya.yamail.model.Yamail#getLocalFile <em>Local File</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.Yamail#getSpamScore <em>Spam Score</em>}</li>
  * </ul>
  * </p>
  *
@@ -107,7 +108,7 @@ public interface Yamail extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>From</em>' attribute list.
 	 * @see org.ecsoya.yamail.model.YamailPackage#getYamail_From()
-	 * @model
+	 * @model transient="true" changeable="false"
 	 * @generated
 	 */
 	EList<String> getFrom();
@@ -124,7 +125,7 @@ public interface Yamail extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Recipients</em>' attribute list.
 	 * @see org.ecsoya.yamail.model.YamailPackage#getYamail_Recipients()
-	 * @model
+	 * @model transient="true" changeable="false"
 	 * @generated
 	 */
 	EList<String> getRecipients();
@@ -147,18 +148,6 @@ public interface Yamail extends EObject {
 	String getSubject();
 
 	/**
-	 * Sets the value of the '{@link org.ecsoya.yamail.model.Yamail#getSubject
-	 * <em>Subject</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Subject</em>' attribute.
-	 * @see #getSubject()
-	 * @generated
-	 */
-	void setSubject(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Content Type</b></em>' attribute. <!--
 	 * begin-user-doc -->
 	 * <p>
@@ -174,16 +163,6 @@ public interface Yamail extends EObject {
 	 * @generated
 	 */
 	String getContentType();
-
-	/**
-	 * Sets the value of the '{@link org.ecsoya.yamail.model.Yamail#getContentType <em>Content Type</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @param value the new value of the '<em>Content Type</em>' attribute.
-	 * @see #getContentType()
-	 * @generated
-	 */
-	void setContentType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Received Date</b></em>' attribute. <!--
@@ -203,16 +182,6 @@ public interface Yamail extends EObject {
 	Date getReceivedDate();
 
 	/**
-	 * Sets the value of the '{@link org.ecsoya.yamail.model.Yamail#getReceivedDate <em>Received Date</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @param value the new value of the '<em>Received Date</em>' attribute.
-	 * @see #getReceivedDate()
-	 * @generated
-	 */
-	void setReceivedDate(Date value);
-
-	/**
 	 * Returns the value of the '<em><b>Sent Date</b></em>' attribute. <!--
 	 * begin-user-doc -->
 	 * <p>
@@ -228,18 +197,6 @@ public interface Yamail extends EObject {
 	 * @generated
 	 */
 	Date getSentDate();
-
-	/**
-	 * Sets the value of the '{@link org.ecsoya.yamail.model.Yamail#getSentDate
-	 * <em>Sent Date</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Sent Date</em>' attribute.
-	 * @see #getSentDate()
-	 * @generated
-	 */
-	void setSentDate(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Content</b></em>' attribute. <!--
@@ -259,18 +216,6 @@ public interface Yamail extends EObject {
 	Object getContent();
 
 	/**
-	 * Sets the value of the '{@link org.ecsoya.yamail.model.Yamail#getContent
-	 * <em>Content</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Content</em>' attribute.
-	 * @see #getContent()
-	 * @generated
-	 */
-	void setContent(Object value);
-
-	/**
 	 * Returns the value of the '<em><b>Headers</b></em>' map.
 	 * The key is of type {@link java.lang.String},
 	 * and the value is of type {@link java.lang.String},
@@ -282,7 +227,7 @@ public interface Yamail extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Headers</em>' map.
 	 * @see org.ecsoya.yamail.model.YamailPackage#getYamail_Headers()
-	 * @model mapType="org.eclipse.emf.ecore.EStringToStringMapEntry<org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EString>"
+	 * @model mapType="org.eclipse.emf.ecore.EStringToStringMapEntry<org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EString>" transient="true" changeable="false"
 	 * @generated
 	 */
 	EMap<String, String> getHeaders();
@@ -305,15 +250,6 @@ public interface Yamail extends EObject {
 	long getSize();
 
 	/**
-	 * Sets the value of the '{@link org.ecsoya.yamail.model.Yamail#getSize <em>Size</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Size</em>' attribute.
-	 * @see #getSize()
-	 * @generated
-	 */
-	void setSize(long value);
-
-	/**
 	 * Returns the value of the '<em><b>Attachments</b></em>' containment reference list.
 	 * The list contents are of type {@link org.ecsoya.yamail.model.YamailAttachment}.
 	 * <!-- begin-user-doc -->
@@ -324,7 +260,7 @@ public interface Yamail extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attachments</em>' containment reference list.
 	 * @see org.ecsoya.yamail.model.YamailPackage#getYamail_Attachments()
-	 * @model containment="true"
+	 * @model containment="true" changeable="false"
 	 * @generated
 	 */
 	EList<YamailAttachment> getAttachments();
@@ -360,64 +296,43 @@ public interface Yamail extends EObject {
 	 * The literals are from the enumeration {@link org.ecsoya.yamail.model.Priority}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Priority</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Priority</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Priority</em>' attribute.
 	 * @see org.ecsoya.yamail.model.Priority
-	 * @see #setPriority(Priority)
 	 * @see org.ecsoya.yamail.model.YamailPackage#getYamail_Priority()
-	 * @model
+	 * @model transient="true" changeable="false"
 	 * @generated
 	 */
 	Priority getPriority();
 
 	/**
-	 * Sets the value of the '{@link org.ecsoya.yamail.model.Yamail#getPriority <em>Priority</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Priority</em>' attribute.
-	 * @see org.ecsoya.yamail.model.Priority
-	 * @see #getPriority()
-	 * @generated
-	 */
-	void setPriority(Priority value);
-
-	/**
-	 * Returns the value of the '<em><b>Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Label</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Label</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Label</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Label</em>' attribute.
-	 * @see #setLabel(String)
 	 * @see org.ecsoya.yamail.model.YamailPackage#getYamail_Label()
-	 * @model
+	 * @model transient="true" changeable="false"
 	 * @generated
 	 */
 	String getLabel();
 
 	/**
-	 * Sets the value of the '{@link org.ecsoya.yamail.model.Yamail#getLabel <em>Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Label</em>' attribute.
-	 * @see #getLabel()
-	 * @generated
-	 */
-	void setLabel(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Local File</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Local File</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Local File</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Local File</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Local File</em>' attribute.
 	 * @see #setLocalFile(String)
 	 * @see org.ecsoya.yamail.model.YamailPackage#getYamail_LocalFile()
@@ -428,12 +343,27 @@ public interface Yamail extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.ecsoya.yamail.model.Yamail#getLocalFile <em>Local File</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Local File</em>' attribute.
 	 * @see #getLocalFile()
 	 * @generated
 	 */
 	void setLocalFile(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Spam Score</b></em>' attribute.
+	 * The default value is <code>"-1"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Spam Score</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Spam Score</em>' attribute.
+	 * @see org.ecsoya.yamail.model.YamailPackage#getYamail_SpamScore()
+	 * @model default="-1" transient="true" changeable="false"
+	 * @generated
+	 */
+	float getSpamScore();
 
 } // Yamail

@@ -68,26 +68,37 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="#//Message"
         transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="read" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="from" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="from" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipients" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="receivedDate" eType="#//Date"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sentDate" eType="#//Date"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
         transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="receivedDate" eType="#//Date"
+        changeable="false" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sentDate" eType="#//Date"
+        changeable="false" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+        changeable="false" transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="headers" upperBound="-1"
         eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStringToStringMapEntry"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+        changeable="false" transient="true" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+        changeable="false" transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attachments" upperBound="-1"
-        eType="#//YamailAttachment" containment="true"/>
+        eType="#//YamailAttachment" changeable="false" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="#//Priority"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="#//Priority"
+        changeable="false" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="localFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="spamScore" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+        changeable="false" transient="true" defaultValueLiteral="-1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="YamailAttachment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

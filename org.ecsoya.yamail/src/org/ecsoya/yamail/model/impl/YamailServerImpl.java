@@ -177,6 +177,7 @@ public abstract class YamailServerImpl extends MinimalEObjectImpl.Container
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -185,17 +186,20 @@ public abstract class YamailServerImpl extends MinimalEObjectImpl.Container
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.YAMAIL_SERVER__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL_SERVER__NAME, oldName, name));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getHostName() {
 		return hostName;
 	}
@@ -204,17 +208,21 @@ public abstract class YamailServerImpl extends MinimalEObjectImpl.Container
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHostName(String newHostName) {
 		String oldHostName = hostName;
 		hostName = newHostName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.YAMAIL_SERVER__HOST_NAME, oldHostName, hostName));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL_SERVER__HOST_NAME, oldHostName,
+					hostName));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getPort() {
 		return port;
 	}
@@ -223,17 +231,20 @@ public abstract class YamailServerImpl extends MinimalEObjectImpl.Container
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPort(int newPort) {
 		int oldPort = port;
 		port = newPort;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.YAMAIL_SERVER__PORT, oldPort, port));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL_SERVER__PORT, oldPort, port));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUserName() {
 		return userName;
 	}
@@ -242,17 +253,21 @@ public abstract class YamailServerImpl extends MinimalEObjectImpl.Container
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUserName(String newUserName) {
 		String oldUserName = userName;
 		userName = newUserName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.YAMAIL_SERVER__USER_NAME, oldUserName, userName));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL_SERVER__USER_NAME, oldUserName,
+					userName));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPassword() {
 		return password;
 	}
@@ -261,17 +276,21 @@ public abstract class YamailServerImpl extends MinimalEObjectImpl.Container
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPassword(String newPassword) {
 		String oldPassword = password;
 		password = newPassword;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.YAMAIL_SERVER__PASSWORD, oldPassword, password));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL_SERVER__PASSWORD, oldPassword,
+					password));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MailProtocol getProtocol() {
 		return protocol;
 	}
@@ -281,6 +300,7 @@ public abstract class YamailServerImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public void setProtocol(MailProtocol newProtocol) {
 		MailProtocol oldProtocol = protocol;
 		protocol = newProtocol == null ? PROTOCOL_EDEFAULT : newProtocol;
@@ -294,6 +314,7 @@ public abstract class YamailServerImpl extends MinimalEObjectImpl.Container
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public long getTimeout() {
 		return timeout;
 	}
@@ -302,11 +323,13 @@ public abstract class YamailServerImpl extends MinimalEObjectImpl.Container
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTimeout(long newTimeout) {
 		long oldTimeout = timeout;
 		timeout = newTimeout;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.YAMAIL_SERVER__TIMEOUT, oldTimeout, timeout));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL_SERVER__TIMEOUT, oldTimeout, timeout));
 	}
 
 	/**
@@ -316,20 +339,20 @@ public abstract class YamailServerImpl extends MinimalEObjectImpl.Container
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_SERVER__NAME:
-				return getName();
-			case YamailPackage.YAMAIL_SERVER__HOST_NAME:
-				return getHostName();
-			case YamailPackage.YAMAIL_SERVER__PORT:
-				return getPort();
-			case YamailPackage.YAMAIL_SERVER__USER_NAME:
-				return getUserName();
-			case YamailPackage.YAMAIL_SERVER__PASSWORD:
-				return getPassword();
-			case YamailPackage.YAMAIL_SERVER__PROTOCOL:
-				return getProtocol();
-			case YamailPackage.YAMAIL_SERVER__TIMEOUT:
-				return getTimeout();
+		case YamailPackage.YAMAIL_SERVER__NAME:
+			return getName();
+		case YamailPackage.YAMAIL_SERVER__HOST_NAME:
+			return getHostName();
+		case YamailPackage.YAMAIL_SERVER__PORT:
+			return getPort();
+		case YamailPackage.YAMAIL_SERVER__USER_NAME:
+			return getUserName();
+		case YamailPackage.YAMAIL_SERVER__PASSWORD:
+			return getPassword();
+		case YamailPackage.YAMAIL_SERVER__PROTOCOL:
+			return getProtocol();
+		case YamailPackage.YAMAIL_SERVER__TIMEOUT:
+			return getTimeout();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -341,27 +364,27 @@ public abstract class YamailServerImpl extends MinimalEObjectImpl.Container
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_SERVER__NAME:
-				setName((String)newValue);
-				return;
-			case YamailPackage.YAMAIL_SERVER__HOST_NAME:
-				setHostName((String)newValue);
-				return;
-			case YamailPackage.YAMAIL_SERVER__PORT:
-				setPort((Integer)newValue);
-				return;
-			case YamailPackage.YAMAIL_SERVER__USER_NAME:
-				setUserName((String)newValue);
-				return;
-			case YamailPackage.YAMAIL_SERVER__PASSWORD:
-				setPassword((String)newValue);
-				return;
-			case YamailPackage.YAMAIL_SERVER__PROTOCOL:
-				setProtocol((MailProtocol)newValue);
-				return;
-			case YamailPackage.YAMAIL_SERVER__TIMEOUT:
-				setTimeout((Long)newValue);
-				return;
+		case YamailPackage.YAMAIL_SERVER__NAME:
+			setName((String) newValue);
+			return;
+		case YamailPackage.YAMAIL_SERVER__HOST_NAME:
+			setHostName((String) newValue);
+			return;
+		case YamailPackage.YAMAIL_SERVER__PORT:
+			setPort((Integer) newValue);
+			return;
+		case YamailPackage.YAMAIL_SERVER__USER_NAME:
+			setUserName((String) newValue);
+			return;
+		case YamailPackage.YAMAIL_SERVER__PASSWORD:
+			setPassword((String) newValue);
+			return;
+		case YamailPackage.YAMAIL_SERVER__PROTOCOL:
+			setProtocol((MailProtocol) newValue);
+			return;
+		case YamailPackage.YAMAIL_SERVER__TIMEOUT:
+			setTimeout((Long) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -373,27 +396,27 @@ public abstract class YamailServerImpl extends MinimalEObjectImpl.Container
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_SERVER__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case YamailPackage.YAMAIL_SERVER__HOST_NAME:
-				setHostName(HOST_NAME_EDEFAULT);
-				return;
-			case YamailPackage.YAMAIL_SERVER__PORT:
-				setPort(PORT_EDEFAULT);
-				return;
-			case YamailPackage.YAMAIL_SERVER__USER_NAME:
-				setUserName(USER_NAME_EDEFAULT);
-				return;
-			case YamailPackage.YAMAIL_SERVER__PASSWORD:
-				setPassword(PASSWORD_EDEFAULT);
-				return;
-			case YamailPackage.YAMAIL_SERVER__PROTOCOL:
-				setProtocol(PROTOCOL_EDEFAULT);
-				return;
-			case YamailPackage.YAMAIL_SERVER__TIMEOUT:
-				setTimeout(TIMEOUT_EDEFAULT);
-				return;
+		case YamailPackage.YAMAIL_SERVER__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case YamailPackage.YAMAIL_SERVER__HOST_NAME:
+			setHostName(HOST_NAME_EDEFAULT);
+			return;
+		case YamailPackage.YAMAIL_SERVER__PORT:
+			setPort(PORT_EDEFAULT);
+			return;
+		case YamailPackage.YAMAIL_SERVER__USER_NAME:
+			setUserName(USER_NAME_EDEFAULT);
+			return;
+		case YamailPackage.YAMAIL_SERVER__PASSWORD:
+			setPassword(PASSWORD_EDEFAULT);
+			return;
+		case YamailPackage.YAMAIL_SERVER__PROTOCOL:
+			setProtocol(PROTOCOL_EDEFAULT);
+			return;
+		case YamailPackage.YAMAIL_SERVER__TIMEOUT:
+			setTimeout(TIMEOUT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -405,20 +428,24 @@ public abstract class YamailServerImpl extends MinimalEObjectImpl.Container
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_SERVER__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case YamailPackage.YAMAIL_SERVER__HOST_NAME:
-				return HOST_NAME_EDEFAULT == null ? hostName != null : !HOST_NAME_EDEFAULT.equals(hostName);
-			case YamailPackage.YAMAIL_SERVER__PORT:
-				return port != PORT_EDEFAULT;
-			case YamailPackage.YAMAIL_SERVER__USER_NAME:
-				return USER_NAME_EDEFAULT == null ? userName != null : !USER_NAME_EDEFAULT.equals(userName);
-			case YamailPackage.YAMAIL_SERVER__PASSWORD:
-				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
-			case YamailPackage.YAMAIL_SERVER__PROTOCOL:
-				return protocol != PROTOCOL_EDEFAULT;
-			case YamailPackage.YAMAIL_SERVER__TIMEOUT:
-				return timeout != TIMEOUT_EDEFAULT;
+		case YamailPackage.YAMAIL_SERVER__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
+					.equals(name);
+		case YamailPackage.YAMAIL_SERVER__HOST_NAME:
+			return HOST_NAME_EDEFAULT == null ? hostName != null
+					: !HOST_NAME_EDEFAULT.equals(hostName);
+		case YamailPackage.YAMAIL_SERVER__PORT:
+			return port != PORT_EDEFAULT;
+		case YamailPackage.YAMAIL_SERVER__USER_NAME:
+			return USER_NAME_EDEFAULT == null ? userName != null
+					: !USER_NAME_EDEFAULT.equals(userName);
+		case YamailPackage.YAMAIL_SERVER__PASSWORD:
+			return PASSWORD_EDEFAULT == null ? password != null
+					: !PASSWORD_EDEFAULT.equals(password);
+		case YamailPackage.YAMAIL_SERVER__PROTOCOL:
+			return protocol != PROTOCOL_EDEFAULT;
+		case YamailPackage.YAMAIL_SERVER__TIMEOUT:
+			return timeout != TIMEOUT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -429,7 +456,8 @@ public abstract class YamailServerImpl extends MinimalEObjectImpl.Container
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");

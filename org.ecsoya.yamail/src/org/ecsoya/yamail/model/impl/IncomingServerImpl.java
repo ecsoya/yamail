@@ -81,6 +81,7 @@ public class IncomingServerImpl extends YamailServerImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getInterval() {
 		return interval;
 	}
@@ -89,17 +90,21 @@ public class IncomingServerImpl extends YamailServerImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInterval(int newInterval) {
 		int oldInterval = interval;
 		interval = newInterval;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.INCOMING_SERVER__INTERVAL, oldInterval, interval));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.INCOMING_SERVER__INTERVAL, oldInterval,
+					interval));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isCheck() {
 		return check;
 	}
@@ -108,11 +113,13 @@ public class IncomingServerImpl extends YamailServerImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCheck(boolean newCheck) {
 		boolean oldCheck = check;
 		check = newCheck;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.INCOMING_SERVER__CHECK, oldCheck, check));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.INCOMING_SERVER__CHECK, oldCheck, check));
 	}
 
 	/**
@@ -122,10 +129,10 @@ public class IncomingServerImpl extends YamailServerImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case YamailPackage.INCOMING_SERVER__INTERVAL:
-				return getInterval();
-			case YamailPackage.INCOMING_SERVER__CHECK:
-				return isCheck();
+		case YamailPackage.INCOMING_SERVER__INTERVAL:
+			return getInterval();
+		case YamailPackage.INCOMING_SERVER__CHECK:
+			return isCheck();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -137,12 +144,12 @@ public class IncomingServerImpl extends YamailServerImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case YamailPackage.INCOMING_SERVER__INTERVAL:
-				setInterval((Integer)newValue);
-				return;
-			case YamailPackage.INCOMING_SERVER__CHECK:
-				setCheck((Boolean)newValue);
-				return;
+		case YamailPackage.INCOMING_SERVER__INTERVAL:
+			setInterval((Integer) newValue);
+			return;
+		case YamailPackage.INCOMING_SERVER__CHECK:
+			setCheck((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -154,12 +161,12 @@ public class IncomingServerImpl extends YamailServerImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case YamailPackage.INCOMING_SERVER__INTERVAL:
-				setInterval(INTERVAL_EDEFAULT);
-				return;
-			case YamailPackage.INCOMING_SERVER__CHECK:
-				setCheck(CHECK_EDEFAULT);
-				return;
+		case YamailPackage.INCOMING_SERVER__INTERVAL:
+			setInterval(INTERVAL_EDEFAULT);
+			return;
+		case YamailPackage.INCOMING_SERVER__CHECK:
+			setCheck(CHECK_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -171,10 +178,10 @@ public class IncomingServerImpl extends YamailServerImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case YamailPackage.INCOMING_SERVER__INTERVAL:
-				return interval != INTERVAL_EDEFAULT;
-			case YamailPackage.INCOMING_SERVER__CHECK:
-				return check != CHECK_EDEFAULT;
+		case YamailPackage.INCOMING_SERVER__INTERVAL:
+			return interval != INTERVAL_EDEFAULT;
+		case YamailPackage.INCOMING_SERVER__CHECK:
+			return check != CHECK_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -185,7 +192,8 @@ public class IncomingServerImpl extends YamailServerImpl implements
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (interval: ");

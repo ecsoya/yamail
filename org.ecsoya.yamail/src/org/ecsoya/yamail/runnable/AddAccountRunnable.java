@@ -50,6 +50,8 @@ public class AddAccountRunnable implements IRunnableWithProgress {
 			// create system folders
 			monitor.setTaskName("Create system folders");
 			createSystemFolders();
+
+			YamailCore.save();
 			monitor.worked(1);
 		} catch (Exception e) {
 			throw new InvocationTargetException(e, "Add Account Error");

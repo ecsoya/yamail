@@ -32,6 +32,9 @@
         <children xsi:type="menu:HandledToolItem" xmi:id="_-TgoUADnEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.handledtoolitem.3" iconURI="platform:/plugin/org.ecsoya.yamail/icons/full/ctools/email_setting.png" command="_1thC4ADnEeS4TJc19_3mMA"/>
       </children>
     </trimBars>
+    <trimBars xmi:id="_nYwggAdNEeSDrpmqxVIq6g" elementId="org.ecsoya.yamail.trimbar.0" side="Bottom">
+      <children xsi:type="menu:ToolControl" xmi:id="_HV8O0AdOEeSDrpmqxVIq6g" elementId="statusbar" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.StatusLineWrapper"/>
+    </trimBars>
   </children>
   <handlers xmi:id="_zHuA_QDJEeS4TJc19_3mMA" elementId="e4demo.handler.quitCommand" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.handlers.QuitHandler" command="_zHuA_ADJEeS4TJc19_3mMA"/>
   <handlers xmi:id="_zHuoCADJEeS4TJc19_3mMA" elementId="e4demo.handler.aboutCommand" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.handlers.AboutHandler" command="_zHuoBwDJEeS4TJc19_3mMA"/>

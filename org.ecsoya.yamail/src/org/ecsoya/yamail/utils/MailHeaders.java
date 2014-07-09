@@ -16,4 +16,9 @@ public interface MailHeaders {
 	String HEADER_IN_REPLY_TO = "IN-REPLY-TO";
 
 	String HEADER_REFERENCES = "REFERENCES";
+
+	String HEADER_SPAM_FLAG = "X-Spam-Flag";
+	String HEADER_SPAM_SCORE = "X-Spam-Score";
+	String HEADER_SPAM_LEVEL = "X-Spam-Level";
+	String HEADER_SPAM_STATUS = "X-Spam-Status";
 }

@@ -53,7 +53,8 @@ public interface YamailPackage extends EPackage {
 	 * end-user-doc -->
 	 * @generated
 	 */
-	YamailPackage eINSTANCE = org.ecsoya.yamail.model.impl.YamailPackageImpl.init();
+	YamailPackage eINSTANCE = org.ecsoya.yamail.model.impl.YamailPackageImpl
+			.init();
 
 	/**
 	 * The meta object id for the '{@link org.ecsoya.yamail.model.impl.YamailLibraryImpl <em>Library</em>}' class.
@@ -196,9 +197,9 @@ public interface YamailPackage extends EPackage {
 	int YAMAIL_ACCOUNT_FEATURE_COUNT = 9;
 
 	/**
-	 * The operation id for the '<em>Get Folder</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The operation id for the '<em>Get Folder</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -716,31 +717,40 @@ public interface YamailPackage extends EPackage {
 	int YAMAIL__ID = 12;
 
 	/**
-	 * The feature id for the '<em><b>Priority</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Priority</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int YAMAIL__PRIORITY = 13;
 
 	/**
-	 * The feature id for the '<em><b>Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int YAMAIL__LABEL = 14;
 
 	/**
-	 * The feature id for the '<em><b>Local File</b></em>' attribute.
+	 * The feature id for the '<em><b>Local File</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int YAMAIL__LOCAL_FILE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Spam Score</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int YAMAIL__LOCAL_FILE = 15;
+	int YAMAIL__SPAM_SCORE = 16;
 
 	/**
 	 * The number of structural features of the '<em>Yamail</em>' class. <!--
@@ -749,7 +759,7 @@ public interface YamailPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int YAMAIL_FEATURE_COUNT = 16;
+	int YAMAIL_FEATURE_COUNT = 17;
 
 	/**
 	 * The number of operations of the '<em>Yamail</em>' class. <!--
@@ -840,8 +850,7 @@ public interface YamailPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.ecsoya.yamail.model.Priority <em>Priority</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.ecsoya.yamail.model.Priority
 	 * @see org.ecsoya.yamail.model.impl.YamailPackageImpl#getPriority()
 	 * @generated
@@ -1015,8 +1024,8 @@ public interface YamailPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the '{@link org.ecsoya.yamail.model.YamailAccount#getFolder(java.lang.Object) <em>Get Folder</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @return the meta object for the '<em>Get Folder</em>' operation.
 	 * @see org.ecsoya.yamail.model.YamailAccount#getFolder(java.lang.Object)
 	 * @generated
@@ -1265,8 +1274,7 @@ public interface YamailPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.ecsoya.yamail.model.Yamail#getPriority <em>Priority</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Priority</em>'.
 	 * @see org.ecsoya.yamail.model.Yamail#getPriority()
 	 * @see #getYamail()
@@ -1275,9 +1283,10 @@ public interface YamailPackage extends EPackage {
 	EAttribute getYamail_Priority();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.ecsoya.yamail.model.Yamail#getLabel <em>Label</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '
+	 * {@link org.ecsoya.yamail.model.Yamail#getLabel <em>Label</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Label</em>'.
 	 * @see org.ecsoya.yamail.model.Yamail#getLabel()
 	 * @see #getYamail()
@@ -1287,14 +1296,24 @@ public interface YamailPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.ecsoya.yamail.model.Yamail#getLocalFile <em>Local File</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Local File</em>'.
 	 * @see org.ecsoya.yamail.model.Yamail#getLocalFile()
 	 * @see #getYamail()
 	 * @generated
 	 */
 	EAttribute getYamail_LocalFile();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.ecsoya.yamail.model.Yamail#getSpamScore <em>Spam Score</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Spam Score</em>'.
+	 * @see org.ecsoya.yamail.model.Yamail#getSpamScore()
+	 * @see #getYamail()
+	 * @generated
+	 */
+	EAttribute getYamail_SpamScore();
 
 	/**
 	 * Returns the meta object for class '{@link org.ecsoya.yamail.model.YamailAttachment <em>Attachment</em>}'.
@@ -1479,9 +1498,10 @@ public interface YamailPackage extends EPackage {
 	EEnum getFolderType();
 
 	/**
-	 * Returns the meta object for enum '{@link org.ecsoya.yamail.model.Priority <em>Priority</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns the meta object for enum '
+	 * {@link org.ecsoya.yamail.model.Priority <em>Priority</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Priority</em>'.
 	 * @see org.ecsoya.yamail.model.Priority
 	 * @generated
@@ -1559,14 +1579,16 @@ public interface YamailPackage extends EPackage {
 		 * end-user-doc -->
 		 * @generated
 		 */
-		EReference YAMAIL_LIBRARY__ACCOUNTS = eINSTANCE.getYamailLibrary_Accounts();
+		EReference YAMAIL_LIBRARY__ACCOUNTS = eINSTANCE
+				.getYamailLibrary_Accounts();
 
 		/**
 		 * The meta object literal for the '<em><b>Settings</b></em>' map feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference YAMAIL_LIBRARY__SETTINGS = eINSTANCE.getYamailLibrary_Settings();
+		EReference YAMAIL_LIBRARY__SETTINGS = eINSTANCE
+				.getYamailLibrary_Settings();
 
 		/**
 		 * The meta object literal for the '
@@ -1593,7 +1615,8 @@ public interface YamailPackage extends EPackage {
 		 * end-user-doc -->
 		 * @generated
 		 */
-		EReference YAMAIL_ACCOUNT__INCOMING_SERVER = eINSTANCE.getYamailAccount_IncomingServer();
+		EReference YAMAIL_ACCOUNT__INCOMING_SERVER = eINSTANCE
+				.getYamailAccount_IncomingServer();
 
 		/**
 		 * The meta object literal for the '<em><b>Outgoing Server</b></em>' containment reference feature.
@@ -1601,57 +1624,64 @@ public interface YamailPackage extends EPackage {
 		 * end-user-doc -->
 		 * @generated
 		 */
-		EReference YAMAIL_ACCOUNT__OUTGOING_SERVER = eINSTANCE.getYamailAccount_OutgoingServer();
+		EReference YAMAIL_ACCOUNT__OUTGOING_SERVER = eINSTANCE
+				.getYamailAccount_OutgoingServer();
 
 		/**
 		 * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute YAMAIL_ACCOUNT__ADDRESS = eINSTANCE.getYamailAccount_Address();
+		EAttribute YAMAIL_ACCOUNT__ADDRESS = eINSTANCE
+				.getYamailAccount_Address();
 
 		/**
 		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute YAMAIL_ACCOUNT__PASSWORD = eINSTANCE.getYamailAccount_Password();
+		EAttribute YAMAIL_ACCOUNT__PASSWORD = eINSTANCE
+				.getYamailAccount_Password();
 
 		/**
 		 * The meta object literal for the '<em><b>Folders</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference YAMAIL_ACCOUNT__FOLDERS = eINSTANCE.getYamailAccount_Folders();
+		EReference YAMAIL_ACCOUNT__FOLDERS = eINSTANCE
+				.getYamailAccount_Folders();
 
 		/**
 		 * The meta object literal for the '<em><b>Data Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute YAMAIL_ACCOUNT__DATA_PATH = eINSTANCE.getYamailAccount_DataPath();
+		EAttribute YAMAIL_ACCOUNT__DATA_PATH = eINSTANCE
+				.getYamailAccount_DataPath();
 
 		/**
 		 * The meta object literal for the '<em><b>Custom Data Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute YAMAIL_ACCOUNT__CUSTOM_DATA_PATH = eINSTANCE.getYamailAccount_CustomDataPath();
+		EAttribute YAMAIL_ACCOUNT__CUSTOM_DATA_PATH = eINSTANCE
+				.getYamailAccount_CustomDataPath();
 
 		/**
 		 * The meta object literal for the '<em><b>Detect Server</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute YAMAIL_ACCOUNT__DETECT_SERVER = eINSTANCE.getYamailAccount_DetectServer();
+		EAttribute YAMAIL_ACCOUNT__DETECT_SERVER = eINSTANCE
+				.getYamailAccount_DetectServer();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Folder</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation YAMAIL_ACCOUNT___GET_FOLDER__OBJECT = eINSTANCE.getYamailAccount__GetFolder__Object();
+		EOperation YAMAIL_ACCOUNT___GET_FOLDER__OBJECT = eINSTANCE
+				.getYamailAccount__GetFolder__Object();
 
 		/**
 		 * The meta object literal for the '{@link org.ecsoya.yamail.model.impl.YamailServerImpl <em>Server</em>}' class.
@@ -1674,7 +1704,8 @@ public interface YamailPackage extends EPackage {
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute YAMAIL_SERVER__HOST_NAME = eINSTANCE.getYamailServer_HostName();
+		EAttribute YAMAIL_SERVER__HOST_NAME = eINSTANCE
+				.getYamailServer_HostName();
 
 		/**
 		 * The meta object literal for the '<em><b>Port</b></em>' attribute feature.
@@ -1688,21 +1719,24 @@ public interface YamailPackage extends EPackage {
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute YAMAIL_SERVER__USER_NAME = eINSTANCE.getYamailServer_UserName();
+		EAttribute YAMAIL_SERVER__USER_NAME = eINSTANCE
+				.getYamailServer_UserName();
 
 		/**
 		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute YAMAIL_SERVER__PASSWORD = eINSTANCE.getYamailServer_Password();
+		EAttribute YAMAIL_SERVER__PASSWORD = eINSTANCE
+				.getYamailServer_Password();
 
 		/**
 		 * The meta object literal for the '<em><b>Protocol</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute YAMAIL_SERVER__PROTOCOL = eINSTANCE.getYamailServer_Protocol();
+		EAttribute YAMAIL_SERVER__PROTOCOL = eINSTANCE
+				.getYamailServer_Protocol();
 
 		/**
 		 * The meta object literal for the '<em><b>Timeout</b></em>' attribute feature.
@@ -1814,27 +1848,32 @@ public interface YamailPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute YAMAIL__PRIORITY = eINSTANCE.getYamail_Priority();
 
 		/**
 		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute YAMAIL__LABEL = eINSTANCE.getYamail_Label();
 
 		/**
 		 * The meta object literal for the '<em><b>Local File</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute YAMAIL__LOCAL_FILE = eINSTANCE.getYamail_LocalFile();
+
+		/**
+		 * The meta object literal for the '<em><b>Spam Score</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute YAMAIL__LOCAL_FILE = eINSTANCE.getYamail_LocalFile();
+		EAttribute YAMAIL__SPAM_SCORE = eINSTANCE.getYamail_SpamScore();
 
 		/**
 		 * The meta object literal for the '{@link org.ecsoya.yamail.model.impl.YamailAttachmentImpl <em>Attachment</em>}' class.
@@ -1851,21 +1890,24 @@ public interface YamailPackage extends EPackage {
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute YAMAIL_ATTACHMENT__FILE_NAME = eINSTANCE.getYamailAttachment_FileName();
+		EAttribute YAMAIL_ATTACHMENT__FILE_NAME = eINSTANCE
+				.getYamailAttachment_FileName();
 
 		/**
 		 * The meta object literal for the '<em><b>Content Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute YAMAIL_ATTACHMENT__CONTENT_TYPE = eINSTANCE.getYamailAttachment_ContentType();
+		EAttribute YAMAIL_ATTACHMENT__CONTENT_TYPE = eINSTANCE
+				.getYamailAttachment_ContentType();
 
 		/**
 		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute YAMAIL_ATTACHMENT__CONTENT = eINSTANCE.getYamailAttachment_Content();
+		EAttribute YAMAIL_ATTACHMENT__CONTENT = eINSTANCE
+				.getYamailAttachment_Content();
 
 		/**
 		 * The meta object literal for the '{@link org.ecsoya.yamail.model.impl.IncomingServerImpl <em>Incoming Server</em>}' class.
@@ -1882,7 +1924,8 @@ public interface YamailPackage extends EPackage {
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INCOMING_SERVER__INTERVAL = eINSTANCE.getIncomingServer_Interval();
+		EAttribute INCOMING_SERVER__INTERVAL = eINSTANCE
+				.getIncomingServer_Interval();
 
 		/**
 		 * The meta object literal for the '<em><b>Check</b></em>' attribute feature.
@@ -1906,21 +1949,24 @@ public interface YamailPackage extends EPackage {
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OUTGOING_SERVER__USE_TSL = eINSTANCE.getOutgoingServer_UseTSL();
+		EAttribute OUTGOING_SERVER__USE_TSL = eINSTANCE
+				.getOutgoingServer_UseTSL();
 
 		/**
 		 * The meta object literal for the '<em><b>From Address</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OUTGOING_SERVER__FROM_ADDRESS = eINSTANCE.getOutgoingServer_FromAddress();
+		EAttribute OUTGOING_SERVER__FROM_ADDRESS = eINSTANCE
+				.getOutgoingServer_FromAddress();
 
 		/**
 		 * The meta object literal for the '<em><b>Email Prefix</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OUTGOING_SERVER__EMAIL_PREFIX = eINSTANCE.getOutgoingServer_EmailPrefix();
+		EAttribute OUTGOING_SERVER__EMAIL_PREFIX = eINSTANCE
+				.getOutgoingServer_EmailPrefix();
 
 		/**
 		 * The meta object literal for the '{@link org.ecsoya.yamail.model.impl.YamailFolderImpl <em>Folder</em>}' class.
@@ -1979,8 +2025,7 @@ public interface YamailPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '{@link org.ecsoya.yamail.model.Priority <em>Priority</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.ecsoya.yamail.model.Priority
 		 * @see org.ecsoya.yamail.model.impl.YamailPackageImpl#getPriority()
 		 * @generated

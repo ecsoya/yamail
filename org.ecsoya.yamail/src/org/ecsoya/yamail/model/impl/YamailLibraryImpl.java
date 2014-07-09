@@ -74,9 +74,12 @@ public class YamailLibraryImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<YamailAccount> getAccounts() {
 		if (accounts == null) {
-			accounts = new EObjectContainmentEList<YamailAccount>(YamailAccount.class, this, YamailPackage.YAMAIL_LIBRARY__ACCOUNTS);
+			accounts = new EObjectContainmentEList<YamailAccount>(
+					YamailAccount.class, this,
+					YamailPackage.YAMAIL_LIBRARY__ACCOUNTS);
 		}
 		return accounts;
 	}
@@ -85,9 +88,13 @@ public class YamailLibraryImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EMap<String, String> getSettings() {
 		if (settings == null) {
-			settings = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, YamailPackage.YAMAIL_LIBRARY__SETTINGS);
+			settings = new EcoreEMap<String, String>(
+					EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY,
+					EStringToStringMapEntryImpl.class, this,
+					YamailPackage.YAMAIL_LIBRARY__SETTINGS);
 		}
 		return settings;
 	}
@@ -100,10 +107,12 @@ public class YamailLibraryImpl extends MinimalEObjectImpl.Container implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_LIBRARY__ACCOUNTS:
-				return ((InternalEList<?>)getAccounts()).basicRemove(otherEnd, msgs);
-			case YamailPackage.YAMAIL_LIBRARY__SETTINGS:
-				return ((InternalEList<?>)getSettings()).basicRemove(otherEnd, msgs);
+		case YamailPackage.YAMAIL_LIBRARY__ACCOUNTS:
+			return ((InternalEList<?>) getAccounts()).basicRemove(otherEnd,
+					msgs);
+		case YamailPackage.YAMAIL_LIBRARY__SETTINGS:
+			return ((InternalEList<?>) getSettings()).basicRemove(otherEnd,
+					msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -115,11 +124,13 @@ public class YamailLibraryImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_LIBRARY__ACCOUNTS:
-				return getAccounts();
-			case YamailPackage.YAMAIL_LIBRARY__SETTINGS:
-				if (coreType) return getSettings();
-				else return getSettings().map();
+		case YamailPackage.YAMAIL_LIBRARY__ACCOUNTS:
+			return getAccounts();
+		case YamailPackage.YAMAIL_LIBRARY__SETTINGS:
+			if (coreType)
+				return getSettings();
+			else
+				return getSettings().map();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -132,13 +143,14 @@ public class YamailLibraryImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_LIBRARY__ACCOUNTS:
-				getAccounts().clear();
-				getAccounts().addAll((Collection<? extends YamailAccount>)newValue);
-				return;
-			case YamailPackage.YAMAIL_LIBRARY__SETTINGS:
-				((EStructuralFeature.Setting)getSettings()).set(newValue);
-				return;
+		case YamailPackage.YAMAIL_LIBRARY__ACCOUNTS:
+			getAccounts().clear();
+			getAccounts()
+					.addAll((Collection<? extends YamailAccount>) newValue);
+			return;
+		case YamailPackage.YAMAIL_LIBRARY__SETTINGS:
+			((EStructuralFeature.Setting) getSettings()).set(newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -150,12 +162,12 @@ public class YamailLibraryImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_LIBRARY__ACCOUNTS:
-				getAccounts().clear();
-				return;
-			case YamailPackage.YAMAIL_LIBRARY__SETTINGS:
-				getSettings().clear();
-				return;
+		case YamailPackage.YAMAIL_LIBRARY__ACCOUNTS:
+			getAccounts().clear();
+			return;
+		case YamailPackage.YAMAIL_LIBRARY__SETTINGS:
+			getSettings().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -167,10 +179,10 @@ public class YamailLibraryImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_LIBRARY__ACCOUNTS:
-				return accounts != null && !accounts.isEmpty();
-			case YamailPackage.YAMAIL_LIBRARY__SETTINGS:
-				return settings != null && !settings.isEmpty();
+		case YamailPackage.YAMAIL_LIBRARY__ACCOUNTS:
+			return accounts != null && !accounts.isEmpty();
+		case YamailPackage.YAMAIL_LIBRARY__SETTINGS:
+			return settings != null && !settings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

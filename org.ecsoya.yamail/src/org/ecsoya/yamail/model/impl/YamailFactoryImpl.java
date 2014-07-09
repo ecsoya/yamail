@@ -10,11 +10,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.ecsoya.yamail.model.*;
 import org.ecsoya.yamail.model.FolderType;
 import org.ecsoya.yamail.model.IncomingServer;
 import org.ecsoya.yamail.model.MailProtocol;
 import org.ecsoya.yamail.model.OutgoingServer;
+import org.ecsoya.yamail.model.Priority;
 import org.ecsoya.yamail.model.Yamail;
 import org.ecsoya.yamail.model.YamailAccount;
 import org.ecsoya.yamail.model.YamailAttachment;
@@ -37,12 +37,12 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	 */
 	public static YamailFactory init() {
 		try {
-			YamailFactory theYamailFactory = (YamailFactory)EPackage.Registry.INSTANCE.getEFactory(YamailPackage.eNS_URI);
+			YamailFactory theYamailFactory = (YamailFactory) EPackage.Registry.INSTANCE
+					.getEFactory(YamailPackage.eNS_URI);
 			if (theYamailFactory != null) {
 				return theYamailFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new YamailFactoryImpl();
@@ -65,15 +65,23 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case YamailPackage.YAMAIL_LIBRARY: return createYamailLibrary();
-			case YamailPackage.YAMAIL_ACCOUNT: return createYamailAccount();
-			case YamailPackage.INCOMING_SERVER: return createIncomingServer();
-			case YamailPackage.OUTGOING_SERVER: return createOutgoingServer();
-			case YamailPackage.YAMAIL_FOLDER: return createYamailFolder();
-			case YamailPackage.YAMAIL: return createYamail();
-			case YamailPackage.YAMAIL_ATTACHMENT: return createYamailAttachment();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case YamailPackage.YAMAIL_LIBRARY:
+			return createYamailLibrary();
+		case YamailPackage.YAMAIL_ACCOUNT:
+			return createYamailAccount();
+		case YamailPackage.INCOMING_SERVER:
+			return createIncomingServer();
+		case YamailPackage.OUTGOING_SERVER:
+			return createOutgoingServer();
+		case YamailPackage.YAMAIL_FOLDER:
+			return createYamailFolder();
+		case YamailPackage.YAMAIL:
+			return createYamail();
+		case YamailPackage.YAMAIL_ATTACHMENT:
+			return createYamailAttachment();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName()
+					+ "' is not a valid classifier");
 		}
 	}
 
@@ -84,18 +92,19 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case YamailPackage.MAIL_PROTOCOL:
-				return createMailProtocolFromString(eDataType, initialValue);
-			case YamailPackage.FOLDER_TYPE:
-				return createFolderTypeFromString(eDataType, initialValue);
-			case YamailPackage.PRIORITY:
-				return createPriorityFromString(eDataType, initialValue);
-			case YamailPackage.DATE:
-				return createDateFromString(eDataType, initialValue);
-			case YamailPackage.INPUT_STREAM:
-				return createInputStreamFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case YamailPackage.MAIL_PROTOCOL:
+			return createMailProtocolFromString(eDataType, initialValue);
+		case YamailPackage.FOLDER_TYPE:
+			return createFolderTypeFromString(eDataType, initialValue);
+		case YamailPackage.PRIORITY:
+			return createPriorityFromString(eDataType, initialValue);
+		case YamailPackage.DATE:
+			return createDateFromString(eDataType, initialValue);
+		case YamailPackage.INPUT_STREAM:
+			return createInputStreamFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '"
+					+ eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -106,18 +115,19 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case YamailPackage.MAIL_PROTOCOL:
-				return convertMailProtocolToString(eDataType, instanceValue);
-			case YamailPackage.FOLDER_TYPE:
-				return convertFolderTypeToString(eDataType, instanceValue);
-			case YamailPackage.PRIORITY:
-				return convertPriorityToString(eDataType, instanceValue);
-			case YamailPackage.DATE:
-				return convertDateToString(eDataType, instanceValue);
-			case YamailPackage.INPUT_STREAM:
-				return convertInputStreamToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case YamailPackage.MAIL_PROTOCOL:
+			return convertMailProtocolToString(eDataType, instanceValue);
+		case YamailPackage.FOLDER_TYPE:
+			return convertFolderTypeToString(eDataType, instanceValue);
+		case YamailPackage.PRIORITY:
+			return convertPriorityToString(eDataType, instanceValue);
+		case YamailPackage.DATE:
+			return convertDateToString(eDataType, instanceValue);
+		case YamailPackage.INPUT_STREAM:
+			return convertInputStreamToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '"
+					+ eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -125,6 +135,7 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public YamailLibrary createYamailLibrary() {
 		YamailLibraryImpl yamailLibrary = new YamailLibraryImpl();
 		return yamailLibrary;
@@ -134,6 +145,7 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public YamailAccount createYamailAccount() {
 		YamailAccountImpl yamailAccount = new YamailAccountImpl();
 		return yamailAccount;
@@ -143,6 +155,7 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Yamail createYamail() {
 		YamailImpl yamail = new YamailImpl();
 		return yamail;
@@ -152,6 +165,7 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public YamailAttachment createYamailAttachment() {
 		YamailAttachmentImpl yamailAttachment = new YamailAttachmentImpl();
 		return yamailAttachment;
@@ -161,6 +175,7 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IncomingServer createIncomingServer() {
 		IncomingServerImpl incomingServer = new IncomingServerImpl();
 		return incomingServer;
@@ -170,6 +185,7 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public OutgoingServer createOutgoingServer() {
 		OutgoingServerImpl outgoingServer = new OutgoingServerImpl();
 		return outgoingServer;
@@ -179,6 +195,7 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public YamailFolder createYamailFolder() {
 		YamailFolderImpl yamailFolder = new YamailFolderImpl();
 		return yamailFolder;
@@ -191,7 +208,10 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	public MailProtocol createMailProtocolFromString(EDataType eDataType,
 			String initialValue) {
 		MailProtocol result = MailProtocol.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue
+					+ "' is not a valid enumerator of '" + eDataType.getName()
+					+ "'");
 		return result;
 	}
 
@@ -211,7 +231,10 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	public FolderType createFolderTypeFromString(EDataType eDataType,
 			String initialValue) {
 		FolderType result = FolderType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue
+					+ "' is not a valid enumerator of '" + eDataType.getName()
+					+ "'");
 		return result;
 	}
 
@@ -225,22 +248,25 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Priority createPriorityFromString(EDataType eDataType, String initialValue) {
+	public Priority createPriorityFromString(EDataType eDataType,
+			String initialValue) {
 		Priority result = Priority.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue
+					+ "' is not a valid enumerator of '" + eDataType.getName()
+					+ "'");
 		return result;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertPriorityToString(EDataType eDataType, Object instanceValue) {
+	public String convertPriorityToString(EDataType eDataType,
+			Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -249,7 +275,7 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	 * @generated
 	 */
 	public Date createDateFromString(EDataType eDataType, String initialValue) {
-		return (Date)super.createFromString(eDataType, initialValue);
+		return (Date) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -266,7 +292,7 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	 */
 	public InputStream createInputStreamFromString(EDataType eDataType,
 			String initialValue) {
-		return (InputStream)super.createFromString(eDataType, initialValue);
+		return (InputStream) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -282,8 +308,9 @@ public class YamailFactoryImpl extends EFactoryImpl implements YamailFactory {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public YamailPackage getYamailPackage() {
-		return (YamailPackage)getEPackage();
+		return (YamailPackage) getEPackage();
 	}
 
 	/**

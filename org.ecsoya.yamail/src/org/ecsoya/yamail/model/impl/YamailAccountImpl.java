@@ -27,24 +27,15 @@ import org.ecsoya.yamail.model.YamailPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getName <em>Name
- * </em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getIncomingServer
- * <em>Incoming Server</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getOutgoingServer
- * <em>Outgoing Server</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getAddress <em>
- * Address</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getPassword <em>
- * Password</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getFolders <em>
- * Folders</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getDataPath <em>
- * Data Path</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#isCustomDataPath
- * <em>Custom Data Path</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#isDetectServer <em>
- * Detect Server</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getIncomingServer <em>Incoming Server</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getOutgoingServer <em>Outgoing Server</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getAddress <em>Address</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getPassword <em>Password</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getFolders <em>Folders</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#getDataPath <em>Data Path</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#isCustomDataPath <em>Custom Data Path</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailAccountImpl#isDetectServer <em>Detect Server</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,7 +46,6 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -65,7 +55,6 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -73,10 +62,9 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getIncomingServer()
-	 * <em>Incoming Server</em>}' containment reference. <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIncomingServer() <em>Incoming Server</em>}' containment reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getIncomingServer()
 	 * @generated
 	 * @ordered
@@ -84,10 +72,9 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	protected IncomingServer incomingServer;
 
 	/**
-	 * The cached value of the '{@link #getOutgoingServer()
-	 * <em>Outgoing Server</em>}' containment reference. <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOutgoingServer() <em>Outgoing Server</em>}' containment reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getOutgoingServer()
 	 * @generated
 	 * @ordered
@@ -95,9 +82,8 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	protected OutgoingServer outgoingServer;
 
 	/**
-	 * The default value of the '{@link #getAddress() <em>Address</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getAddress()
 	 * @generated
 	 * @ordered
@@ -105,9 +91,8 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	protected static final String ADDRESS_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getAddress() <em>Address</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getAddress() <em>Address</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getAddress()
 	 * @generated
 	 * @ordered
@@ -115,9 +100,8 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	protected String address = ADDRESS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPassword() <em>Password</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getPassword() <em>Password</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getPassword()
 	 * @generated
 	 * @ordered
@@ -125,9 +109,8 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	protected static final String PASSWORD_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getPassword() <em>Password</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getPassword() <em>Password</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getPassword()
 	 * @generated
 	 * @ordered
@@ -135,9 +118,8 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	protected String password = PASSWORD_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getFolders() <em>Folders</em>}'
-	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getFolders() <em>Folders</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getFolders()
 	 * @generated
 	 * @ordered
@@ -145,9 +127,8 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	protected EList<YamailFolder> folders;
 
 	/**
-	 * The default value of the '{@link #getDataPath() <em>Data Path</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getDataPath() <em>Data Path</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getDataPath()
 	 * @generated
 	 * @ordered
@@ -155,9 +136,8 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	protected static final String DATA_PATH_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDataPath() <em>Data Path</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getDataPath() <em>Data Path</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getDataPath()
 	 * @generated
 	 * @ordered
@@ -165,10 +145,9 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	protected String dataPath = DATA_PATH_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isCustomDataPath()
-	 * <em>Custom Data Path</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #isCustomDataPath() <em>Custom Data Path</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #isCustomDataPath()
 	 * @generated
 	 * @ordered
@@ -176,10 +155,9 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	protected static final boolean CUSTOM_DATA_PATH_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isCustomDataPath()
-	 * <em>Custom Data Path</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #isCustomDataPath() <em>Custom Data Path</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #isCustomDataPath()
 	 * @generated
 	 * @ordered
@@ -187,10 +165,9 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	protected boolean customDataPath = CUSTOM_DATA_PATH_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isDetectServer()
-	 * <em>Detect Server</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #isDetectServer() <em>Detect Server</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #isDetectServer()
 	 * @generated
 	 * @ordered
@@ -198,9 +175,8 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	protected static final boolean DETECT_SERVER_EDEFAULT = true;
 
 	/**
-	 * The cached value of the '{@link #isDetectServer() <em>Detect Server</em>}
-	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #isDetectServer() <em>Detect Server</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isDetectServer()
 	 * @generated
 	 * @ordered
@@ -209,7 +185,6 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected YamailAccountImpl() {
@@ -218,7 +193,6 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -228,18 +202,18 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -250,16 +224,15 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public IncomingServer getIncomingServer() {
 		return incomingServer;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetIncomingServer(
@@ -281,9 +254,9 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIncomingServer(IncomingServer newIncomingServer) {
 		if (newIncomingServer != incomingServer) {
 			NotificationChain msgs = null;
@@ -312,16 +285,15 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public OutgoingServer getOutgoingServer() {
 		return outgoingServer;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetOutgoingServer(
@@ -343,9 +315,9 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public void setOutgoingServer(OutgoingServer newOutgoingServer) {
 		if (newOutgoingServer != outgoingServer) {
 			NotificationChain msgs = null;
@@ -374,18 +346,18 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public String getAddress() {
 		return address;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public void setAddress(String newAddress) {
 		String oldAddress = address;
 		address = newAddress;
@@ -396,18 +368,18 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public String getPassword() {
 		return password;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPassword(String newPassword) {
 		String oldPassword = password;
 		password = newPassword;
@@ -419,9 +391,9 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<YamailFolder> getFolders() {
 		if (folders == null) {
 			folders = new EObjectContainmentEList<YamailFolder>(
@@ -433,18 +405,18 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public String getDataPath() {
 		return dataPath;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public void setDataPath(String newDataPath) {
 		String oldDataPath = dataPath;
 		dataPath = newDataPath;
@@ -456,18 +428,18 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isCustomDataPath() {
 		return customDataPath;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public void setCustomDataPath(boolean newCustomDataPath) {
 		boolean oldCustomDataPath = customDataPath;
 		customDataPath = newCustomDataPath;
@@ -479,18 +451,18 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isDetectServer() {
 		return detectServer;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@Override
 	public void setDetectServer(boolean newDetectServer) {
 		boolean oldDetectServer = detectServer;
 		detectServer = newDetectServer;
@@ -505,6 +477,7 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public YamailFolder getFolder(Object nameOrType) {
 		EList<YamailFolder> folders = getFolders();
 		if (nameOrType instanceof FolderType) {
@@ -526,7 +499,6 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -546,7 +518,6 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -576,7 +547,6 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -617,7 +587,6 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -656,7 +625,6 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -690,7 +658,6 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -705,7 +672,6 @@ public class YamailAccountImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

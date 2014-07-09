@@ -3,8 +3,9 @@ package org.ecsoya.yamail.ui.dialogs;
 import java.net.URL;
 
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.xwt.IConstants;
 import org.ecsoya.yamail.model.YamailAccount;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 
 public class AccountBasicPage extends XWTWizardPage {
 
@@ -20,8 +21,11 @@ public class AccountBasicPage extends XWTWizardPage {
 
 	@Override
 	protected URL getContentURL() {
-		return AccountBasicPage.class.getResource(AccountBasicPage.class
-				.getSimpleName() + IConstants.XWT_EXTENSION_SUFFIX);
+		Bundle bundle = FrameworkUtil.getBundle(getClass());
+		if (bundle != null) {
+			return bundle.getEntry("xwt/dialogs/AccountBasicPage.xwt");
+		}
+		return null;
 	}
 
 }

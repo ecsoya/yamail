@@ -148,20 +148,16 @@ public enum FolderType implements Enumerator {
 	 * 
 	 * @generated
 	 */
-	private static final FolderType[] VALUES_ARRAY = new FolderType[] {
-			INBOX,
-			SENT,
-			DRAFT,
-			TRASH,
-			SPAM,
-		};
+	private static final FolderType[] VALUES_ARRAY = new FolderType[] { INBOX,
+			SENT, DRAFT, TRASH, SPAM, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Folder Type</b></em>' enumerators.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<FolderType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<FolderType> VALUES = Collections
+			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Folder Type</b></em>' literal with the specified literal value.
@@ -200,11 +196,16 @@ public enum FolderType implements Enumerator {
 	 */
 	public static FolderType get(int value) {
 		switch (value) {
-			case INBOX_VALUE: return INBOX;
-			case SENT_VALUE: return SENT;
-			case DRAFT_VALUE: return DRAFT;
-			case TRASH_VALUE: return TRASH;
-			case SPAM_VALUE: return SPAM;
+		case INBOX_VALUE:
+			return INBOX;
+		case SENT_VALUE:
+			return SENT;
+		case DRAFT_VALUE:
+			return DRAFT;
+		case TRASH_VALUE:
+			return TRASH;
+		case SPAM_VALUE:
+			return SPAM;
 		}
 		return null;
 	}
@@ -243,24 +244,27 @@ public enum FolderType implements Enumerator {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**

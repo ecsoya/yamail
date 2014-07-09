@@ -119,6 +119,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -127,20 +128,24 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.YAMAIL_FOLDER__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL_FOLDER__NAME, oldName, name));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Yamail> getMails() {
 		if (mails == null) {
-			mails = new EObjectContainmentEList<Yamail>(Yamail.class, this, YamailPackage.YAMAIL_FOLDER__MAILS);
+			mails = new EObjectContainmentEList<Yamail>(Yamail.class, this,
+					YamailPackage.YAMAIL_FOLDER__MAILS);
 		}
 		return mails;
 	}
@@ -149,6 +154,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isSystem() {
 		return system;
 	}
@@ -157,17 +163,20 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSystem(boolean newSystem) {
 		boolean oldSystem = system;
 		system = newSystem;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.YAMAIL_FOLDER__SYSTEM, oldSystem, system));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL_FOLDER__SYSTEM, oldSystem, system));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FolderType getType() {
 		return type;
 	}
@@ -176,11 +185,13 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(FolderType newType) {
 		FolderType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamailPackage.YAMAIL_FOLDER__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					YamailPackage.YAMAIL_FOLDER__TYPE, oldType, type));
 	}
 
 	/**
@@ -191,8 +202,8 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_FOLDER__MAILS:
-				return ((InternalEList<?>)getMails()).basicRemove(otherEnd, msgs);
+		case YamailPackage.YAMAIL_FOLDER__MAILS:
+			return ((InternalEList<?>) getMails()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -204,14 +215,14 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_FOLDER__NAME:
-				return getName();
-			case YamailPackage.YAMAIL_FOLDER__MAILS:
-				return getMails();
-			case YamailPackage.YAMAIL_FOLDER__SYSTEM:
-				return isSystem();
-			case YamailPackage.YAMAIL_FOLDER__TYPE:
-				return getType();
+		case YamailPackage.YAMAIL_FOLDER__NAME:
+			return getName();
+		case YamailPackage.YAMAIL_FOLDER__MAILS:
+			return getMails();
+		case YamailPackage.YAMAIL_FOLDER__SYSTEM:
+			return isSystem();
+		case YamailPackage.YAMAIL_FOLDER__TYPE:
+			return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -224,19 +235,19 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_FOLDER__NAME:
-				setName((String)newValue);
-				return;
-			case YamailPackage.YAMAIL_FOLDER__MAILS:
-				getMails().clear();
-				getMails().addAll((Collection<? extends Yamail>)newValue);
-				return;
-			case YamailPackage.YAMAIL_FOLDER__SYSTEM:
-				setSystem((Boolean)newValue);
-				return;
-			case YamailPackage.YAMAIL_FOLDER__TYPE:
-				setType((FolderType)newValue);
-				return;
+		case YamailPackage.YAMAIL_FOLDER__NAME:
+			setName((String) newValue);
+			return;
+		case YamailPackage.YAMAIL_FOLDER__MAILS:
+			getMails().clear();
+			getMails().addAll((Collection<? extends Yamail>) newValue);
+			return;
+		case YamailPackage.YAMAIL_FOLDER__SYSTEM:
+			setSystem((Boolean) newValue);
+			return;
+		case YamailPackage.YAMAIL_FOLDER__TYPE:
+			setType((FolderType) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -248,18 +259,18 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_FOLDER__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case YamailPackage.YAMAIL_FOLDER__MAILS:
-				getMails().clear();
-				return;
-			case YamailPackage.YAMAIL_FOLDER__SYSTEM:
-				setSystem(SYSTEM_EDEFAULT);
-				return;
-			case YamailPackage.YAMAIL_FOLDER__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
+		case YamailPackage.YAMAIL_FOLDER__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case YamailPackage.YAMAIL_FOLDER__MAILS:
+			getMails().clear();
+			return;
+		case YamailPackage.YAMAIL_FOLDER__SYSTEM:
+			setSystem(SYSTEM_EDEFAULT);
+			return;
+		case YamailPackage.YAMAIL_FOLDER__TYPE:
+			setType(TYPE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -271,14 +282,15 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case YamailPackage.YAMAIL_FOLDER__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case YamailPackage.YAMAIL_FOLDER__MAILS:
-				return mails != null && !mails.isEmpty();
-			case YamailPackage.YAMAIL_FOLDER__SYSTEM:
-				return system != SYSTEM_EDEFAULT;
-			case YamailPackage.YAMAIL_FOLDER__TYPE:
-				return type != TYPE_EDEFAULT;
+		case YamailPackage.YAMAIL_FOLDER__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
+					.equals(name);
+		case YamailPackage.YAMAIL_FOLDER__MAILS:
+			return mails != null && !mails.isEmpty();
+		case YamailPackage.YAMAIL_FOLDER__SYSTEM:
+			return system != SYSTEM_EDEFAULT;
+		case YamailPackage.YAMAIL_FOLDER__TYPE:
+			return type != TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -289,7 +301,8 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");

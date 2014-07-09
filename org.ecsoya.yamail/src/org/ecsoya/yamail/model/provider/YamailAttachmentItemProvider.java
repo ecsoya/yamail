@@ -6,28 +6,37 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.ecsoya.yamail.model.OutgoingServer;
+import org.ecsoya.yamail.model.YamailAttachment;
 import org.ecsoya.yamail.model.YamailPackage;
 
 /**
  * This is the item provider adapter for a
- * {@link org.ecsoya.yamail.model.OutgoingServer} object. <!-- begin-user-doc
+ * {@link org.ecsoya.yamail.model.YamailAttachment} object. <!-- begin-user-doc
  * --> <!-- end-user-doc -->
  * 
  * @generated
  */
-public class OutgoingServerItemProvider extends YamailServerItemProvider {
+public class YamailAttachmentItemProvider extends ItemProviderAdapter implements
+		IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public OutgoingServerItemProvider(AdapterFactory adapterFactory) {
+	public YamailAttachmentItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -42,74 +51,74 @@ public class OutgoingServerItemProvider extends YamailServerItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUseTSLPropertyDescriptor(object);
-			addFromAddressPropertyDescriptor(object);
-			addEmailPrefixPropertyDescriptor(object);
+			addFileNamePropertyDescriptor(object);
+			addContentTypePropertyDescriptor(object);
+			addContentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Use TSL feature. <!--
+	 * This adds a property descriptor for the File Name feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected void addUseTSLPropertyDescriptor(Object object) {
+	protected void addFileNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_OutgoingServer_useTSL_feature"),
+				getString("_UI_YamailAttachment_fileName_feature"),
 				getString("_UI_PropertyDescriptor_description",
-						"_UI_OutgoingServer_useTSL_feature",
-						"_UI_OutgoingServer_type"),
-				YamailPackage.Literals.OUTGOING_SERVER__USE_TSL, true, false,
-				false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the From Address feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addFromAddressPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_OutgoingServer_fromAddress_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_OutgoingServer_fromAddress_feature",
-						"_UI_OutgoingServer_type"),
-				YamailPackage.Literals.OUTGOING_SERVER__FROM_ADDRESS, true,
+						"_UI_YamailAttachment_fileName_feature",
+						"_UI_YamailAttachment_type"),
+				YamailPackage.Literals.YAMAIL_ATTACHMENT__FILE_NAME, true,
 				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Email Prefix feature. <!--
+	 * This adds a property descriptor for the Content Type feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected void addEmailPrefixPropertyDescriptor(Object object) {
+	protected void addContentTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_OutgoingServer_emailPrefix_feature"),
+				getString("_UI_YamailAttachment_contentType_feature"),
 				getString("_UI_PropertyDescriptor_description",
-						"_UI_OutgoingServer_emailPrefix_feature",
-						"_UI_OutgoingServer_type"),
-				YamailPackage.Literals.OUTGOING_SERVER__EMAIL_PREFIX, true,
+						"_UI_YamailAttachment_contentType_feature",
+						"_UI_YamailAttachment_type"),
+				YamailPackage.Literals.YAMAIL_ATTACHMENT__CONTENT_TYPE, true,
 				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
 	}
 
 	/**
-	 * This returns OutgoingServer.gif. <!-- begin-user-doc --> <!--
+	 * This adds a property descriptor for the Content feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addContentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_YamailAttachment_content_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_YamailAttachment_content_feature",
+						"_UI_YamailAttachment_type"),
+				YamailPackage.Literals.YAMAIL_ATTACHMENT__CONTENT, true, false,
+				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This returns YamailAttachment.gif. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
@@ -117,7 +126,7 @@ public class OutgoingServerItemProvider extends YamailServerItemProvider {
 	@Override
 	public Object getImage(Object object) {
 		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/OutgoingServer"));
+				getResourceLocator().getImage("full/obj16/YamailAttachment"));
 	}
 
 	/**
@@ -138,9 +147,9 @@ public class OutgoingServerItemProvider extends YamailServerItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((OutgoingServer) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_OutgoingServer_type")
-				: getString("_UI_OutgoingServer_type") + " " + label;
+		String label = ((YamailAttachment) object).getFileName();
+		return label == null || label.length() == 0 ? getString("_UI_YamailAttachment_type")
+				: getString("_UI_YamailAttachment_type") + " " + label;
 	}
 
 	/**
@@ -155,15 +164,26 @@ public class OutgoingServerItemProvider extends YamailServerItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(OutgoingServer.class)) {
-		case YamailPackage.OUTGOING_SERVER__USE_TSL:
-		case YamailPackage.OUTGOING_SERVER__FROM_ADDRESS:
-		case YamailPackage.OUTGOING_SERVER__EMAIL_PREFIX:
+		switch (notification.getFeatureID(YamailAttachment.class)) {
+		case YamailPackage.YAMAIL_ATTACHMENT__FILE_NAME:
+		case YamailPackage.YAMAIL_ATTACHMENT__CONTENT_TYPE:
+		case YamailPackage.YAMAIL_ATTACHMENT__CONTENT:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return YamailEditPlugin.INSTANCE;
 	}
 
 }

@@ -68,57 +68,68 @@ public class YamailSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case YamailPackage.YAMAIL_LIBRARY: {
-				YamailLibrary yamailLibrary = (YamailLibrary)theEObject;
-				T result = caseYamailLibrary(yamailLibrary);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case YamailPackage.YAMAIL_ACCOUNT: {
-				YamailAccount yamailAccount = (YamailAccount)theEObject;
-				T result = caseYamailAccount(yamailAccount);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case YamailPackage.YAMAIL_SERVER: {
-				YamailServer yamailServer = (YamailServer)theEObject;
-				T result = caseYamailServer(yamailServer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case YamailPackage.INCOMING_SERVER: {
-				IncomingServer incomingServer = (IncomingServer)theEObject;
-				T result = caseIncomingServer(incomingServer);
-				if (result == null) result = caseYamailServer(incomingServer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case YamailPackage.OUTGOING_SERVER: {
-				OutgoingServer outgoingServer = (OutgoingServer)theEObject;
-				T result = caseOutgoingServer(outgoingServer);
-				if (result == null) result = caseYamailServer(outgoingServer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case YamailPackage.YAMAIL_FOLDER: {
-				YamailFolder yamailFolder = (YamailFolder)theEObject;
-				T result = caseYamailFolder(yamailFolder);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case YamailPackage.YAMAIL: {
-				Yamail yamail = (Yamail)theEObject;
-				T result = caseYamail(yamail);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case YamailPackage.YAMAIL_ATTACHMENT: {
-				YamailAttachment yamailAttachment = (YamailAttachment)theEObject;
-				T result = caseYamailAttachment(yamailAttachment);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case YamailPackage.YAMAIL_LIBRARY: {
+			YamailLibrary yamailLibrary = (YamailLibrary) theEObject;
+			T result = caseYamailLibrary(yamailLibrary);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamailPackage.YAMAIL_ACCOUNT: {
+			YamailAccount yamailAccount = (YamailAccount) theEObject;
+			T result = caseYamailAccount(yamailAccount);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamailPackage.YAMAIL_SERVER: {
+			YamailServer yamailServer = (YamailServer) theEObject;
+			T result = caseYamailServer(yamailServer);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamailPackage.INCOMING_SERVER: {
+			IncomingServer incomingServer = (IncomingServer) theEObject;
+			T result = caseIncomingServer(incomingServer);
+			if (result == null)
+				result = caseYamailServer(incomingServer);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamailPackage.OUTGOING_SERVER: {
+			OutgoingServer outgoingServer = (OutgoingServer) theEObject;
+			T result = caseOutgoingServer(outgoingServer);
+			if (result == null)
+				result = caseYamailServer(outgoingServer);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamailPackage.YAMAIL_FOLDER: {
+			YamailFolder yamailFolder = (YamailFolder) theEObject;
+			T result = caseYamailFolder(yamailFolder);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamailPackage.YAMAIL: {
+			Yamail yamail = (Yamail) theEObject;
+			T result = caseYamail(yamail);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamailPackage.YAMAIL_ATTACHMENT: {
+			YamailAttachment yamailAttachment = (YamailAttachment) theEObject;
+			T result = caseYamailAttachment(yamailAttachment);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 
