@@ -2,7 +2,6 @@ package org.ecsoya.yamail.ui;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.dialogs.ProgressIndicator;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.JFaceColors;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.util.Util;
@@ -33,6 +32,7 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
+import org.ecsoya.yamail.ui.resources.ImageFactory;
 
 /**
  * A StatusLine control is a SWT Composite with a horizontal layout which hosts
@@ -102,15 +102,7 @@ public class StatusLine extends Composite implements IProgressMonitor {
 	/** the cancle button */
 	protected ToolItem fCancelButton;
 
-	/** stop image descriptor */
-	protected static ImageDescriptor fgStopImage = ImageDescriptor
-			.createFromFile(StatusLine.class, "images/stop.gif");//$NON-NLS-1$
-
 	private MenuItem copyMenuItem;
-	static {
-		JFaceResources.getImageRegistry().put(
-				"org.eclipse.jface.parts.StatusLine.stopImage", fgStopImage);//$NON-NLS-1$
-	}
 
 	/**
 	 * Layout the contribution item controls on the status line.
@@ -174,8 +166,8 @@ public class StatusLine extends Composite implements IProgressMonitor {
 			// Make sure cancel button and progress bar are before
 			// contributions.
 			fMessageLabel.moveAbove(null);
-			fToolBar.moveBelow(fMessageLabel);
-			fProgressBarComposite.moveBelow(fToolBar);
+			fProgressBarComposite.moveBelow(fMessageLabel);
+			fToolBar.moveBelow(fProgressBarComposite);
 
 			Rectangle rect = composite.getClientArea();
 			Control[] children = composite.getChildren();
@@ -280,7 +272,7 @@ public class StatusLine extends Composite implements IProgressMonitor {
 
 		setLayout(new StatusLineLayout());
 
-		fMessageLabel = new CLabel(this, SWT.NONE);// SWT.SHADOW_IN);
+		fMessageLabel = new CLabel(this, SWT.RIGHT);// SWT.SHADOW_IN);
 
 		// this would need extra work to make this accessible
 		// from the workbench command framework.
@@ -302,30 +294,6 @@ public class StatusLine extends Composite implements IProgressMonitor {
 			}
 		});
 
-		fProgressIsVisible = false;
-		fCancelEnabled = false;
-
-		fToolBar = new ToolBar(this, SWT.FLAT);
-		fCancelButton = new ToolItem(fToolBar, SWT.PUSH);
-		fCancelButton.setImage(fgStopImage.createImage());
-		fCancelButton.setToolTipText(JFaceResources
-				.getString("Cancel_Current_Operation")); //$NON-NLS-1$
-		fCancelButton.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				setCanceled(true);
-			}
-		});
-		fCancelButton.addDisposeListener(new DisposeListener() {
-			@Override
-			public void widgetDisposed(DisposeEvent e) {
-				Image i = fCancelButton.getImage();
-				if ((i != null) && (!i.isDisposed())) {
-					i.dispose();
-				}
-			}
-		});
-
 		// We create a composite to create the progress bar in
 		// so that it can be centered. See bug #32331
 		fProgressBarComposite = new Composite(this, SWT.NONE);
@@ -338,6 +306,24 @@ public class StatusLine extends Composite implements IProgressMonitor {
 		fProgressBar = new ProgressIndicator(fProgressBarComposite);
 		fProgressBar.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL
 				| GridData.GRAB_VERTICAL));
+
+		fToolBar = new ToolBar(this, SWT.FLAT);
+		StatusLineLayoutData layoutData = new StatusLineLayoutData();
+		layoutData.heightHint = 26;
+		fToolBar.setLayoutData(layoutData);
+		fCancelButton = new ToolItem(fToolBar, SWT.NONE);
+		fCancelButton.setImage(ImageFactory
+				.getImage("icons/full/ctools/16/stop.gif"));
+		fCancelButton.setToolTipText(JFaceResources
+				.getString("Cancel_Current_Operation")); //$NON-NLS-1$
+		fCancelButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				setCanceled(true);
+			}
+		});
+		fCancelButton.setEnabled(fCancelEnabled);
+		fToolBar.setVisible(fCancelButtonIsVisible);
 
 		fStopButtonCursor = new Cursor(getDisplay(), SWT.CURSOR_ARROW);
 	}

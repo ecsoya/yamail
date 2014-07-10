@@ -75,6 +75,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//YamailFolder/mails"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailFolder/system"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//YamailFolder/type"/>
+      <genOperations ecoreOperation="model.ecore#//YamailFolder/getMailById">
+        <genParameters ecoreParameter="model.ecore#//YamailFolder/getMailById/id"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//Yamail">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Yamail/message"/>

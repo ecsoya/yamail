@@ -41,35 +41,23 @@ import org.ecsoya.yamail.utils.MailUtils;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getMessage <em>Message
- * </em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#isRead <em>Read</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getFrom <em>From</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getRecipients <em>
- * Recipients</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getSubject <em>Subject
- * </em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getContentType <em>Content
- * Type</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getReceivedDate <em>
- * Received Date</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getSentDate <em>Sent Date
- * </em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getContent <em>Content
- * </em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getHeaders <em>Headers
- * </em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getSize <em>Size</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getAttachments <em>
- * Attachments</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getId <em>Id</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getPriority <em>Priority
- * </em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getLabel <em>Label</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getLocalFile <em>Local
- * File</em>}</li>
- * <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getSpamScore <em>Spam
- * Score</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getMessage <em>Message</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#isRead <em>Read</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getFrom <em>From</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getRecipients <em>Recipients</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getSubject <em>Subject</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getContentType <em>Content Type</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getReceivedDate <em>Received Date</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getSentDate <em>Sent Date</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getHeaders <em>Headers</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getSize <em>Size</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getAttachments <em>Attachments</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getPriority <em>Priority</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getLocalFile <em>Local File</em>}</li>
+ *   <li>{@link org.ecsoya.yamail.model.impl.YamailImpl#getSpamScore <em>Spam Score</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,9 +65,8 @@ import org.ecsoya.yamail.utils.MailUtils;
  */
 public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	/**
-	 * The default value of the '{@link #getMessage() <em>Message</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -87,9 +74,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected static final Message MESSAGE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getMessage() <em>Message</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -99,7 +85,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	/**
 	 * The default value of the '{@link #isRead() <em>Read</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #isRead()
 	 * @generated
 	 * @ordered
@@ -117,9 +102,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected boolean read = READ_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getFrom() <em>From</em>}' attribute
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getFrom() <em>From</em>}' attribute list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getFrom()
 	 * @generated
 	 * @ordered
@@ -127,9 +111,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected EList<String> from;
 
 	/**
-	 * The cached value of the '{@link #getRecipients() <em>Recipients</em>}'
-	 * attribute list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getRecipients() <em>Recipients</em>}' attribute list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getRecipients()
 	 * @generated
 	 * @ordered
@@ -137,9 +120,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected EList<String> recipients;
 
 	/**
-	 * The default value of the '{@link #getSubject() <em>Subject</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getSubject() <em>Subject</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSubject()
 	 * @generated
 	 * @ordered
@@ -147,9 +129,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected static final String SUBJECT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getSubject() <em>Subject</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getSubject() <em>Subject</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSubject()
 	 * @generated
 	 * @ordered
@@ -157,9 +138,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected String subject = SUBJECT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContentType() <em>Content Type</em>}
-	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getContentType() <em>Content Type</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getContentType()
 	 * @generated
 	 * @ordered
@@ -167,9 +147,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected static final String CONTENT_TYPE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getContentType() <em>Content Type</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getContentType() <em>Content Type</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getContentType()
 	 * @generated
 	 * @ordered
@@ -177,10 +156,9 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected String contentType = CONTENT_TYPE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getReceivedDate()
-	 * <em>Received Date</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #getReceivedDate() <em>Received Date</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getReceivedDate()
 	 * @generated
 	 * @ordered
@@ -188,10 +166,9 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected static final Date RECEIVED_DATE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getReceivedDate()
-	 * <em>Received Date</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getReceivedDate() <em>Received Date</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getReceivedDate()
 	 * @generated
 	 * @ordered
@@ -199,9 +176,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected Date receivedDate = RECEIVED_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSentDate() <em>Sent Date</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getSentDate() <em>Sent Date</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSentDate()
 	 * @generated
 	 * @ordered
@@ -209,9 +185,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected static final Date SENT_DATE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getSentDate() <em>Sent Date</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getSentDate() <em>Sent Date</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSentDate()
 	 * @generated
 	 * @ordered
@@ -219,9 +194,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected Date sentDate = SENT_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContent() <em>Content</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getContent()
 	 * @generated
 	 * @ordered
@@ -229,9 +203,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected static final Object CONTENT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getContent()
 	 * @generated
 	 * @ordered
@@ -241,7 +214,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	/**
 	 * The cached value of the '{@link #getHeaders() <em>Headers</em>}' map.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getHeaders()
 	 * @generated
 	 * @ordered
@@ -251,7 +223,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	/**
 	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getSize()
 	 * @generated
 	 * @ordered
@@ -261,7 +232,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	/**
 	 * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getSize()
 	 * @generated
 	 * @ordered
@@ -269,9 +239,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected long size = SIZE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAttachments() <em>Attachments</em>}'
-	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getAttachments() <em>Attachments</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getAttachments()
 	 * @generated
 	 * @ordered
@@ -299,9 +268,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected String id = ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPriority() <em>Priority</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -309,9 +277,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected static final Priority PRIORITY_EDEFAULT = Priority.HIGHEST;
 
 	/**
-	 * The cached value of the '{@link #getPriority() <em>Priority</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -321,7 +288,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	/**
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -331,7 +297,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	/**
 	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -339,9 +304,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected String label = LABEL_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLocalFile() <em>Local File</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getLocalFile() <em>Local File</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLocalFile()
 	 * @generated
 	 * @ordered
@@ -349,9 +313,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected static final String LOCAL_FILE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLocalFile() <em>Local File</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getLocalFile() <em>Local File</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLocalFile()
 	 * @generated
 	 * @ordered
@@ -359,9 +322,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected String localFile = LOCAL_FILE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSpamScore() <em>Spam Score</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getSpamScore() <em>Spam Score</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSpamScore()
 	 * @generated
 	 * @ordered
@@ -369,9 +331,8 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 	protected static final float SPAM_SCORE_EDEFAULT = -1.0F;
 
 	/**
-	 * The cached value of the '{@link #getSpamScore() <em>Spam Score</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getSpamScore() <em>Spam Score</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSpamScore()
 	 * @generated
 	 * @ordered
@@ -380,7 +341,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected YamailImpl() {
@@ -389,7 +349,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -446,7 +405,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean isRead() {
@@ -455,7 +413,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setRead(boolean newRead) {
@@ -642,7 +599,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<YamailAttachment> getAttachments() {
@@ -656,7 +612,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getId() {
@@ -665,7 +620,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setId(String newId) {
@@ -707,7 +661,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getLocalFile() {
@@ -716,7 +669,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setLocalFile(String newLocalFile) {
@@ -746,7 +698,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -765,7 +716,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -814,7 +764,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -838,7 +787,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -862,7 +810,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -916,7 +863,6 @@ public class YamailImpl extends MinimalEObjectImpl.Container implements Yamail {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

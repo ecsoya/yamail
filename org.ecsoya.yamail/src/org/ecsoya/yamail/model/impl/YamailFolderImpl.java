@@ -2,17 +2,28 @@
  */
 package org.ecsoya.yamail.model.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Set;
 
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.query.conditions.eobjects.structuralfeatures.EObjectAttributeValueCondition;
+import org.eclipse.emf.query.conditions.strings.StringValue;
+import org.eclipse.emf.query.statements.FROM;
+import org.eclipse.emf.query.statements.IQueryResult;
+import org.eclipse.emf.query.statements.SELECT;
+import org.eclipse.emf.query.statements.WHERE;
 import org.ecsoya.yamail.model.FolderType;
 import org.ecsoya.yamail.model.Yamail;
 import org.ecsoya.yamail.model.YamailFolder;
@@ -24,10 +35,14 @@ import org.ecsoya.yamail.model.YamailPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.ecsoya.yamail.model.impl.YamailFolderImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.ecsoya.yamail.model.impl.YamailFolderImpl#getMails <em>Mails</em>}</li>
- *   <li>{@link org.ecsoya.yamail.model.impl.YamailFolderImpl#isSystem <em>System</em>}</li>
- *   <li>{@link org.ecsoya.yamail.model.impl.YamailFolderImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.ecsoya.yamail.model.impl.YamailFolderImpl#getName <em>Name
+ * </em>}</li>
+ * <li>{@link org.ecsoya.yamail.model.impl.YamailFolderImpl#getMails <em>Mails
+ * </em>}</li>
+ * <li>{@link org.ecsoya.yamail.model.impl.YamailFolderImpl#isSystem <em>System
+ * </em>}</li>
+ * <li>{@link org.ecsoya.yamail.model.impl.YamailFolderImpl#getType <em>Type
+ * </em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +53,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -47,6 +63,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -54,8 +71,9 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getMails() <em>Mails</em>}' containment reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getMails() <em>Mails</em>}' containment
+	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getMails()
 	 * @generated
 	 * @ordered
@@ -65,6 +83,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The default value of the '{@link #isSystem() <em>System</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isSystem()
 	 * @generated
 	 * @ordered
@@ -74,6 +93,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The cached value of the '{@link #isSystem() <em>System</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isSystem()
 	 * @generated
 	 * @ordered
@@ -83,6 +103,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -92,6 +113,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -100,6 +122,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected YamailFolderImpl() {
@@ -108,6 +131,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -117,6 +141,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -126,6 +151,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -139,6 +165,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -152,6 +179,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -161,6 +189,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -174,6 +203,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -183,6 +213,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -196,6 +227,30 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public Yamail getMailById(String id) {
+		EObjectAttributeValueCondition condition = new EObjectAttributeValueCondition(
+				YamailPackage.Literals.YAMAIL__ID, new StringValue(id));
+		SELECT statement = new SELECT(SELECT.UNBOUNDED, false, new FROM(
+				Collections.singleton(this)), new WHERE(condition),
+				new NullProgressMonitor());
+		IQueryResult results = statement.execute();
+		if (!results.isEmpty()) {
+			Set<? extends EObject> eObjects = results.getEObjects();
+			for (EObject eObject : eObjects) {
+				if (eObject instanceof Yamail) {
+					return (Yamail) eObject;
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -210,6 +265,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -229,6 +285,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -254,6 +311,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -277,6 +335,7 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -297,6 +356,22 @@ public class YamailFolderImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments)
+			throws InvocationTargetException {
+		switch (operationID) {
+		case YamailPackage.YAMAIL_FOLDER___GET_MAIL_BY_ID__STRING:
+			return getMailById((String) arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

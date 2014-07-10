@@ -1,20 +1,25 @@
 package org.ecsoya.yamail.ui.views;
 
+import javax.mail.Message;
+
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.IFontProvider;
+import org.eclipse.jface.viewers.ILabelDecorator;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Image;
 import org.ecsoya.yamail.model.FolderType;
+import org.ecsoya.yamail.model.Yamail;
 import org.ecsoya.yamail.model.YamailAccount;
 import org.ecsoya.yamail.model.YamailFolder;
 import org.ecsoya.yamail.ui.resources.ImageFactory;
 import org.ecsoya.yamail.utils.StringUtils;
 
 public class AccountLabelProvider extends LabelProvider implements
-		IFontProvider, IColorProvider {
+		IFontProvider, IColorProvider, ILabelDecorator {
 
 	@Override
 	public String getText(Object element) {
@@ -83,5 +88,38 @@ public class AccountLabelProvider extends LabelProvider implements
 	@Override
 	public Color getBackground(Object element) {
 		return null;
+	}
+
+	@Override
+	public Image decorateImage(Image image, Object element) {
+		return null;
+	}
+
+	@Override
+	public String decorateText(String text, Object element) {
+		if (element instanceof YamailFolder) {
+			return text + " (" + getUnreadMailCount((YamailFolder) element)
+					+ ")";
+		}
+		return text;
+	}
+
+	private int getUnreadMailCount(YamailFolder folder) {
+		if (folder == null) {
+			return 0;
+		}
+		int count = 0;
+		EList<Yamail> mails = folder.getMails();
+		for (Yamail yamail : mails) {
+			try {
+				Message message = yamail.getMessage();
+				if (message != null && !yamail.isRead()) {
+					count++;
+				}
+			} catch (Exception e) {
+				continue;
+			}
+		}
+		return count;
 	}
 }

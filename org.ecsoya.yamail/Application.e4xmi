@@ -3,10 +3,12 @@
   <children xsi:type="basic:TrimmedWindow" xmi:id="_zHuA8QDJEeS4TJc19_3mMA" label="Yamail - Ecsoya Mail Client">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_zHuoEQDJEeS4TJc19_3mMA">
       <children xsi:type="advanced:Perspective" xmi:id="_zHuoEgDJEeS4TJc19_3mMA">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_zHuoEwDJEeS4TJc19_3mMA" horizontal="true">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_zHuoEwDJEeS4TJc19_3mMA" containerData="" horizontal="true">
           <children xsi:type="basic:Part" xmi:id="_s4RfUADNEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.ui.account" containerData="1" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.AccountView" label="Accounts"/>
           <children xsi:type="basic:PartSashContainer" xmi:id="_zRC_QADNEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.partsashcontainer.0" containerData="3">
-            <children xsi:type="basic:Part" xmi:id="_zx_wMADNEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.ui.headers" containerData="1" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.MailsView"/>
+            <children xsi:type="basic:Part" xmi:id="_zx_wMADNEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.ui.headers" containerData="1" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.MailsView" closeable="true">
+              <toolbar xmi:id="_3oX5kAfYEeSgPYrqcvhAjQ" elementId="org.ecsoya.yamail.toolbar.1"/>
+            </children>
             <children xsi:type="basic:Part" xmi:id="_0GwfQADNEeS4TJc19_3mMA" elementId="org.ecsoya.yamail.ui.details" containerData="3" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.views.ContentView"/>
           </children>
         </children>
@@ -33,7 +35,9 @@
       </children>
     </trimBars>
     <trimBars xmi:id="_nYwggAdNEeSDrpmqxVIq6g" elementId="org.ecsoya.yamail.trimbar.0" side="Bottom">
-      <children xsi:type="menu:ToolControl" xmi:id="_HV8O0AdOEeSDrpmqxVIq6g" elementId="statusbar" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.StatusLineWrapper"/>
+      <children xsi:type="menu:ToolControl" xmi:id="_HV8O0AdOEeSDrpmqxVIq6g" elementId="statusbar" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.ui.StatusLineWrapper">
+        <tags>stretch</tags>
+      </children>
     </trimBars>
   </children>
   <handlers xmi:id="_zHuA_QDJEeS4TJc19_3mMA" elementId="e4demo.handler.quitCommand" contributionURI="bundleclass://org.ecsoya.yamail/org.ecsoya.yamail.handlers.QuitHandler" command="_zHuA_ADJEeS4TJc19_3mMA"/>

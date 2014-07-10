@@ -11,8 +11,8 @@ public class YamailPreferenceInitializer extends AbstractPreferenceInitializer {
 	public void initializeDefaultPreferences() {
 		IEclipsePreferences preferences = InstanceScope.INSTANCE
 				.getNode(YamailCore.PLUGIN_ID);
-		preferences.put(YamailPreferences.YAMIL_GOLBALE_DATA_PATH,
-				System.getProperty("user.home") + "/yamail");
+		preferences.put(YamailPreferences.YAMAIL_GOLBALE_DATA_PATH,
+				System.getProperty("user.home") + "/.yamail");
 	}
 
 }

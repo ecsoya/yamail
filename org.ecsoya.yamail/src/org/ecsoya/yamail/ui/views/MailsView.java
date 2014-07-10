@@ -21,6 +21,7 @@ import org.eclipse.jface.layout.TreeColumnLayout;
 import org.eclipse.jface.util.ConfigureColumns;
 import org.eclipse.jface.viewers.CellLabelProvider;
 import org.eclipse.jface.viewers.ColumnWeightData;
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
@@ -162,7 +163,16 @@ public class MailsView {
 
 					@Override
 					public void selectionChanged(SelectionChangedEvent event) {
-						selectionService.setSelection(event.getSelection());
+						ISelection selection = event.getSelection();
+						selectionService.setSelection(selection);
+
+						Object element = ((IStructuredSelection) selection)
+								.getFirstElement();
+						if (element instanceof Yamail
+								&& !((Yamail) element).isRead()) {
+							((Yamail) element).setRead(true);
+							mailsViewer.refresh(element, true);
+						}
 					}
 				});
 	}

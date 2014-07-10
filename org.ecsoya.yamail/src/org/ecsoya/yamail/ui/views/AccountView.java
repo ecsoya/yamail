@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.viewers.DecoratingLabelProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
@@ -52,7 +53,8 @@ public class AccountView {
 		accountViewer = new TreeViewer(form, SWT.FULL_SELECTION
 				| SWT.HIDE_SELECTION);
 		accountViewer.setContentProvider(new AccountContentProvider());
-		accountViewer.setLabelProvider(new AccountLabelProvider());
+		accountViewer.setLabelProvider(new DecoratingLabelProvider(
+				new AccountLabelProvider(), new AccountLabelProvider()));
 
 		final YamailLibrary library = YamailCore.getLibrary();
 		library.eAdapters().add(refresher = new EContentAdapter() {

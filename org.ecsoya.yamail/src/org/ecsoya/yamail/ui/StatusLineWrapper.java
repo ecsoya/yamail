@@ -16,8 +16,8 @@ public class StatusLineWrapper implements IProgressMonitor {
 
 	@PostConstruct
 	public void createControls(Composite parent) {
-		statusLine = new StatusLine(parent, SWT.BORDER);
-		statusLine.setBounds(100, 20, 200, 30);
+		statusLine = new StatusLine(parent, SWT.NONE);
+		statusLine.setCancelEnabled(true);
 	}
 
 	@Override
@@ -75,7 +75,7 @@ public class StatusLineWrapper implements IProgressMonitor {
 
 			@Override
 			public void run() {
-				statusLine.setTaskName(name);
+				statusLine.subTask(name);
 			}
 		});
 	}

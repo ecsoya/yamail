@@ -2,6 +2,7 @@ package org.ecsoya.yamail.runnable;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 import javax.mail.Folder;
@@ -16,6 +17,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.core.runtime.jobs.Job;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.ecsoya.yamail.YamailCore;
 import org.ecsoya.yamail.model.IncomingServer;
 import org.ecsoya.yamail.model.MailProtocol;
@@ -23,6 +25,8 @@ import org.ecsoya.yamail.model.Yamail;
 import org.ecsoya.yamail.model.YamailAccount;
 import org.ecsoya.yamail.model.YamailFactory;
 import org.ecsoya.yamail.model.YamailFolder;
+import org.ecsoya.yamail.utils.LoggerUtil;
+import org.ecsoya.yamail.utils.MailHeaders;
 import org.ecsoya.yamail.utils.MailUtils;
 
 public class CheckMessageJob extends Job {
@@ -48,11 +52,16 @@ public class CheckMessageJob extends Job {
 						e.getMessage(), e);
 			}
 		}
+		try {
+			YamailCore.save();
+		} catch (IOException e) {
+			LoggerUtil.error("Save data", e);
+		}
 		monitor.done();
 		return Status.OK_STATUS;
 	}
 
-	private void retrieveMails(YamailAccount account, IProgressMonitor monitor)
+	private int retrieveMails(YamailAccount account, IProgressMonitor monitor)
 			throws Exception {
 		if (monitor.isCanceled()) {
 			throw new InterruptedException();
@@ -77,13 +86,15 @@ public class CheckMessageJob extends Job {
 			}
 
 			Folder[] list = store.getDefaultFolder().list();
+			int newMessages = 0;
 			for (Folder folder : list) {
 				monitor.setTaskName("Sync " + folder.getFullName() + " Folder");
-				SubProgressMonitor m = new SubProgressMonitor(monitor, 5);
-				syncFolder(folder, account, m);
+				SubProgressMonitor m = new SubProgressMonitor(monitor, 5,
+						SubProgressMonitor.PREPEND_MAIN_LABEL_TO_SUBTASK);
+				newMessages += syncFolder(folder, account, m);
 				monitor.worked(1);
 			}
-
+			return newMessages;
 		} catch (MessagingException e) {
 			throw e;
 		} finally {
@@ -93,7 +104,7 @@ public class CheckMessageJob extends Job {
 		}
 	}
 
-	private void syncFolder(Folder remoteFolder, YamailAccount account,
+	private int syncFolder(Folder remoteFolder, YamailAccount account,
 			IProgressMonitor monitor) throws MessagingException {
 		File dataPath = new File(account.getDataPath());
 		if (!dataPath.exists()) {
@@ -103,6 +114,8 @@ public class CheckMessageJob extends Job {
 		if (!remoteFolder.isOpen()) {
 			remoteFolder.open(Folder.READ_WRITE);
 		}
+
+		int newMessages = 0;
 
 		int messageCount = remoteFolder.getMessageCount();
 		String name = remoteFolder.getName();
@@ -125,27 +138,67 @@ public class CheckMessageJob extends Job {
 			if (monitor.isCanceled() || monitor.isCanceled()) {
 				break;
 			}
-			Yamail yamail = YamailFactory.eINSTANCE.createYamail();
-			if (message instanceof MimeMessage) {
-				yamail.setMessage(new MimeMessage((MimeMessage) message));
-			}
-			String fileName = root.list().length + 1 + ".eml";
-			yamail.setLocalFile(fileName);
-
+			String messageId = null;
 			try {
-				File file = new File(root, fileName);
-				FileOutputStream out = new FileOutputStream(file);
-				message.writeTo(out);
-				out.close();
-			} catch (Exception e) {
-				continue;
+				messageId = MailUtils.getMessageId(message);
+			} catch (Exception e1) {
 			}
-			yamailFolder.getMails().add(yamail);
+			if (messageId == null) {
+				messageId = EcoreUtil.generateUUID();
+				UpdateMessageIdJob job = new UpdateMessageIdJob(message,
+						messageId);
+				job.schedule();
+			}
+
+			Yamail yamail = yamailFolder.getMailById(messageId);
+			if (yamail == null) {
+				newMessages++;
+				yamail = YamailFactory.eINSTANCE.createYamail();
+				yamail.setId(messageId);
+				if (message instanceof MimeMessage) {
+					yamail.setMessage(new MimeMessage((MimeMessage) message));
+				}
+				String fileName = root.list().length + 1 + ".eml";
+				yamail.setLocalFile(root.getName() + File.separator + fileName);
+
+				try {
+					File file = new File(root, fileName);
+					FileOutputStream out = new FileOutputStream(file);
+					message.writeTo(out);
+					out.close();
+				} catch (Exception e) {
+					continue;
+				}
+				yamailFolder.getMails().add(yamail);
+			}
 			monitor.setTaskName("Remain " + (length--) + " messages");
 			monitor.worked(1);
 		}
 
 		monitor.done();
+		return newMessages;
 	}
 
+	private static class UpdateMessageIdJob extends Job {
+
+		private Message message;
+		private String id;
+
+		public UpdateMessageIdJob(Message message, String id) {
+			super("Update message id");
+			this.message = message;
+			this.id = id;
+		}
+
+		@Override
+		protected IStatus run(IProgressMonitor monitor) {
+			try {
+				message.setHeader(MailHeaders.HEADER_MESSAGE_ID, id);
+			} catch (MessagingException e) {
+				e.printStackTrace();
+			}
+			return Status.OK_STATUS;
+		}
+
+	}
 }

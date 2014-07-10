@@ -38,7 +38,7 @@ public class CreateAccountWizard extends Wizard implements IPageChangedListener 
 		IEclipsePreferences preferences = InstanceScope.INSTANCE
 				.getNode(YamailCore.PLUGIN_ID);
 		account.setDataPath(preferences.get(
-				YamailPreferences.YAMIL_GOLBALE_DATA_PATH,
+				YamailPreferences.YAMAIL_GOLBALE_DATA_PATH,
 				System.getProperty("user.home"))
 				+ "\\(your account)");
 

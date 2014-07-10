@@ -121,4 +121,12 @@ public interface YamailFolder extends EObject {
 	 */
 	void setType(FolderType value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	Yamail getMailById(String id);
+
 } // YamailFolder

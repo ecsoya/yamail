@@ -39,7 +39,7 @@ public class AddAccountRunnable implements IRunnableWithProgress {
 			if (!account.isCustomDataPath()) {
 				IEclipsePreferences preferences = YamailCore.getPreferences();
 				String dataRoot = preferences.get(
-						YamailPreferences.YAMIL_GOLBALE_DATA_PATH,
+						YamailPreferences.YAMAIL_GOLBALE_DATA_PATH,
 						YamailCore.getYamailRoot());
 				String dataPath = dataRoot + File.separator
 						+ account.getAddress();

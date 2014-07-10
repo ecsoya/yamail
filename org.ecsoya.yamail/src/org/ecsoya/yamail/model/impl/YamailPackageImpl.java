@@ -702,6 +702,15 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getYamailFolder__GetMailById__String() {
+		return yamailFolderEClass.getEOperations().get(0);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -823,6 +832,8 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		createEReference(yamailFolderEClass, YAMAIL_FOLDER__MAILS);
 		createEAttribute(yamailFolderEClass, YAMAIL_FOLDER__SYSTEM);
 		createEAttribute(yamailFolderEClass, YAMAIL_FOLDER__TYPE);
+		createEOperation(yamailFolderEClass,
+				YAMAIL_FOLDER___GET_MAIL_BY_ID__STRING);
 
 		yamailEClass = createEClass(YAMAIL);
 		createEAttribute(yamailEClass, YAMAIL__MESSAGE);
@@ -1036,6 +1047,11 @@ public class YamailPackageImpl extends EPackageImpl implements YamailPackage {
 		initEAttribute(getYamailFolder_Type(), this.getFolderType(), "type",
 				null, 0, 1, YamailFolder.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		op = initEOperation(getYamailFolder__GetMailById__String(),
+				this.getYamail(), "getMailById", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "id", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
 
 		initEClass(yamailEClass, Yamail.class, "Yamail", !IS_ABSTRACT,

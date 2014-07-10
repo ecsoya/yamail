@@ -57,6 +57,9 @@
     <eLiterals name="SECURE_SMTP" value="465" literal="smtps"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="YamailFolder">
+    <eOperations name="getMailById" eType="#//Yamail">
+      <eParameters name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mails" upperBound="-1"

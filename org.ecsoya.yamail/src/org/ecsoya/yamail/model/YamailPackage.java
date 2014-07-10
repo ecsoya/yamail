@@ -592,13 +592,22 @@ public interface YamailPackage extends EPackage {
 	int YAMAIL_FOLDER_FEATURE_COUNT = 4;
 
 	/**
+	 * The operation id for the '<em>Get Mail By Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int YAMAIL_FOLDER___GET_MAIL_BY_ID__STRING = 0;
+
+	/**
 	 * The number of operations of the '<em>Folder</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int YAMAIL_FOLDER_OPERATION_COUNT = 0;
+	int YAMAIL_FOLDER_OPERATION_COUNT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Message</b></em>' attribute. <!--
@@ -1478,6 +1487,16 @@ public interface YamailPackage extends EPackage {
 	EAttribute getYamailFolder_Type();
 
 	/**
+	 * Returns the meta object for the '{@link org.ecsoya.yamail.model.YamailFolder#getMailById(java.lang.String) <em>Get Mail By Id</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Mail By Id</em>' operation.
+	 * @see org.ecsoya.yamail.model.YamailFolder#getMailById(java.lang.String)
+	 * @generated
+	 */
+	EOperation getYamailFolder__GetMailById__String();
+
+	/**
 	 * Returns the meta object for enum '{@link org.ecsoya.yamail.model.MailProtocol <em>Mail Protocol</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for enum '<em>Mail Protocol</em>'.
@@ -2004,6 +2023,15 @@ public interface YamailPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute YAMAIL_FOLDER__TYPE = eINSTANCE.getYamailFolder_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Mail By Id</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation YAMAIL_FOLDER___GET_MAIL_BY_ID__STRING = eINSTANCE
+				.getYamailFolder__GetMailById__String();
 
 		/**
 		 * The meta object literal for the '{@link org.ecsoya.yamail.model.MailProtocol <em>Mail Protocol</em>}' enum.

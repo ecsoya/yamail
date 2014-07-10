@@ -13,14 +13,18 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.ecsoya.yamail.model.Yamail;
 import org.ecsoya.yamail.model.YamailFolder;
+import org.ecsoya.yamail.model.YamailPackage;
 
-public class MailsContentProvider implements ITreeContentProvider {
+public class MailsContentProvider extends AdapterImpl implements
+		ITreeContentProvider {
 
 	private boolean groupingByDate = false;
 
@@ -37,11 +41,28 @@ public class MailsContentProvider implements ITreeContentProvider {
 	}
 
 	@Override
+	public void notifyChanged(Notification msg) {
+		super.notifyChanged(msg);
+		if (YamailPackage.Literals.YAMAIL_FOLDER__MAILS == msg.getFeature()) {
+			int eventType = msg.getEventType();
+			if (Notification.ADD == eventType
+					|| Notification.ADD_MANY == eventType
+					|| Notification.REMOVE == eventType
+					|| Notification.REMOVE_MANY == eventType) {
+				selfUpdateViewer();
+			}
+		}
+	}
+
+	@Override
 	public void dispose() {
 		if (datedMails != null) {
 			datedMails.clear();
 		}
 		datedMails = null;
+		if (currentInput instanceof YamailFolder) {
+			((YamailFolder) currentInput).eAdapters().remove(this);
+		}
 	}
 
 	@Override
@@ -52,6 +73,12 @@ public class MailsContentProvider implements ITreeContentProvider {
 				.equals(newInput);
 		if (!equals) {
 			runGroupJob();
+		}
+		if (oldInput instanceof YamailFolder) {
+			((YamailFolder) oldInput).eAdapters().remove(this);
+		}
+		if (currentInput instanceof YamailFolder) {
+			((YamailFolder) currentInput).eAdapters().add(this);
 		}
 	}
 
